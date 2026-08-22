@@ -1,0 +1,3306 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Digital__Hana__Arts® — خلاقیت محاسباتی در تلاقی هنر، داده، هوش مصنوعی و بلاک‌چین."
+    >
+
+    <meta
+        name="theme-color"
+        content="#07070b"
+    >
+
+    <meta
+        property="og:title"
+        content="Digital__Hana__Arts®"
+    >
+
+    <meta
+        property="og:description"
+        content="هنر × داده × هوش × بلاک‌چین"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:image"
+        content="assets/DHA_logo.png"
+    >
+
+    <title>
+        Digital__Hana__Arts® — هنر × داده × هوش
+    </title>
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           DHA — GLOBAL
+        ====================================================== */
+
+        :root {
+
+            --bg: #07070b;
+            --bg-soft: #0d0d14;
+
+            --text: #f5f5f7;
+            --muted: #9b9ba8;
+
+            --line:
+                rgba(255,255,255,.10);
+
+            --cyan: #00e5ff;
+            --violet: #8b5cf6;
+            --pink: #ff3cac;
+            --orange: #ff9f43;
+
+            --radius: 24px;
+
+            --max-width: 1240px;
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(139,92,246,.14),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(0,229,255,.10),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(255,60,172,.09),
+                    transparent 30%
+                ),
+
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                "Vazirmatn",
+                "Inter",
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        ::selection {
+
+            background: var(--pink);
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           AMBIENT GRID
+        ====================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                70px 70px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 80%
+                );
+
+            z-index: -3;
+
+        }
+
+
+        /* =====================================================
+           FLOATING LIGHT
+        ====================================================== */
+
+        .orb {
+
+            position: fixed;
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            opacity: .15;
+
+            pointer-events: none;
+
+            z-index: -2;
+
+        }
+
+
+        .orb.one {
+
+            background: var(--violet);
+
+            top: 5%;
+            left: -100px;
+
+            animation:
+                floatOne 14s ease-in-out infinite;
+
+        }
+
+
+        .orb.two {
+
+            background: var(--cyan);
+
+            top: 40%;
+            right: -120px;
+
+            animation:
+                floatTwo 18s ease-in-out infinite;
+
+        }
+
+
+        .orb.three {
+
+            background: var(--pink);
+
+            bottom: -100px;
+            left: 40%;
+
+            animation:
+                floatThree 16s ease-in-out infinite;
+
+        }
+
+
+        @keyframes floatOne {
+
+            0%, 100% {
+                transform:
+                    translate(0, 0);
+            }
+
+            50% {
+                transform:
+                    translate(100px, 80px);
+            }
+
+        }
+
+
+        @keyframes floatTwo {
+
+            0%, 100% {
+                transform:
+                    translate(0, 0);
+            }
+
+            50% {
+                transform:
+                    translate(-80px, -60px);
+            }
+
+        }
+
+
+        @keyframes floatThree {
+
+            0%, 100% {
+                transform:
+                    translate(0, 0);
+            }
+
+            50% {
+                transform:
+                    translate(60px, -80px);
+            }
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 18px;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width:
+                min(
+                    calc(100% - 32px),
+                    1120px
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                10px 16px 10px 14px;
+
+            background:
+                rgba(10,10,16,.72);
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            backdrop-filter:
+                blur(22px);
+
+            -webkit-backdrop-filter:
+                blur(22px);
+
+            border-radius:
+                999px;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,.35);
+
+        }
+
+
+        .nav-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 700;
+
+            letter-spacing:
+                -.02em;
+
+        }
+
+
+        .nav-logo {
+
+            width: 34px;
+            height: 34px;
+
+            object-fit: contain;
+
+            display: block;
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(0,229,255,.25)
+                );
+
+            transition:
+                transform .25s ease,
+                filter .25s ease;
+
+        }
+
+
+        .nav-brand:hover
+        .nav-logo {
+
+            transform:
+                scale(1.08);
+
+            filter:
+                drop-shadow(
+                    0 0 16px
+                    rgba(0,229,255,.45)
+                );
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 26px;
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size: 11px;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+
+        }
+
+
+        .nav-links a {
+
+            transition:
+                color .25s ease,
+                transform .25s ease;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--max-width)
+                );
+
+            margin:
+                auto;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            position:
+                relative;
+
+            padding:
+                140px 0
+                90px;
+
+        }
+
+
+        .hero-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(320px, .85fr);
+
+            gap:
+                70px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .eyebrow {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                .16em;
+
+            text-transform:
+                uppercase;
+
+            color:
+                var(--muted);
+
+            margin-bottom:
+                26px;
+
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width:
+                28px;
+
+            height:
+                1px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--pink)
+                );
+
+        }
+
+
+        .hero h1 {
+
+            margin: 0;
+
+            font-size:
+                clamp(4rem, 9vw, 8.5rem);
+
+            line-height:
+                .82;
+
+            letter-spacing:
+                -.085em;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .hero h1 span {
+
+            display:
+                block;
+
+        }
+
+
+        .hero h1 .gradient {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    #7c7cff 35%,
+                    var(--pink) 70%,
+                    var(--orange)
+                );
+
+            background-size:
+                250% auto;
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+            animation:
+                gradientMove 8s ease infinite;
+
+        }
+
+
+        @keyframes gradientMove {
+
+            0%, 100% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+
+        }
+
+
+        .hero-copy {
+
+            max-width:
+                650px;
+
+            margin-top:
+                36px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                clamp(1rem, 1.6vw, 1.25rem);
+
+            line-height:
+                1.75;
+
+            font-weight:
+                300;
+
+        }
+
+
+        .hero-copy strong {
+
+            color:
+                white;
+
+            font-weight:
+                500;
+
+        }
+
+
+        .hero-actions {
+
+            display:
+                flex;
+
+            gap:
+                14px;
+
+            margin-top:
+                36px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .button {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            min-height:
+                48px;
+
+            padding:
+                0 22px;
+
+            border-radius:
+                999px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                background .25s ease;
+
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(255,255,255,.35);
+
+        }
+
+
+        .button.primary {
+
+            color:
+                #050507;
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    #8b7cff,
+                    var(--pink)
+                );
+
+            border:
+                none;
+
+        }
+
+
+        .button.secondary {
+
+            background:
+                rgba(255,255,255,.04);
+
+        }
+
+
+        /* =====================================================
+           HERO LOGO
+        ====================================================== */
+
+        .hero-art {
+
+            min-height:
+                520px;
+
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .hero-logo-wrapper {
+
+            position:
+                relative;
+
+            width:
+                min(
+                    460px,
+                    78vw
+                );
+
+            aspect-ratio:
+                1;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+        }
+
+
+        .hero-logo-wrapper::before {
+
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                78%;
+
+            height:
+                78%;
+
+            border-radius:
+                50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(0,229,255,.18),
+                    rgba(139,92,246,.10) 40%,
+                    transparent 70%
+                );
+
+            filter:
+                blur(35px);
+
+            animation:
+                logoGlow 7s ease-in-out infinite;
+
+        }
+
+
+        .hero-logo-wrapper::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                8%;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius:
+                50%;
+
+            transform:
+                rotate(-15deg)
+                scaleY(.42);
+
+            box-shadow:
+
+                0 0 40px
+                rgba(0,229,255,.08),
+
+                inset 0 0 30px
+                rgba(255,255,255,.025);
+
+            animation:
+                logoOrbit 12s linear infinite;
+
+        }
+
+
+        .hero-logo {
+
+            position:
+                relative;
+
+            z-index:
+                3;
+
+            width:
+                72%;
+
+            height:
+                72%;
+
+            object-fit:
+                contain;
+
+            display:
+                block;
+
+            filter:
+
+                drop-shadow(
+                    0 0 25px
+                    rgba(0,229,255,.20)
+                )
+
+                drop-shadow(
+                    0 20px 45px
+                    rgba(0,0,0,.45)
+                );
+
+            animation:
+                logoFloat 7s ease-in-out infinite;
+
+            transition:
+                transform .5s ease,
+                filter .5s ease;
+
+        }
+
+
+        .hero-logo-wrapper:hover
+        .hero-logo {
+
+            transform:
+                scale(1.045);
+
+            filter:
+
+                drop-shadow(
+                    0 0 35px
+                    rgba(0,229,255,.35)
+                )
+
+                drop-shadow(
+                    0 25px 55px
+                    rgba(0,0,0,.50)
+                );
+
+        }
+
+
+        @keyframes logoFloat {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px)
+                    rotate(1deg);
+
+            }
+
+        }
+
+
+        @keyframes logoGlow {
+
+            0%, 100% {
+
+                transform:
+                    scale(.92);
+
+                opacity:
+                    .65;
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.06);
+
+                opacity:
+                    1;
+
+            }
+
+        }
+
+
+        @keyframes logoOrbit {
+
+            0% {
+
+                transform:
+                    rotate(-15deg)
+                    scaleY(.42);
+
+            }
+
+            50% {
+
+                transform:
+                    rotate(15deg)
+                    scaleY(.42);
+
+            }
+
+            100% {
+
+                transform:
+                    rotate(-15deg)
+                    scaleY(.42);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MARQUEE
+        ====================================================== */
+
+        .marquee {
+
+            overflow:
+                hidden;
+
+            border-top:
+                1px solid
+                var(--line);
+
+            border-bottom:
+                1px solid
+                var(--line);
+
+            padding:
+                16px 0;
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                .14em;
+
+            text-transform:
+                uppercase;
+
+            white-space:
+                nowrap;
+
+        }
+
+
+        .marquee-track {
+
+            display:
+                inline-flex;
+
+            gap:
+                50px;
+
+            animation:
+                marquee 28s linear infinite;
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+1) {
+
+            color:
+                var(--cyan);
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+2) {
+
+            color:
+                var(--violet);
+
+        }
+
+
+        .marquee-track
+        span:nth-child(4n+3) {
+
+            color:
+                var(--pink);
+
+        }
+
+
+        @keyframes marquee {
+
+            to {
+
+                transform:
+                    translateX(-50%);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SECTION
+        ====================================================== */
+
+        section {
+
+            padding:
+                130px 0;
+
+        }
+
+
+        .section-label {
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                .14em;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                22px;
+
+        }
+
+
+        .section-title {
+
+            margin:
+                0;
+
+            max-width:
+                900px;
+
+            font-size:
+                clamp(2.7rem, 6vw, 5.8rem);
+
+            line-height:
+                .95;
+
+            letter-spacing:
+                -.065em;
+
+        }
+
+
+        .section-title .gradient {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    var(--violet),
+                    var(--pink)
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+        }
+
+
+        .section-intro {
+
+            max-width:
+                700px;
+
+            margin-top:
+                30px;
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.8;
+
+            font-size:
+                1.05rem;
+
+        }
+
+
+        /* =====================================================
+           DOMAIN CARDS
+        ====================================================== */
+
+        .domains {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                14px;
+
+            margin-top:
+                60px;
+
+        }
+
+
+        .domain {
+
+            min-height:
+                320px;
+
+            padding:
+                28px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius:
+                var(--radius);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.025)
+                );
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+
+        }
+
+
+        .domain:hover {
+
+            transform:
+                translateY(-10px)
+                rotate(-.5deg);
+
+            border-color:
+                rgba(255,255,255,.28);
+
+        }
+
+
+        .domain::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                180px;
+
+            height:
+                180px;
+
+            border-radius:
+                50%;
+
+            top:
+                -80px;
+
+            right:
+                -70px;
+
+            filter:
+                blur(35px);
+
+            opacity:
+                .35;
+
+        }
+
+
+        .domain.art::before {
+            background:
+                var(--pink);
+        }
+
+
+        .domain.data::before {
+            background:
+                var(--cyan);
+        }
+
+
+        .domain.ai::before {
+            background:
+                var(--violet);
+        }
+
+
+        .domain.chain::before {
+            background:
+                var(--orange);
+        }
+
+
+        .domain-number {
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                11px;
+
+            color:
+                var(--muted);
+
+        }
+
+
+        .domain-symbol {
+
+            font-size:
+                42px;
+
+            margin:
+                40px 0 25px;
+
+        }
+
+
+        .domain h3 {
+
+            margin:
+                0 0 12px;
+
+            font-size:
+                23px;
+
+        }
+
+
+        .domain p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap:
+                80px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .about-visual {
+
+            min-height:
+                520px;
+
+            border-radius:
+                40px;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    var(--pink),
+                    transparent 22%
+                ),
+
+                radial-gradient(
+                    circle at 70% 60%,
+                    var(--cyan),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 45% 80%,
+                    var(--violet),
+                    transparent 28%
+                ),
+
+                #11111a;
+
+        }
+
+
+        .about-visual::before {
+
+            content:
+                "DHA";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            font-size:
+                clamp(
+                    7rem,
+                    18vw,
+                    15rem
+                );
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -.1em;
+
+            color:
+                rgba(255,255,255,.05);
+
+            transform:
+                rotate(-10deg);
+
+        }
+
+
+        .about-visual::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                280px;
+
+            height:
+                280px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            border-radius:
+                50%;
+
+            top:
+                50%;
+
+            left:
+                50%;
+
+            transform:
+                translate(-50%,-50%)
+                rotate(25deg)
+                scaleY(.38);
+
+        }
+
+
+        .about-text h2 {
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height:
+                .95;
+
+            letter-spacing:
+                -.06em;
+
+            margin:
+                0;
+
+        }
+
+
+        .about-text p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                1.05rem;
+
+            line-height:
+                1.85;
+
+            margin-top:
+                28px;
+
+        }
+
+
+        /* =====================================================
+           PROJECT / DHA VISION
+        ====================================================== */
+
+        .project {
+
+            margin-top:
+                65px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            min-height:
+                520px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius:
+                36px;
+
+            overflow:
+                hidden;
+
+            background:
+                rgba(255,255,255,.035);
+
+        }
+
+
+        .project-visual {
+
+            position:
+                relative;
+
+            min-height:
+                520px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            overflow:
+                hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(0,229,255,.20),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 75% 70%,
+                    rgba(255,60,172,.20),
+                    transparent 35%
+                ),
+
+                #0b0b13;
+
+        }
+
+
+        .project-visual img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            display:
+                block;
+
+            transition:
+                transform .7s ease,
+                filter .7s ease;
+
+        }
+
+
+        .project-visual::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,.16),
+                    transparent 35%,
+                    rgba(139,92,246,.10) 60%,
+                    rgba(255,60,172,.18)
+                );
+
+            mix-blend-mode:
+                screen;
+
+            z-index:
+                1;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .project-visual::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 5px,
+                    rgba(255,255,255,.025) 6px
+                );
+
+            opacity:
+                .35;
+
+            z-index:
+                2;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .project:hover
+        .project-visual img {
+
+            transform:
+                scale(1.035);
+
+            filter:
+                saturate(1.08)
+                contrast(1.04);
+
+        }
+
+
+        .project-info {
+
+            padding:
+                clamp(
+                    35px,
+                    6vw,
+                    75px
+                );
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .project-tag {
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                11px;
+
+            color:
+                var(--cyan);
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                .15em;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .project-info h3 {
+
+            margin:
+                0;
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    4.8rem
+                );
+
+            letter-spacing:
+                -.07em;
+
+            line-height:
+                .9;
+
+        }
+
+
+        .project-info p {
+
+            color:
+                var(--muted);
+
+            line-height:
+                1.8;
+
+            margin:
+                30px 0;
+
+        }
+
+
+        .tech {
+
+            display:
+                flex;
+
+            gap:
+                8px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .tech span {
+
+            border:
+                1px solid
+                var(--line);
+
+            padding:
+                7px 11px;
+
+            border-radius:
+                999px;
+
+            color:
+                var(--muted);
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           HANA
+        ====================================================== */
+
+        .hana {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            padding:
+                100px 0;
+
+            border-top:
+                1px solid
+                var(--line);
+
+            border-bottom:
+                1px solid
+                var(--line);
+
+        }
+
+
+        .hana-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                80px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .hana-copy h2 {
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height:
+                .82;
+
+            letter-spacing:
+                -.08em;
+
+            margin:
+                0;
+
+        }
+
+
+        .hana-copy h2 span {
+
+            display:
+                block;
+
+        }
+
+
+        .hana-copy h2
+        .hana-gradient {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    var(--orange),
+                    var(--pink),
+                    var(--violet)
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+        }
+
+
+        .hana-copy p {
+
+            color:
+                var(--muted);
+
+            max-width:
+                550px;
+
+            line-height:
+                1.8;
+
+            margin-top:
+                30px;
+
+        }
+
+
+        .hana-image {
+
+            min-height:
+                480px;
+
+            border-radius:
+                40px;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #171721,
+                    #0c0c12
+                );
+
+        }
+
+
+        .hana-image::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,255,.15),
+                    transparent 35%,
+                    rgba(255,60,172,.15)
+                );
+
+            z-index:
+                1;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .hana-image img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            display:
+                block;
+
+            filter:
+                saturate(.9)
+                contrast(1.05);
+
+        }
+
+
+        /* =====================================================
+           PHILOSOPHY
+        ====================================================== */
+
+        .philosophy {
+
+            text-align:
+                center;
+
+            padding:
+                180px 0;
+
+        }
+
+
+        .philosophy-mark {
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                12px;
+
+            color:
+                var(--muted);
+
+            letter-spacing:
+                .2em;
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        .philosophy h2 {
+
+            margin:
+                auto;
+
+            max-width:
+                1100px;
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height:
+                .9;
+
+            letter-spacing:
+                -.075em;
+
+        }
+
+
+        .philosophy h2 span {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    var(--cyan),
+                    var(--violet),
+                    var(--pink)
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top:
+                1px solid
+                var(--line);
+
+            padding:
+                60px 0 35px;
+
+        }
+
+
+        .footer-grid {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-start;
+
+            gap:
+                40px;
+
+        }
+
+
+        .footer-brand {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            font-size:
+                22px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                -.04em;
+
+        }
+
+
+        .footer-logo {
+
+            width:
+                42px;
+
+            height:
+                42px;
+
+            object-fit:
+                contain;
+
+            display:
+                block;
+
+        }
+
+
+        .footer-sub {
+
+            color:
+                var(--muted);
+
+            margin-top:
+                10px;
+
+            font-size:
+                13px;
+
+        }
+
+
+        .footer-links {
+
+            display:
+                flex;
+
+            gap:
+                20px;
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                11px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                .08em;
+
+            color:
+                var(--muted);
+
+        }
+
+
+        .footer-links a:hover {
+
+            color:
+                white;
+
+        }
+
+
+        .copyright {
+
+            margin-top:
+                60px;
+
+            padding-top:
+                20px;
+
+            border-top:
+                1px solid
+                var(--line);
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            color:
+                #555560;
+
+            font-family:
+                "Vazirmatn",
+                "DM Mono",
+                monospace;
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                .08em;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE — TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display:
+                    none;
+            }
+
+
+            .hero-grid,
+            .about-grid,
+            .hana-grid,
+            .project {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .hero {
+
+                padding-top:
+                    130px;
+
+            }
+
+
+            .hero-art {
+
+                min-height:
+                    430px;
+
+                order:
+                    -1;
+
+            }
+
+
+            .hero-logo-wrapper {
+
+                width:
+                    min(
+                        400px,
+                        72vw
+                    );
+
+            }
+
+
+            .domains {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .project-visual {
+
+                min-height:
+                    420px;
+
+            }
+
+
+            .hana-image {
+
+                min-height:
+                    400px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE — MOBILE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--max-width)
+                    );
+
+            }
+
+
+            section {
+
+                padding:
+                    90px 0;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    120px 0
+                    70px;
+
+            }
+
+
+            .hero-grid {
+
+                gap:
+                    30px;
+
+            }
+
+
+            .hero-art {
+
+                min-height:
+                    320px;
+
+            }
+
+
+            .hero-logo-wrapper {
+
+                width:
+                    min(
+                        310px,
+                        80vw
+                    );
+
+            }
+
+
+            .hero-logo {
+
+                width:
+                    70%;
+
+                height:
+                    70%;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    4rem;
+
+            }
+
+
+            .hero-copy {
+
+                font-size:
+                    1rem;
+
+            }
+
+
+            .domains {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .domain {
+
+                min-height:
+                    260px;
+
+            }
+
+
+            .project-visual {
+
+                min-height:
+                    340px;
+
+            }
+
+
+            .hana-image {
+
+                min-height:
+                    340px;
+
+            }
+
+
+            .footer-grid,
+            .copyright {
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .footer-links {
+
+                flex-wrap:
+                    wrap;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior:
+                    auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PERSIAN TYPOGRAPHY OVERRIDES
+        ====================================================== */
+
+        .hero h1,
+        .section-title,
+        .about-text h2,
+        .project-info h3,
+        .hana-copy h2,
+        .philosophy h2 {
+
+            letter-spacing:
+                0;
+
+            line-height:
+                1.1;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         AMBIENT BACKGROUND
+    ====================================================== -->
+
+    <div class="orb one"></div>
+
+    <div class="orb two"></div>
+
+    <div class="orb three"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+
+        <a
+            href="#top"
+            class="nav-brand"
+        >
+
+            <img
+                src="assets/DHA_logo_h.png"
+                alt="لوگوی Digital__Hana__Arts®"
+                class="nav-logo"
+            >
+
+            <span>
+                DHA
+            </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="#about">
+                درباره ما
+            </a>
+
+            <a href="#domains">
+                حوزه‌ها
+            </a>
+
+            <a href="#work">
+                آثار
+            </a>
+
+            <a href="#hana">
+                هانا
+            </a>
+
+            <a
+                href="https://github.com/DigitalHanaArts"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                گیت‌هاب
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main id="top">
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            استودیوی خلاقیت محاسباتی
+                        </div>
+
+
+                        <h1>
+
+                            <span>
+                                دیجیتال
+                            </span>
+
+                            <span class="gradient">
+                                هانا
+                            </span>
+
+                            <span>
+                                آرتز
+                            </span>
+
+                        </h1>
+
+
+                        <p class="hero-copy">
+
+                            جایی که
+
+                            <strong>هنر</strong>،
+
+                            <strong>داده</strong>،
+
+                            <strong>هوش مصنوعی</strong>
+
+                            و
+
+                            <strong>فناوری غیرمتمرکز</strong>
+
+                            به شکل‌های تازه‌ای از بیان دیجیتال می‌رسند.
+
+                        </p>
+
+
+                        <div class="hero-actions">
+
+                            <a
+                                href="#work"
+                                class="button primary"
+                            >
+                                مشاهده آثار
+                            </a>
+
+
+                            <a
+                                href="https://github.com/DigitalHanaArts"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button secondary"
+                            >
+                                گیت‌هاب ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-art">
+
+                        <div class="hero-logo-wrapper">
+
+                            <img
+                                src="assets/DHA_logo.png"
+                                alt="لوگوی دیجیتال هانا آرتز"
+                                class="hero-logo"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MARQUEE
+        ================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <span>هنر</span>
+                <span>داده</span>
+                <span>هوش مصنوعی</span>
+                <span>بلاک‌چین</span>
+                <span>مولد</span>
+                <span>محاسباتی</span>
+                <span>هوش</span>
+                <span>بصری‌سازی</span>
+
+                <span>هنر</span>
+                <span>داده</span>
+                <span>هوش مصنوعی</span>
+                <span>بلاک‌چین</span>
+                <span>مولد</span>
+                <span>محاسباتی</span>
+                <span>هوش</span>
+                <span>بصری‌سازی</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+
+                    <div class="about-visual"></div>
+
+
+                    <div class="about-text">
+
+                        <div class="section-label">
+                            ۰۱ / استودیو
+                        </div>
+
+
+                        <h2>
+
+                            فناوری
+
+                            <span class="gradient">
+                                ماده
+                            </span>
+
+                            است.
+
+                        </h2>
+
+
+                        <p>
+
+                            دیجیتال هانا آرتز یک استودیوی تجربی خلاقیت محاسباتی است
+                            که فضای میان فناوری و بیان هنری را کاوش می‌کند.
+
+                        </p>
+
+
+                        <p>
+
+                            ما نرم‌افزار، سیستم‌های بصری، آزمایش‌های یادگیری ماشین،
+                            آثار هنری داده‌محور و دارایی‌های دیجیتال مبتنی بر بلاک‌چین
+                            توسعه می‌دهیم.
+
+                        </p>
+
+
+                        <p>
+
+                            پرسش اصلی ما ساده است:
+
+                            <strong>
+                                وقتی محاسبه به یک رسانه خلاق تبدیل شود،
+                                چه رخ می‌دهد؟
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DOMAINS
+        ================================================== -->
+
+        <section id="domains">
+
+            <div class="container">
+
+                <div class="section-label">
+                    ۰۲ / اکوسیستم
+                </div>
+
+
+                <h2 class="section-title">
+
+                    چهار حوزه.
+
+                    <span class="gradient">
+                        یک سیستم.
+                    </span>
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    DHA به‌جای فعالیت در یک دسته فناوری واحد،
+                    در میان رشته‌ها کار می‌کند.
+
+                </p>
+
+
+                <div class="domains">
+
+
+                    <article class="domain art">
+
+                        <div class="domain-number">
+                            ۰۱
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◇
+                        </div>
+
+
+                        <h3>
+                            هنر دیجیتال
+                        </h3>
+
+
+                        <p>
+                            سیستم‌های مولد، هنر الگوریتمی،
+                            عکاسی محاسباتی و رسانه دیجیتال تجربی.
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain data">
+
+                        <div class="domain-number">
+                            ۰۲
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◌
+                        </div>
+
+
+                        <h3>
+                            علم داده
+                        </h3>
+
+
+                        <p>
+                            داده‌کاوی، تحلیل، بصری‌سازی،
+                            محاسبات آماری و کشف داده‌محور.
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain ai">
+
+                        <div class="domain-number">
+                            ۰۳
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ◎
+                        </div>
+
+
+                        <h3>
+                            هوش
+                        </h3>
+
+
+                        <p>
+                            یادگیری ماشین، یادگیری عمیق،
+                            بینایی رایانه و هوش مصنوعی مولد.
+                        </p>
+
+                    </article>
+
+
+                    <article class="domain chain">
+
+                        <div class="domain-number">
+                            ۰۴
+                        </div>
+
+
+                        <div class="domain-symbol">
+                            ⛓
+                        </div>
+
+
+                        <h3>
+                            بلاک‌چین
+                        </h3>
+
+
+                        <p>
+                            ان‌اف‌تی‌ها، دارایی‌های دیجیتال،
+                            تحلیل بلاک‌چین و اکوسیستم‌های خلاق غیرمتمرکز.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WORK
+        ================================================== -->
+
+        <section id="work">
+
+            <div class="container">
+
+                <div class="section-label">
+                    ۰۳ / آثار منتخب
+                </div>
+
+
+                <h2 class="section-title">
+
+                    از
+
+                    <span class="gradient">
+                        پیکسل
+                    </span>
+
+                    تا هوش.
+
+                </h2>
+
+
+                <div class="project">
+
+
+                    <div class="project-visual">
+
+                        <img
+                            src="assets/DHA_Vision.png"
+                            alt="DHA Vision — دیجیتال هانا آرتز"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <div class="project-tag">
+                            پلتفرم تجربی
+                        </div>
+
+
+                        <h3>
+                            DHA<br>
+                            ویژن
+                        </h3>
+
+
+                        <p>
+
+                            یک پلتفرم هنر محاسباتی مبتنی بر جولیا
+                            که کاوش می‌کند چگونه عکس‌ها می‌توانند
+                            از طریق پردازش تصویر، یادگیری ماشین
+                            و سیستم‌های مولد به آثار هنری دیجیتال تازه
+                            تبدیل شوند.
+
+                        </p>
+
+
+                        <div class="tech">
+
+                            <span>
+                                جولیا
+                            </span>
+
+                            <span>
+                                فلوکس
+                            </span>
+
+                            <span>
+                                یادگیری ماشین
+                            </span>
+
+                            <span>
+                                پردازش تصویر
+                            </span>
+
+                            <span>
+                                هنر مولد
+                            </span>
+
+                        </div>
+
+
+                        <br>
+
+
+                        <a
+                            href="https://github.com/DigitalHanaArts/DHA-Vision"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button secondary"
+                        >
+                            مشاهده پروژه ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HANA
+        ================================================== -->
+
+        <section
+            id="hana"
+            class="hana"
+        >
+
+            <div class="container">
+
+                <div class="hana-grid">
+
+
+                    <div class="hana-copy">
+
+                        <div class="section-label">
+                            ۰۴ / خاستگاه
+                        </div>
+
+
+                        <h2>
+
+                            <span>
+                                با
+                            </span>
+
+                            <span class="hana-gradient">
+                                هانا
+                            </span>
+
+                            <span>
+                                آشنا شوید.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            دیجیتال هانا آرتز به نام هانا نام‌گذاری شده است —
+                            بچه‌گربه‌ای که در قلب هویت بصری قرار دارد.
+
+                        </p>
+
+
+                        <p>
+
+                            حضور او عامدانه چیزی انسانی و ارگانیک را
+                            به جهانی محاسباتی وارد می‌کند:
+
+                            <strong>
+                                کنجکاوی، فردیت و شخصیت.
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="hana-image">
+
+                        <img
+                            src="assets/Hana_the_kitten.jpeg"
+                            alt="هانا بچه‌گربه"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PHILOSOPHY
+        ================================================== -->
+
+        <section class="philosophy">
+
+            <div class="container">
+
+
+                <div class="philosophy-mark">
+                    ۰۵ / پرسش
+                </div>
+
+
+                <h2>
+
+                    چه رخ می‌دهد وقتی
+
+                    <span>
+                        محاسبه
+                    </span>
+
+                    به یک
+
+                    <span>
+                        رسانه خلاق
+                    </span>
+
+                    تبدیل شود؟
+
+                </h2>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <div class="footer-brand">
+
+                        <img
+                            src="assets/DHA_logo.png"
+                            alt="لوگوی Digital__Hana__Arts®"
+                            class="footer-logo"
+                        >
+
+                        <span>
+                            دیجیتال هانا آرتز
+                        </span>
+
+                    </div>
+
+
+                    <div class="footer-sub">
+
+                        هنر × داده × هوش × بلاک‌چین
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a
+                        href="https://github.com/DigitalHanaArts"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        گیت‌هاب
+                    </a>
+
+
+                    <a href="#top">
+                        بازگشت به بالا ↑
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                <span>
+                    © ۲۰۲۶ دیجیتال هانا آرتز®
+                </span>
+
+
+                <span>
+                    محاسبه به‌عنوان یک رسانه خلاق.
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

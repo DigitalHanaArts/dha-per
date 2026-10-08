@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fa" dir="rtl">
+<html lang="fa-IR" dir="rtl">
 
 <head>
 
@@ -13,22 +13,22 @@
 
     <meta
         name="description"
-        content="Digital__Hana__Arts® — خلاقیت محاسباتی در تلاقی هنر، داده، هوش مصنوعی و بلاک‌چین."
+        content="صنایع رقومی هانا® — آفرینش‌گری محاسباتی در تلاقی هنر، داده، هوش مصنوعی و بلاک‌چین. بیانیه‌ای پساپسامدرن و انتزاعی، بافته در میراث کهن ایران."
     >
 
     <meta
         name="theme-color"
-        content="#07070b"
+        content="#0d1620"
     >
 
     <meta
         property="og:title"
-        content="Digital__Hana__Arts®"
+        content="صنایع رقومی هانا® — موتور انتزاعی"
     >
 
     <meta
         property="og:description"
-        content="هنر × داده × هوش × بلاک‌چین"
+        content="هنر × داده × هوش × بلاک‌چین × انتزاع"
     >
 
     <meta
@@ -42,12 +42,12 @@
     >
 
     <title>
-        Digital__Hana__Arts® — هنر × داده × هوش
+        صنایع رقومی هانا® — [موتور انتزاعی]
     </title>
 
 
     <!-- =====================================================
-         FONTS
+         قلم‌ها · FONTS
     ====================================================== -->
 
     <link
@@ -62,7 +62,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Estedad:wght@300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&family=Lalezar&family=Gulzar&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap"
         rel="stylesheet"
     >
 
@@ -70,105 +70,91 @@
     <style>
 
         /* =====================================================
-           DHA — GLOBAL
+           ص.ر.ه. — پروتکل انتزاعی · ویرایش ایرانی
+           DHA — ABSTRACT PROTOCOL · PERSIAN EDITION
+           (طاق جناغی · مقرنس · کاشی · اسلیمی · نگارگری)
         ====================================================== */
 
         :root {
 
-            --bg: #07070b;
-            --bg-soft: #0d0d14;
+            /* شب · نیلی — night · indigo ground */
+            --شب: #0d1620;
+            --شب-۲: #131e2a;
+            --شب-۳: #1c2b38;
 
-            --text: #f5f5f7;
-            --muted: #9b9ba8;
+            /* لعاب · گچ — glaze · stucco light */
+            --لعاب: #f0e6cf;
+            --لعاب-۲: #cfc3a4;
+            --گرد: #8a8474;
+            --خاک: #4a4538;
 
-            --line:
-                rgba(255,255,255,.10);
+            /* فیروزه · لاجورد · زر — turquoise · lapis · gold */
+            --فیروزه: #29a6a6;
+            --فیروزه-۲: #4ed9d9;
+            --فیروزه-۳: #1a7a7a;
+            --لاجورد: #26428c;
+            --لاجورد-۲: #1a2c5e;
+            --زر: #c9a227;
+            --زر-۲: #e6bc3d;
 
-            --cyan: #00e5ff;
-            --violet: #8b5cf6;
-            --pink: #ff3cac;
-            --orange: #ff9f43;
+            /* زعفران · انار — saffron · pomegranate */
+            --زعفران: #e8701a;
+            --انار: #b8261f;
+            --گل‌محمدی: #d8848a;
 
-            --radius: 24px;
+            --کاشی-خط: rgba(240,230,207,.22);
+            --کاشی-خط-نازک: rgba(240,230,207,.08);
 
-            --max-width: 1240px;
+            --پهنا: 1400px;
 
         }
 
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
 
         html {
             scroll-behavior: smooth;
+            background: var(--شب);
+            direction: rtl;
         }
 
 
         body {
 
-            margin: 0;
-            padding: 0;
+            background: var(--شب);
 
-            background:
-
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(139,92,246,.14),
-                    transparent 28%
-                ),
-
-                radial-gradient(
-                    circle at 85% 30%,
-                    rgba(0,229,255,.10),
-                    transparent 28%
-                ),
-
-                radial-gradient(
-                    circle at 50% 90%,
-                    rgba(255,60,172,.09),
-                    transparent 30%
-                ),
-
-                var(--bg);
-
-            color: var(--text);
+            color: var(--لعاب);
 
             font-family:
                 "Vazirmatn",
-                "Inter",
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
+                "Estedad",
+                "Tahoma",
                 sans-serif;
 
             overflow-x: hidden;
 
-        }
+            cursor: crosshair;
 
+            position: relative;
 
-        a {
-
-            color: inherit;
-
-            text-decoration: none;
+            line-height: 1.9;
 
         }
 
 
         ::selection {
-
-            background: var(--pink);
-
-            color: white;
-
+            background: var(--فیروزه);
+            color: var(--شب);
         }
 
 
         /* =====================================================
-           AMBIENT GRID
+           بافتِ کاغذ و کاشی · PAPER & TILE TEXTURE
         ====================================================== */
 
         body::before {
@@ -181,161 +167,278 @@
 
             pointer-events: none;
 
+            z-index: 9997;
+
+            opacity: .05;
+
             background-image:
 
-                linear-gradient(
-                    rgba(255,255,255,.025) 1px,
-                    transparent 1px
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,.025) 1px,
-                    transparent 1px
+                repeating-conic-gradient(
+                    from 0deg,
+                    rgba(240,230,207,.12) 0deg,
+                    rgba(0,0,0,.10) 1deg,
+                    rgba(240,230,207,.06) 2deg,
+                    rgba(0,0,0,.06) 3deg
                 );
 
-            background-size:
-                70px 70px;
-
-            mask-image:
-                linear-gradient(
-                    to bottom,
-                    black,
-                    transparent 80%
-                );
-
-            z-index: -3;
+            mix-blend-mode: overlay;
 
         }
 
 
-        /* =====================================================
-           FLOATING LIGHT
-        ====================================================== */
+        /* بته‌جقه درخشان در پس‌زمینه — paisley drift */
 
-        .orb {
+        body::after {
+
+            content: "";
 
             position: fixed;
 
-            width: 320px;
-            height: 320px;
-
-            border-radius: 50%;
-
-            filter: blur(90px);
-
-            opacity: .15;
+            inset: 0;
 
             pointer-events: none;
 
-            z-index: -2;
+            z-index: 9996;
 
-        }
+            background:
 
+                radial-gradient(
+                    ellipse 60% 40% at 18% 12%,
+                    rgba(41,166,166,.11),
+                    transparent 55%
+                ),
 
-        .orb.one {
+                radial-gradient(
+                    ellipse 55% 45% at 84% 32%,
+                    rgba(38,66,140,.11),
+                    transparent 55%
+                ),
 
-            background: var(--violet);
+                radial-gradient(
+                    ellipse 50% 35% at 50% 92%,
+                    rgba(201,162,39,.09),
+                    transparent 60%
+                ),
 
-            top: 5%;
-            left: -100px;
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 2px,
+                    rgba(240,230,207,.014) 3px,
+                    transparent 4px
+                );
 
-            animation:
-                floatOne 14s ease-in-out infinite;
+            mix-blend-mode: screen;
 
-        }
-
-
-        .orb.two {
-
-            background: var(--cyan);
-
-            top: 40%;
-            right: -120px;
-
-            animation:
-                floatTwo 18s ease-in-out infinite;
-
-        }
-
-
-        .orb.three {
-
-            background: var(--pink);
-
-            bottom: -100px;
-            left: 40%;
-
-            animation:
-                floatThree 16s ease-in-out infinite;
-
-        }
-
-
-        @keyframes floatOne {
-
-            0%, 100% {
-                transform:
-                    translate(0, 0);
-            }
-
-            50% {
-                transform:
-                    translate(100px, 80px);
-            }
-
-        }
-
-
-        @keyframes floatTwo {
-
-            0%, 100% {
-                transform:
-                    translate(0, 0);
-            }
-
-            50% {
-                transform:
-                    translate(-80px, -60px);
-            }
-
-        }
-
-
-        @keyframes floatThree {
-
-            0%, 100% {
-                transform:
-                    translate(0, 0);
-            }
-
-            50% {
-                transform:
-                    translate(60px, -80px);
-            }
+            animation: نقش-نفس 18s ease-in-out infinite;
 
         }
 
 
         /* =====================================================
-           NAVIGATION
+           جنبش · KEYFRAMES
+        ====================================================== */
+
+        @keyframes نقش-نفس {
+
+            0%, 100% { opacity: .85; }
+            50% { opacity: 1; }
+
+        }
+
+
+        @keyframes کاشی-لرزش {
+
+            0% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+            6% {
+                transform: translate(-2px, 2px);
+                clip-path: inset(12% 0 76% 0);
+            }
+            12% {
+                transform: translate(3px, -1px);
+                clip-path: inset(42% 0 38% 0);
+            }
+            18% {
+                transform: translate(-1px, -3px);
+                clip-path: inset(68% 0 12% 0);
+            }
+            24% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+            100% {
+                transform: translate(0, 0);
+                clip-path: inset(0 0 0 0);
+            }
+
+        }
+
+
+        @keyframes نقش-برشی {
+
+            0%, 100% { clip-path: inset(0 0 0 0); }
+            10% { clip-path: inset(22% 0 58% 0); }
+            20% { clip-path: inset(78% 0 12% 0); }
+            30% { clip-path: inset(38% 0 32% 0); }
+            40% { clip-path: inset(8% 0 88% 0); }
+            50% { clip-path: inset(0 0 0 0); }
+
+        }
+
+
+        @keyframes نور-گذر {
+
+            0% { top: -100%; }
+            100% { top: 200%; }
+
+        }
+
+
+        @keyframes چرخ-آفتاب {
+
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+
+        }
+
+
+        @keyframes چرخ-ماه {
+
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+
+        }
+
+
+        @keyframes شعله-نفس {
+
+            0%, 100% { opacity: .55; transform: scale(1); }
+            50% { opacity: .95; transform: scale(1.04); }
+
+        }
+
+
+        @keyframes اسلیمی-گردش {
+
+            0% { background-position: 0 0, 24px 24px, 48px 48px; }
+            100% { background-position: 48px 48px, 72px 72px, 96px 96px; }
+
+        }
+
+
+        /* =====================================================
+           خطِ نور — SCANLINE
+        ====================================================== */
+
+        .خط-نور {
+
+            position: fixed;
+
+            inset-inline: 0;
+
+            height: 1px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--فیروزه),
+                var(--زر),
+                transparent
+            );
+
+            opacity: .20;
+
+            pointer-events: none;
+
+            z-index: 9000;
+
+            animation: نور-گذر 12s linear infinite;
+
+        }
+
+
+        /* =====================================================
+           نوارِ کاشی · PERSIAN TILE BAND
+        ====================================================== */
+
+        .کاشی {
+
+            height: 20px;
+
+            width: 100%;
+
+            background:
+
+                /* ستاره‌های هشت‌پر — eight-pointed stars */
+                linear-gradient(45deg,
+                    var(--زر) 25%, transparent 25%) 0 0 / 20px 20px,
+
+                linear-gradient(-45deg,
+                    var(--زر) 25%, transparent 25%) 0 0 / 20px 20px,
+
+                linear-gradient(135deg,
+                    var(--فیروزه) 25%, transparent 25%) 10px 10px / 20px 20px,
+
+                linear-gradient(-135deg,
+                    var(--فیروزه) 25%, transparent 25%) 10px 10px / 20px 20px,
+
+                var(--لاجورد-۲);
+
+            opacity: .95;
+
+        }
+
+
+        .کاشی-نازک {
+
+            height: 8px;
+
+            width: 100%;
+
+            /* اسلیمی — interlocking ornament line */
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0 6px,
+                    var(--فیروزه) 6px 8px,
+                    transparent 8px 14px,
+                    var(--زر) 14px 16px,
+                    transparent 16px 24px,
+                    var(--انار) 24px 26px,
+                    transparent 26px 34px
+                );
+
+            opacity: .60;
+
+        }
+
+
+        /* =====================================================
+           ناوبری · NAV
         ====================================================== */
 
         nav {
 
             position: fixed;
 
-            top: 18px;
-            left: 50%;
+            inset-block-start: 0;
+            inset-inline: 0;
 
-            transform:
-                translateX(-50%);
+            z-index: 1000;
 
-            width:
-                min(
-                    calc(100% - 32px),
-                    1120px
-                );
+            background: rgba(13,22,32,.88);
+
+            border-block-end: 1px solid var(--کاشی-خط);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+            padding: 0 clamp(16px, 4vw, 60px);
 
             display: flex;
 
@@ -343,2232 +446,2216 @@
 
             justify-content: space-between;
 
-            padding:
-                10px 16px 10px 14px;
-
-            background:
-                rgba(10,10,16,.72);
-
-            border:
-                1px solid
-                rgba(255,255,255,.10);
-
-            backdrop-filter:
-                blur(22px);
-
-            -webkit-backdrop-filter:
-                blur(22px);
-
-            border-radius:
-                999px;
-
-            z-index: 1000;
-
-            box-shadow:
-                0 20px 60px
-                rgba(0,0,0,.35);
+            height: 68px;
 
         }
 
 
-        .nav-brand {
+        nav::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset-inline-start: 0;
+            inset-block-end: -5px;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    var(--فیروزه) 0 8px,
+                    transparent 8px 12px,
+                    var(--زر) 12px 20px,
+                    transparent 20px 24px,
+                    var(--لاجورد) 24px 34px,
+                    transparent 34px 38px
+                );
+
+            opacity: .75;
+
+        }
+
+
+        .نشان {
 
             display: flex;
 
             align-items: center;
 
-            gap: 10px;
+            gap: 12px;
 
-            font-weight: 700;
+            font-family: "Lalezar", "Markazi Text", serif;
 
-            letter-spacing:
-                -.02em;
+            font-weight: 400;
+
+            font-size: 20px;
+
+            letter-spacing: .01em;
+
+            color: var(--لعاب);
+
+            text-decoration: none;
+
+            padding-block-start: 4px;
 
         }
 
 
-        .nav-logo {
+        .نشان-نگاره {
 
             width: 34px;
             height: 34px;
 
             object-fit: contain;
 
-            display: block;
-
-            filter:
-                drop-shadow(
-                    0 0 10px
-                    rgba(0,229,255,.25)
-                );
-
-            transition:
-                transform .25s ease,
-                filter .25s ease;
+            filter: brightness(1.15) contrast(1.1);
 
         }
 
 
-        .nav-brand:hover
-        .nav-logo {
-
-            transform:
-                scale(1.08);
-
-            filter:
-                drop-shadow(
-                    0 0 16px
-                    rgba(0,229,255,.45)
-                );
-
-        }
-
-
-        .nav-links {
+        .پیوندها {
 
             display: flex;
 
-            gap: 26px;
+            gap: 28px;
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
+            align-items: center;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+        .پیوندها a {
+
+            color: var(--گرد);
+
+            text-decoration: none;
+
+            transition: color .2s ease;
+
+            position: relative;
+
+        }
+
+
+        .پیوندها a::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset-block-end: -5px;
+            inset-inline-start: 0;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--فیروزه);
+
+            transition: width .3s ease;
+
+        }
+
+
+        .پیوندها a:hover {
+            color: var(--لعاب);
+        }
+
+
+        .پیوندها a:hover::before {
+            width: 100%;
+        }
+
+
+        /* گزینشِ زبان · LANGUAGE SWITCH */
+
+        .زبان {
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+
+        .زبان-ورودی {
+
+            position: absolute;
+
+            opacity: 0;
+
+            width: 0;
+            height: 0;
+
+        }
+
+
+        .زبان-دکمه {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+            padding: 8px 16px;
+
+            border: 1px solid var(--کاشی-خط);
+
+            background: transparent;
+
+            font-family: "Vazirmatn", "DM Mono", monospace;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            color: var(--لعاب);
+
+            transition: all .2s ease;
+
+            user-select: none;
+
+        }
+
+
+        .زبان-دکمه:hover {
+
+            background: var(--فیروزه);
+
+            color: var(--شب);
+
+            border-color: var(--فیروزه);
+
+        }
+
+
+        .زبان-فهرست {
+
+            position: absolute;
+
+            inset-block-start: calc(100% + 8px);
+
+            inset-inline-end: 0;
+
+            min-width: 190px;
+
+            background: var(--شب-۲);
+
+            border: 1px solid var(--کاشی-خط);
+
+            padding: 0;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-4px);
+
+            transition: all .2s ease;
+
+            z-index: 1001;
+
+            max-height: 480px;
+
+            overflow-y: auto;
+
+        }
+
+
+        .زبان-گزینه {
+
+            display: block;
+
+            padding: 11px 18px;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 13px;
+
+            color: var(--گرد);
+
+            text-decoration: none;
+
+            transition: all .2s ease;
+
+            border-block-end: 1px solid rgba(240,230,207,.06);
+
+        }
+
+
+        .زبان-گزینه:hover {
+
+            background: var(--شب-۳);
+
+            color: var(--فیروزه-۲);
+
+        }
+
+
+        .زبان-گزینه.فعال {
+
+            color: var(--شب);
+
+            background: var(--فیروزه);
+
+        }
+
+
+        .زبان-ورودی:checked ~ .زبان-فهرست,
+        .زبان:focus-within .زبان-فهرست {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =====================================================
+           پرده‌ی نخست · HERO
+        ====================================================== */
+
+        .قهرمان {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 120px 0 70px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .قهرمان-ردیف {
+
+            display: grid;
+
+            grid-template-columns: 1.05fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+
+            width: 100%;
+
+        }
+
+
+        .قهرمان-آواز {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .قهرمان-برچسب {
+
+            font-family: "DM Mono", monospace;
 
             font-size: 11px;
 
-            letter-spacing: .08em;
+            letter-spacing: .28em;
 
-            text-transform: uppercase;
+            color: var(--فیروزه);
 
-            color: var(--muted);
+            margin-block-end: 24px;
+
+            display: inline-block;
+
+            border: 1px solid var(--فیروزه);
+
+            padding: 8px 20px;
+
+            background: rgba(41,166,166,.06);
 
         }
 
 
-        .nav-links a {
+        .قهرمان-بیت {
 
-            transition:
-                color .25s ease,
-                transform .25s ease;
+            font-family: "Gulzar", "Noto Naskh Arabic", serif;
+
+            font-size: 22px;
+
+            line-height: 1.7;
+
+            color: var(--لعاب-۲);
+
+            margin-block-end: 32px;
+
+            padding-inline-start: 24px;
+
+            border-inline-start: 3px solid var(--زر);
+
+            direction: rtl;
 
         }
 
 
-        .nav-links a:hover {
+        .قهرمان-بیت .مصرع {
 
-            color: white;
+            display: block;
 
-            transform:
-                translateY(-1px);
+        }
 
+
+        .قهرمان-بیت .گفتار {
+
+            display: block;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: .06em;
+
+            color: var(--گرد);
+
+            margin-block-start: 12px;
+
+        }
+
+
+        .قهرمان-آواز h1 {
+
+            font-family: "Lalezar", "Markazi Text", serif;
+
+            font-weight: 400;
+
+            font-size: clamp(3rem, 10vw, 8.5rem);
+
+            line-height: 1.05;
+
+            letter-spacing: .005em;
+
+            position: relative;
+
+        }
+
+
+        .قهرمان-آواز h1 .واژه {
+
+            display: block;
+
+            position: relative;
+
+        }
+
+
+        .قهرمان-آواز h1 .واژه-۱ {
+
+            color: var(--لعاب);
+
+            text-shadow:
+
+                5px 0 0 var(--فیروزه),
+
+                -4px 0 0 var(--لاجورد);
+
+            animation: نقش-برشی 7s infinite;
+
+        }
+
+
+        .قهرمان-آواز h1 .واژه-۲ {
+
+            color: transparent;
+
+            -webkit-text-stroke: 2px var(--زر);
+
+            font-style: italic;
+
+            transform: translateX(-26px);
+
+            animation: کاشی-لرزش 9s infinite;
+
+        }
+
+
+        .قهرمان-آواز h1 .واژه-۳ {
+
+            color: var(--شب);
+
+            background: var(--زر);
+
+            padding: 0 24px 8px;
+
+            display: inline-block;
+
+            transform: skewX(6deg);
+
+            animation: شعله-نفس 5s infinite;
+
+            letter-spacing: .01em;
+
+        }
+
+
+        .قهرمان-آواز p {
+
+            margin-block-start: 44px;
+
+            max-width: 640px;
+
+            font-family: "Estedad", sans-serif;
+
+            font-size: 17px;
+
+            line-height: 2.05;
+
+            color: var(--گرد);
+
+            border-inline-start: 3px solid var(--فیروزه);
+
+            padding-inline-start: 24px;
+
+        }
+
+
+        .قهرمان-آواز p strong {
+
+            color: var(--لعاب);
+
+            font-weight: 700;
+
+            border-block-end: 2px solid var(--زر);
+
+        }
+
+
+        .قهرمان-کنش‌ها {
+
+            display: flex;
+
+            gap: 16px;
+
+            margin-block-start: 44px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .دکمه {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 32px;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: .03em;
+
+            text-decoration: none;
+
+            border: 1px solid var(--کاشی-خط);
+
+            background: transparent;
+
+            color: var(--لعاب);
+
+            transition: all .25s ease;
+
+            position: relative;
+
+            overflow: hidden;
+
+            z-index: 1;
+
+        }
+
+
+        .دکمه::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset-block-start: 0;
+            inset-inline-start: -100%;
+
+            width: 100%;
+            height: 100%;
+
+            background: var(--فیروزه);
+
+            transition: inset-inline-start .25s ease;
+
+            z-index: -1;
+
+        }
+
+
+        .دکمه:hover::before {
+            inset-inline-start: 0;
+        }
+
+
+        .دکمه:hover {
+
+            color: var(--شب);
+
+            border-color: var(--فیروزه);
+
+        }
+
+
+        .دکمه-اصلی {
+
+            background: var(--فیروزه);
+
+            color: var(--شب);
+
+            border-color: var(--فیروزه);
+
+        }
+
+
+        .دکمه-اصلی::before {
+            background: var(--زر);
+        }
+
+
+        .دکمه-اصلی:hover {
+            color: var(--شب);
+            border-color: var(--زر);
         }
 
 
         /* =====================================================
-           CONTAINER
+           طاقِ جناغی · PERSIAN POINTED ARCH (hero visual)
         ====================================================== */
 
-        .container {
+        .قهرمان-طاق {
 
-            width:
-                min(
-                    calc(100% - 40px),
-                    var(--max-width)
-                );
+            position: relative;
 
-            margin:
-                auto;
+            min-height: 700px;
 
-        }
+            display: flex;
 
+            align-items: center;
 
-        /* =====================================================
-           HERO
-        ====================================================== */
-
-        .hero {
-
-            min-height:
-                100vh;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            position:
-                relative;
-
-            padding:
-                140px 0
-                90px;
+            justify-content: center;
 
         }
 
 
-        .hero-grid {
+        .طاق-قاب {
 
-            display:
-                grid;
+            position: relative;
 
-            grid-template-columns:
-                minmax(0, 1.15fr)
-                minmax(320px, .85fr);
+            width: min(100%, 520px);
 
-            gap:
-                70px;
+            aspect-ratio: 4 / 6;
 
-            align-items:
-                center;
+            background: var(--شب-۲);
 
-        }
+            /* طاق جناغی — pointed arch of Isfahan */
+            border: 3px solid var(--زر);
 
+            border-radius: 50% 50% 8% 8% / 62% 62% 5% 5%;
 
-        .eyebrow {
-
-            display:
-                inline-flex;
-
-            align-items:
-                center;
-
-            gap:
-                10px;
-
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
-
-            font-size:
-                11px;
-
-            letter-spacing:
-                .16em;
-
-            text-transform:
-                uppercase;
-
-            color:
-                var(--muted);
-
-            margin-bottom:
-                26px;
-
-        }
-
-
-        .eyebrow::before {
-
-            content: "";
-
-            width:
-                28px;
-
-            height:
-                1px;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    var(--cyan),
-                    var(--pink)
-                );
-
-        }
-
-
-        .hero h1 {
-
-            margin: 0;
-
-            font-size:
-                clamp(4rem, 9vw, 8.5rem);
-
-            line-height:
-                .82;
-
-            letter-spacing:
-                -.085em;
-
-            font-weight:
-                800;
-
-        }
-
-
-        .hero h1 span {
-
-            display:
-                block;
-
-        }
-
-
-        .hero h1 .gradient {
-
-            background:
-
-                linear-gradient(
-                    100deg,
-                    var(--cyan),
-                    #7c7cff 35%,
-                    var(--pink) 70%,
-                    var(--orange)
-                );
-
-            background-size:
-                250% auto;
-
-            -webkit-background-clip:
-                text;
-
-            background-clip:
-                text;
-
-            color:
-                transparent;
-
-            animation:
-                gradientMove 8s ease infinite;
-
-        }
-
-
-        @keyframes gradientMove {
-
-            0%, 100% {
-                background-position:
-                    0% 50%;
-            }
-
-            50% {
-                background-position:
-                    100% 50%;
-            }
-
-        }
-
-
-        .hero-copy {
-
-            max-width:
-                650px;
-
-            margin-top:
-                36px;
-
-            color:
-                var(--muted);
-
-            font-size:
-                clamp(1rem, 1.6vw, 1.25rem);
-
-            line-height:
-                1.75;
-
-            font-weight:
-                300;
-
-        }
-
-
-        .hero-copy strong {
-
-            color:
-                white;
-
-            font-weight:
-                500;
-
-        }
-
-
-        .hero-actions {
-
-            display:
-                flex;
-
-            gap:
-                14px;
-
-            margin-top:
-                36px;
-
-            flex-wrap:
-                wrap;
-
-        }
-
-
-        .button {
-
-            display:
-                inline-flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            min-height:
-                48px;
-
-            padding:
-                0 22px;
-
-            border-radius:
-                999px;
-
-            border:
-                1px solid
-                rgba(255,255,255,.14);
-
-            font-size:
-                13px;
-
-            font-weight:
-                600;
-
-            transition:
-                transform .25s ease,
-                border-color .25s ease,
-                background .25s ease;
-
-        }
-
-
-        .button:hover {
-
-            transform:
-                translateY(-3px);
-
-            border-color:
-                rgba(255,255,255,.35);
-
-        }
-
-
-        .button.primary {
-
-            color:
-                #050507;
-
-            background:
-
-                linear-gradient(
-                    100deg,
-                    var(--cyan),
-                    #8b7cff,
-                    var(--pink)
-                );
-
-            border:
-                none;
-
-        }
-
-
-        .button.secondary {
-
-            background:
-                rgba(255,255,255,.04);
-
-        }
-
-
-        /* =====================================================
-           HERO LOGO
-        ====================================================== */
-
-        .hero-art {
-
-            min-height:
-                520px;
-
-            position:
-                relative;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-        }
-
-
-        .hero-logo-wrapper {
-
-            position:
-                relative;
-
-            width:
-                min(
-                    460px,
-                    78vw
-                );
-
-            aspect-ratio:
-                1;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-        }
-
-
-        .hero-logo-wrapper::before {
-
-            content: "";
-
-            position:
-                absolute;
-
-            width:
-                78%;
-
-            height:
-                78%;
-
-            border-radius:
-                50%;
-
-            background:
-
-                radial-gradient(
-                    circle,
-                    rgba(0,229,255,.18),
-                    rgba(139,92,246,.10) 40%,
-                    transparent 70%
-                );
-
-            filter:
-                blur(35px);
-
-            animation:
-                logoGlow 7s ease-in-out infinite;
-
-        }
-
-
-        .hero-logo-wrapper::after {
-
-            content: "";
-
-            position:
-                absolute;
-
-            inset:
-                8%;
-
-            border:
-                1px solid
-                rgba(255,255,255,.10);
-
-            border-radius:
-                50%;
-
-            transform:
-                rotate(-15deg)
-                scaleY(.42);
+            padding: 22px;
 
             box-shadow:
 
-                0 0 40px
-                rgba(0,229,255,.08),
+                0 0 0 7px var(--شب),
 
-                inset 0 0 30px
-                rgba(255,255,255,.025);
+                0 0 0 9px var(--فیروزه),
 
-            animation:
-                logoOrbit 12s linear infinite;
+                0 0 0 11px var(--شب),
+
+                0 34px 110px rgba(41,166,166,.22);
+
+            overflow: hidden;
 
         }
 
 
-        .hero-logo {
+        .طاق-قاب::before {
 
-            position:
-                relative;
+            content: "";
 
-            z-index:
-                3;
+            position: absolute;
 
-            width:
-                72%;
+            inset: 10px;
 
-            height:
-                72%;
+            border: 2px dashed var(--فیروزه);
 
-            object-fit:
-                contain;
+            border-radius: 50% 50% 8% 8% / 62% 62% 5% 5%;
 
-            display:
-                block;
+            pointer-events: none;
+
+            z-index: 5;
+
+            opacity: .75;
+
+        }
+
+
+        .طاق-قاب::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 20px;
+
+            border: 1px solid rgba(201,162,39,.55);
+
+            border-radius: 50% 50% 8% 8% / 62% 62% 5% 5%;
+
+            pointer-events: none;
+
+            z-index: 5;
+
+        }
+
+
+        /* کاشی‌کاری درونی · interior tilework */
+
+        .کاشی-درون {
+
+            position: absolute;
+
+            inset: 28px;
+
+            border-radius: 50% 50% 8% 8% / 62% 62% 5% 5%;
+
+            background:
+
+                /* کاشی هشت‌پر — eight-pointed star lattice */
+                linear-gradient(45deg, rgba(41,166,166,.28) 25%, transparent 25%) 0 0 / 36px 36px,
+
+                linear-gradient(-45deg, rgba(41,166,166,.28) 25%, transparent 25%) 0 0 / 36px 36px,
+
+                linear-gradient(135deg, rgba(38,66,140,.42) 25%, transparent 25%) 18px 18px / 36px 36px,
+
+                linear-gradient(-135deg, rgba(38,66,140,.42) 25%, transparent 25%) 18px 18px / 36px 36px,
+
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(201,162,39,.22) 0%,
+                    transparent 55%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(184,38,31,.16) 0%,
+                    transparent 60%
+                ),
+
+                var(--شب-۳);
+
+            animation: اسلیمی-گردش 60s linear infinite;
+
+            z-index: 1;
+
+        }
+
+
+        /* مقرنس — concentric muqarnas rings */
+
+        .مقرنس {
+
+            position: absolute;
+
+            inset: 28px;
+
+            display: grid;
+
+            place-items: center;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            border-radius: 50% 50% 8% 8% / 62% 62% 5% 5%;
+
+        }
+
+
+        .حلقه {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 1px solid;
+
+        }
+
+
+        .حلقه-۱ {
+
+            width: 86%;
+            height: 78%;
+
+            border-color: rgba(41,166,166,.55);
+
+            border-style: dashed;
+
+            animation: چرخ-آفتاب 90s linear infinite;
+
+        }
+
+
+        .حلقه-۲ {
+
+            width: 66%;
+            height: 60%;
+
+            border-color: rgba(201,162,39,.60);
+
+            animation: چرخ-ماه 65s linear infinite;
+
+        }
+
+
+        .حلقه-۳ {
+
+            width: 46%;
+            height: 42%;
+
+            border-color: rgba(38,66,140,.80);
+
+            border-style: dotted;
+
+            border-width: 2px;
+
+            animation: چرخ-آفتاب 45s linear infinite;
+
+        }
+
+
+        .حلقه-۴ {
+
+            width: 26%;
+            height: 24%;
+
+            border-color: rgba(184,38,31,.85);
+
+            animation: چرخ-ماه 30s linear infinite;
+
+        }
+
+
+        /* تصویر نگاره در مرکز طاق */
+
+        .نگاره-مرکزی {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            z-index: 4;
+
+            padding-bottom: 6%;
+
+        }
+
+
+        .نگاره-مرکزی img {
+
+            width: 60%;
+
+            max-width: 260px;
+
+            object-fit: contain;
 
             filter:
 
-                drop-shadow(
-                    0 0 25px
-                    rgba(0,229,255,.20)
-                )
+                drop-shadow(0 0 30px rgba(78,217,217,.45))
 
-                drop-shadow(
-                    0 20px 45px
-                    rgba(0,0,0,.45)
+                drop-shadow(0 20px 40px rgba(0,0,0,.5));
+
+            animation: شعله-نفس 7s infinite;
+
+        }
+
+
+        /* نقش پایین — اسلیمی زیر طاق */
+
+        .اسلیمی {
+
+            position: absolute;
+
+            inset-block-end: 28px;
+
+            inset-inline: 28px;
+
+            height: 32%;
+
+            z-index: 3;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0 10px,
+                    var(--زر) 10px 12px,
+                    transparent 12px 22px
+                ),
+
+                radial-gradient(
+                    ellipse at 50% 100%,
+                    rgba(201,162,39,.30) 0%,
+                    transparent 70%
                 );
 
-            animation:
-                logoFloat 7s ease-in-out infinite;
+            opacity: .55;
 
-            transition:
-                transform .5s ease,
-                filter .5s ease;
+            border-radius: 50% 50% 8% 8% / 40% 40% 5% 5%;
 
-        }
-
-
-        .hero-logo-wrapper:hover
-        .hero-logo {
-
-            transform:
-                scale(1.045);
-
-            filter:
-
-                drop-shadow(
-                    0 0 35px
-                    rgba(0,229,255,.35)
-                )
-
-                drop-shadow(
-                    0 25px 55px
-                    rgba(0,0,0,.50)
-                );
+            pointer-events: none;
 
         }
 
 
-        @keyframes logoFloat {
+        .طاق-امضا {
 
-            0%, 100% {
+            position: absolute;
 
-                transform:
-                    translateY(0)
-                    rotate(0deg);
+            inset-block-end: -46px;
+            inset-inline-start: 50%;
 
-            }
+            transform: translateX(50%);
 
-            50% {
+            font-family: "DM Mono", monospace;
 
-                transform:
-                    translateY(-12px)
-                    rotate(1deg);
+            font-size: 10px;
 
-            }
+            letter-spacing: .3em;
 
-        }
+            color: var(--گرد);
 
+            text-transform: uppercase;
 
-        @keyframes logoGlow {
+            white-space: nowrap;
 
-            0%, 100% {
+            z-index: 6;
 
-                transform:
-                    scale(.92);
-
-                opacity:
-                    .65;
-
-            }
-
-            50% {
-
-                transform:
-                    scale(1.06);
-
-                opacity:
-                    1;
-
-            }
-
-        }
-
-
-        @keyframes logoOrbit {
-
-            0% {
-
-                transform:
-                    rotate(-15deg)
-                    scaleY(.42);
-
-            }
-
-            50% {
-
-                transform:
-                    rotate(15deg)
-                    scaleY(.42);
-
-            }
-
-            100% {
-
-                transform:
-                    rotate(-15deg)
-                    scaleY(.42);
-
-            }
+            direction: ltr;
 
         }
 
 
         /* =====================================================
-           MARQUEE
+           نوارِ نگار · MARQUEE
         ====================================================== */
 
-        .marquee {
+        .نگار {
 
-            overflow:
-                hidden;
+            border-block-start: 1px solid var(--کاشی-خط);
 
-            border-top:
-                1px solid
-                var(--line);
+            border-block-end: 1px solid var(--کاشی-خط);
 
-            border-bottom:
-                1px solid
-                var(--line);
+            padding: 22px 0;
 
-            padding:
-                16px 0;
+            overflow: hidden;
 
-            color:
-                rgba(255,255,255,.45);
+            background: var(--شب-۲);
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
-
-            font-size:
-                12px;
-
-            letter-spacing:
-                .14em;
-
-            text-transform:
-                uppercase;
-
-            white-space:
-                nowrap;
+            position: relative;
 
         }
 
 
-        .marquee-track {
+        .نگار::before {
 
-            display:
-                inline-flex;
+            content: "";
 
-            gap:
-                50px;
+            position: absolute;
 
-            animation:
-                marquee 28s linear infinite;
+            inset: 0;
 
-        }
+            background:
 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 62px,
+                    rgba(201,162,39,.05) 63px,
+                    transparent 64px
+                );
 
-        .marquee-track
-        span:nth-child(4n+1) {
+            pointer-events: none;
 
-            color:
-                var(--cyan);
-
-        }
-
-
-        .marquee-track
-        span:nth-child(4n+2) {
-
-            color:
-                var(--violet);
+            z-index: 1;
 
         }
 
 
-        .marquee-track
-        span:nth-child(4n+3) {
+        .نگار-ردیف {
 
-            color:
-                var(--pink);
+            display: inline-flex;
+
+            gap: 46px;
+
+            animation: نگار-گردش 30s linear infinite;
+
+            font-family: "Lalezar", "Markazi Text", serif;
+
+            font-size: 20px;
+
+            letter-spacing: .02em;
+
+            white-space: nowrap;
+
+            padding-block-start: 2px;
 
         }
 
 
-        @keyframes marquee {
+        .نگار-ردیف span {
 
-            to {
+            color: var(--گرد);
 
-                transform:
-                    translateX(-50%);
+            position: relative;
 
-            }
+        }
+
+
+        .نگار-ردیف span::before {
+
+            content: "❁";
+
+            color: var(--زر);
+
+            margin-inline-end: 12px;
+
+            font-size: 14px;
+
+            vertical-align: middle;
+
+        }
+
+
+        .نگار-ردیف span::after {
+
+            content: "❁";
+
+            color: var(--زر);
+
+            margin-inline-start: 12px;
+
+            font-size: 14px;
+
+            vertical-align: middle;
+
+        }
+
+
+        @keyframes نگار-گردش {
+
+            to { transform: translateX(-50%); }
 
         }
 
 
         /* =====================================================
-           SECTION
+           پرده‌ها · SECTIONS
         ====================================================== */
 
         section {
 
-            padding:
-                130px 0;
+            padding: 140px 0;
+
+            position: relative;
+
+            border-block-end: 1px solid var(--کاشی-خط-نازک);
 
         }
 
 
-        .section-label {
+        .جام {
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
+            width: min(calc(100% - 40px), var(--پهنا));
 
-            color:
-                var(--muted);
+            margin: auto;
 
-            font-size:
-                11px;
-
-            letter-spacing:
-                .14em;
-
-            text-transform:
-                uppercase;
-
-            margin-bottom:
-                22px;
+            position: relative;
 
         }
 
 
-        .section-title {
+        .پرده-برچسب {
 
-            margin:
-                0;
+            font-family: "DM Mono", monospace;
 
-            max-width:
-                900px;
+            font-size: 11px;
 
-            font-size:
-                clamp(2.7rem, 6vw, 5.8rem);
+            font-weight: 500;
 
-            line-height:
-                .95;
+            letter-spacing: .22em;
 
-            letter-spacing:
-                -.065em;
+            color: var(--فیروزه);
 
-        }
+            margin-block-end: 34px;
 
+            display: inline-block;
 
-        .section-title .gradient {
+            border-block-end: 2px solid var(--زر);
 
-            background:
+            padding-block-end: 8px;
 
-                linear-gradient(
-                    100deg,
-                    var(--cyan),
-                    var(--violet),
-                    var(--pink)
-                );
-
-            -webkit-background-clip:
-                text;
-
-            background-clip:
-                text;
-
-            color:
-                transparent;
+            direction: rtl;
 
         }
 
 
-        .section-intro {
+        .پرده-عنوان {
 
-            max-width:
-                700px;
+            font-family: "Lalezar", "Markazi Text", serif;
 
-            margin-top:
-                30px;
+            font-size: clamp(2.2rem, 6vw, 6rem);
 
-            color:
-                var(--muted);
+            line-height: 1.15;
 
-            line-height:
-                1.8;
+            font-weight: 400;
 
-            font-size:
-                1.05rem;
+            margin-block-end: 36px;
+
+            letter-spacing: .005em;
 
         }
 
 
-        /* =====================================================
-           DOMAIN CARDS
-        ====================================================== */
+        .پرده-عنوان .سایه {
 
-        .domains {
+            color: transparent;
 
-            display:
-                grid;
+            -webkit-text-stroke: 1.5px var(--زر);
 
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap:
-                14px;
-
-            margin-top:
-                60px;
+            font-style: italic;
 
         }
 
 
-        .domain {
+        .پرده-عنوان .خط‌خورده {
 
-            min-height:
-                320px;
+            text-decoration: line-through;
 
-            padding:
-                28px;
+            text-decoration-color: var(--انار);
 
-            border:
-                1px solid
-                var(--line);
-
-            border-radius:
-                var(--radius);
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.07),
-                    rgba(255,255,255,.025)
-                );
-
-            position:
-                relative;
-
-            overflow:
-                hidden;
-
-            transition:
-                transform .35s ease,
-                border-color .35s ease;
+            text-decoration-thickness: 4px;
 
         }
 
 
-        .domain:hover {
+        .پرده-درآمد {
 
-            transform:
-                translateY(-10px)
-                rotate(-.5deg);
+            font-family: "Estedad", sans-serif;
 
-            border-color:
-                rgba(255,255,255,.28);
+            font-size: 17px;
 
-        }
+            line-height: 2.05;
 
+            color: var(--گرد);
 
-        .domain::before {
+            max-width: 740px;
 
-            content:
-                "";
+            margin-block-end: 66px;
 
-            position:
-                absolute;
+            border-inline-start: 3px solid var(--زر);
 
-            width:
-                180px;
-
-            height:
-                180px;
-
-            border-radius:
-                50%;
-
-            top:
-                -80px;
-
-            right:
-                -70px;
-
-            filter:
-                blur(35px);
-
-            opacity:
-                .35;
-
-        }
-
-
-        .domain.art::before {
-            background:
-                var(--pink);
-        }
-
-
-        .domain.data::before {
-            background:
-                var(--cyan);
-        }
-
-
-        .domain.ai::before {
-            background:
-                var(--violet);
-        }
-
-
-        .domain.chain::before {
-            background:
-                var(--orange);
-        }
-
-
-        .domain-number {
-
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
-
-            font-size:
-                11px;
-
-            color:
-                var(--muted);
-
-        }
-
-
-        .domain-symbol {
-
-            font-size:
-                42px;
-
-            margin:
-                40px 0 25px;
-
-        }
-
-
-        .domain h3 {
-
-            margin:
-                0 0 12px;
-
-            font-size:
-                23px;
-
-        }
-
-
-        .domain p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                14px;
-
-            line-height:
-                1.7;
+            padding-inline-start: 24px;
 
         }
 
 
         /* =====================================================
-           ABOUT
+           چهار قلمرو · DOMAINS
         ====================================================== */
 
-        .about-grid {
+        .قلمروها {
 
-            display:
-                grid;
+            display: grid;
 
-            grid-template-columns:
-                .8fr 1.2fr;
+            grid-template-columns: repeat(4, 1fr);
 
-            gap:
-                80px;
+            gap: 0;
 
-            align-items:
-                center;
+            border: 1px solid var(--کاشی-خط);
 
         }
 
 
-        .about-visual {
+        .قلمرو {
 
-            min-height:
-                520px;
+            padding: 46px 32px;
 
-            border-radius:
-                40px;
+            min-height: 340px;
 
-            position:
-                relative;
+            position: relative;
 
-            overflow:
-                hidden;
+            border-inline-end: 1px solid var(--کاشی-خط);
+
+            border-block-end: 1px solid var(--کاشی-خط);
+
+            background: var(--شب);
+
+            transition: all .3s ease;
+
+            cursor: crosshair;
+
+        }
+
+
+        .قلمرو:nth-child(4n) {
+            border-inline-end: none;
+        }
+
+
+        .قلمرو:nth-last-child(-n+4) {
+            border-block-end: none;
+        }
+
+
+        .قلمرو:hover {
+
+            background: var(--شب-۲);
+
+            transform: translateY(-4px);
+
+            border-color: var(--فیروزه);
+
+        }
+
+
+        .قلمرو::before {
+
+            content: attr(data-شماره);
+
+            position: absolute;
+
+            inset-block-start: 24px;
+            inset-inline-end: 28px;
+
+            font-family: "Lalezar", serif;
+
+            font-size: 24px;
+
+            color: var(--فیروزه);
+
+            opacity: .85;
+
+        }
+
+
+        .قلمرو-نماد {
+
+            font-family: "Markazi Text", serif;
+
+            font-size: 54px;
+
+            margin-block-end: 32px;
+
+            color: var(--زر);
+
+            opacity: .9;
+
+            animation: شعله-نفس 6s infinite;
+
+            line-height: 1;
+
+        }
+
+
+        .قلمرو h3 {
+
+            font-family: "Lalezar", "Markazi Text", serif;
+
+            font-size: 22px;
+
+            font-weight: 400;
+
+            letter-spacing: .01em;
+
+            margin-block-end: 18px;
+
+            color: var(--لعاب);
+
+            padding-block-start: 4px;
+
+        }
+
+
+        .قلمرو p {
+
+            font-family: "Estedad", sans-serif;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            color: var(--گرد);
+
+        }
+
+
+        /* =====================================================
+           استودیو · ABOUT
+        ====================================================== */
+
+        .استودیو-ردیف {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .استودیو-نگاره {
+
+            min-height: 540px;
+
+            position: relative;
+
+            background: var(--شب-۲);
+
+            border: 1px solid var(--کاشی-خط);
+
+            overflow: hidden;
+
+        }
+
+
+        .استودیو-نگاره::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
 
             background:
 
                 radial-gradient(
                     circle at 30% 30%,
-                    var(--pink),
-                    transparent 22%
+                    rgba(41,166,166,.32),
+                    transparent 45%
                 ),
 
                 radial-gradient(
-                    circle at 70% 60%,
-                    var(--cyan),
-                    transparent 25%
+                    circle at 75% 65%,
+                    rgba(38,66,140,.42),
+                    transparent 45%
                 ),
 
                 radial-gradient(
-                    circle at 45% 80%,
-                    var(--violet),
-                    transparent 28%
-                ),
-
-                #11111a;
-
-        }
-
-
-        .about-visual::before {
-
-            content:
-                "DHA";
-
-            position:
-                absolute;
-
-            inset:
-                0;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            font-size:
-                clamp(
-                    7rem,
-                    18vw,
-                    15rem
+                    circle at 50% 92%,
+                    rgba(201,162,39,.22),
+                    transparent 50%
                 );
 
-            font-weight:
-                800;
+            filter: blur(36px);
 
-            letter-spacing:
-                -.1em;
+            animation: شعله-نفس 14s ease-in-out infinite;
 
-            color:
-                rgba(255,255,255,.05);
-
-            transform:
-                rotate(-10deg);
+            z-index: 1;
 
         }
 
 
-        .about-visual::after {
+        .استودیو-نگاره img {
 
-            content:
-                "";
+            position: relative;
 
-            position:
-                absolute;
+            width: 100%;
+            height: 100%;
 
-            width:
-                280px;
+            object-fit: cover;
 
-            height:
-                280px;
+            opacity: .88;
 
-            border:
-                1px solid
-                rgba(255,255,255,.25);
+            z-index: 2;
 
-            border-radius:
-                50%;
-
-            top:
-                50%;
-
-            left:
-                50%;
-
-            transform:
-                translate(-50%,-50%)
-                rotate(25deg)
-                scaleY(.38);
+            filter: contrast(1.15) brightness(.9);
 
         }
 
 
-        .about-text h2 {
+        .استودیو-گفتار h2 {
 
-            font-size:
-                clamp(
-                    2.5rem,
-                    5vw,
-                    5rem
-                );
+            font-family: "Lalezar", "Markazi Text", serif;
 
-            line-height:
-                .95;
+            font-size: clamp(2rem, 4.6vw, 4.6rem);
 
-            letter-spacing:
-                -.06em;
+            line-height: 1.2;
 
-            margin:
-                0;
+            font-weight: 400;
+
+            margin-block-end: 26px;
+
+            letter-spacing: .005em;
 
         }
 
 
-        .about-text p {
+        .استودیو-گفتار h2 .زیرخط {
 
-            color:
-                var(--muted);
+            background: var(--فیروزه);
 
-            font-size:
-                1.05rem;
+            color: var(--شب);
 
-            line-height:
-                1.85;
+            padding: 0 16px 4px;
 
-            margin-top:
-                28px;
+            display: inline-block;
+
+            transform: skewX(4deg);
+
+        }
+
+
+        .استودیو-گفتار p {
+
+            font-family: "Estedad", sans-serif;
+
+            font-size: 16px;
+
+            line-height: 2.1;
+
+            color: var(--گرد);
+
+            margin-block-end: 24px;
+
+        }
+
+
+        .استودیو-گفتار p strong {
+
+            color: var(--زر);
+
+            font-weight: 700;
 
         }
 
 
         /* =====================================================
-           PROJECT / DHA VISION
+           کارها · PROJECTS
         ====================================================== */
 
-        .project {
+        .کار {
 
-            margin-top:
-                65px;
+            margin-block-end: 48px;
 
-            display:
-                grid;
+            border: 1px solid var(--کاشی-خط);
 
-            grid-template-columns:
-                1fr 1fr;
+            background: var(--شب-۲);
 
-            min-height:
-                520px;
+            display: grid;
 
-            border:
-                1px solid
-                var(--line);
+            grid-template-columns: 1fr 1fr;
 
-            border-radius:
-                36px;
+            position: relative;
 
-            overflow:
-                hidden;
-
-            background:
-                rgba(255,255,255,.035);
+            transition: all .3s ease;
 
         }
 
 
-        .project-visual {
+        .کار:hover {
 
-            position:
-                relative;
+            border-color: var(--فیروزه);
 
-            min-height:
-                520px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            overflow:
-                hidden;
-
-            background:
-
-                radial-gradient(
-                    circle at 30% 30%,
-                    rgba(0,229,255,.20),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 75% 70%,
-                    rgba(255,60,172,.20),
-                    transparent 35%
-                ),
-
-                #0b0b13;
+            transform: translateX(4px);
 
         }
 
 
-        .project-visual img {
+        .کار-تصویر {
 
-            width:
-                100%;
+            min-height: 440px;
 
-            height:
-                100%;
+            position: relative;
 
-            object-fit:
-                cover;
+            overflow: hidden;
 
-            display:
-                block;
-
-            transition:
-                transform .7s ease,
-                filter .7s ease;
+            background: var(--شب);
 
         }
 
 
-        .project-visual::before {
+        .کار-تصویر img {
 
-            content:
-                "";
+            width: 100%;
+            height: 100%;
 
-            position:
-                absolute;
+            object-fit: cover;
 
-            inset:
-                0;
+            filter: grayscale(30%) contrast(1.12) brightness(.94);
 
-            background:
-
-                linear-gradient(
-                    135deg,
-                    rgba(0,229,255,.16),
-                    transparent 35%,
-                    rgba(139,92,246,.10) 60%,
-                    rgba(255,60,172,.18)
-                );
-
-            mix-blend-mode:
-                screen;
-
-            z-index:
-                1;
-
-            pointer-events:
-                none;
+            transition: all .6s ease;
 
         }
 
 
-        .project-visual::after {
+        .کار:hover .کار-تصویر img {
 
-            content:
-                "";
+            filter: grayscale(0%) contrast(1.08) brightness(1);
 
-            position:
-                absolute;
+            transform: scale(1.05);
 
-            inset:
-                0;
+        }
+
+
+        .کار-تصویر::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
 
             background:
 
                 repeating-linear-gradient(
                     0deg,
                     transparent 0px,
-                    transparent 5px,
-                    rgba(255,255,255,.025) 6px
+                    transparent 4px,
+                    rgba(13,22,32,.35) 5px
                 );
 
-            opacity:
-                .35;
+            z-index: 1;
 
-            z-index:
-                2;
-
-            pointer-events:
-                none;
+            pointer-events: none;
 
         }
 
 
-        .project:hover
-        .project-visual img {
+        .کار-گفتار {
 
-            transform:
-                scale(1.035);
+            padding: clamp(34px, 5vw, 66px);
 
-            filter:
-                saturate(1.08)
-                contrast(1.04);
+            display: flex;
 
-        }
+            flex-direction: column;
 
+            justify-content: center;
 
-        .project-info {
-
-            padding:
-                clamp(
-                    35px,
-                    6vw,
-                    75px
-                );
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            justify-content:
-                center;
+            position: relative;
 
         }
 
 
-        .project-tag {
+        .کار-برچسب {
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
+            font-family: "DM Mono", monospace;
 
-            font-size:
-                11px;
+            font-size: 11px;
 
-            color:
-                var(--cyan);
+            letter-spacing: .22em;
 
-            text-transform:
-                uppercase;
+            color: var(--زر);
 
-            letter-spacing:
-                .15em;
+            margin-block-end: 24px;
 
-            margin-bottom:
-                20px;
+            display: inline-block;
+
+            direction: rtl;
 
         }
 
 
-        .project-info h3 {
+        .کار-گفتار h3 {
 
-            margin:
-                0;
+            font-family: "Lalezar", "Markazi Text", serif;
 
-            font-size:
-                clamp(
-                    2.5rem,
-                    5vw,
-                    4.8rem
-                );
+            font-size: clamp(2rem, 4.2vw, 4.2rem);
 
-            letter-spacing:
-                -.07em;
+            line-height: 1.15;
 
-            line-height:
-                .9;
+            font-weight: 400;
 
-        }
+            margin-block-end: 24px;
 
+            color: var(--لعاب);
 
-        .project-info p {
+            letter-spacing: .005em;
 
-            color:
-                var(--muted);
-
-            line-height:
-                1.8;
-
-            margin:
-                30px 0;
+            padding-block-start: 6px;
 
         }
 
 
-        .tech {
+        .کار-گفتار h3 em {
 
-            display:
-                flex;
+            font-style: italic;
 
-            gap:
-                8px;
-
-            flex-wrap:
-                wrap;
+            color: var(--فیروزه-۲);
 
         }
 
 
-        .tech span {
+        .کار-گفتار p {
 
-            border:
-                1px solid
-                var(--line);
+            font-family: "Estedad", sans-serif;
 
-            padding:
-                7px 11px;
+            font-size: 15px;
 
-            border-radius:
-                999px;
+            line-height: 2.05;
 
-            color:
-                var(--muted);
+            color: var(--گرد);
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
+            margin-block-end: 28px;
 
-            font-size:
-                10px;
+        }
 
+
+        .فن‌ها {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-block-end: 28px;
+
+        }
+
+
+        .فن‌ها span {
+
+            border: 1px solid var(--کاشی-خط);
+
+            padding: 7px 14px;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 11px;
+
+            color: var(--لعاب-۲);
+
+            background: var(--شب);
+
+        }
+
+
+        .کار-پیوندها {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .کار-پیوندها .دکمه {
+
+            padding: 13px 22px;
+
+            font-size: 13px;
+
+        }
+
+
+        .کار-نشان {
+
+            position: absolute;
+
+            inset-block-end: 22px;
+            inset-inline-start: 22px;
+
+            width: 84px;
+            height: 84px;
+
+            object-fit: contain;
+
+            z-index: 3;
+
+            padding: 6px;
+
+            background: rgba(13,22,32,.7);
+
+            border: 1px solid var(--کاشی-خط);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            filter: none !important;
+
+            border-radius: 50%;
+
+        }
+
+
+        .کار:hover .کار-نشان {
+            border-color: var(--فیروزه);
+        }
+
+
+        .کار.پهن .کار-تصویر {
+            min-height: 500px;
         }
 
 
         /* =====================================================
-           HANA
+           هانا · HANA
         ====================================================== */
 
-        .hana {
+        .هانا-ردیف {
 
-            position:
-                relative;
+            display: grid;
 
-            overflow:
-                hidden;
+            grid-template-columns: 1fr 1fr;
 
-            padding:
-                100px 0;
+            gap: 70px;
 
-            border-top:
-                1px solid
-                var(--line);
-
-            border-bottom:
-                1px solid
-                var(--line);
+            align-items: center;
 
         }
 
 
-        .hana-grid {
+        .هانا-گفتار h2 {
 
-            display:
-                grid;
+            font-family: "Lalezar", "Markazi Text", serif;
 
-            grid-template-columns:
-                1fr 1fr;
+            font-size: clamp(2.8rem, 7vw, 7rem);
 
-            gap:
-                80px;
+            line-height: 1.1;
 
-            align-items:
-                center;
+            font-weight: 400;
 
-        }
+            margin-block-end: 26px;
 
-
-        .hana-copy h2 {
-
-            font-size:
-                clamp(
-                    3rem,
-                    7vw,
-                    7rem
-                );
-
-            line-height:
-                .82;
-
-            letter-spacing:
-                -.08em;
-
-            margin:
-                0;
+            letter-spacing: .005em;
 
         }
 
 
-        .hana-copy h2 span {
+        .هانا-گفتار h2 .واژه {
+            display: block;
+        }
 
-            display:
-                block;
+
+        .هانا-گفتار h2 .واژه-۱ {
+            color: var(--لعاب);
+        }
+
+
+        .هانا-گفتار h2 .واژه-۲ {
+
+            color: transparent;
+
+            -webkit-text-stroke: 3px var(--فیروزه);
+
+            font-style: italic;
+
+            transform: translateX(-30px);
 
         }
 
 
-        .hana-copy h2
-        .hana-gradient {
+        .هانا-گفتار p {
 
-            background:
+            font-family: "Estedad", sans-serif;
 
-                linear-gradient(
-                    100deg,
-                    var(--orange),
-                    var(--pink),
-                    var(--violet)
-                );
+            font-size: 16px;
 
-            -webkit-background-clip:
-                text;
+            line-height: 2.1;
 
-            background-clip:
-                text;
+            color: var(--گرد);
 
-            color:
-                transparent;
+            margin-block-end: 24px;
 
         }
 
 
-        .hana-copy p {
+        .هانا-گفتار p strong {
+            color: var(--زر);
+        }
 
-            color:
-                var(--muted);
 
-            max-width:
-                550px;
+        .هانا-تصویر {
 
-            line-height:
-                1.8;
+            min-height: 540px;
 
-            margin-top:
-                30px;
+            position: relative;
+
+            border: 1px solid var(--کاشی-خط);
+
+            background: var(--شب-۲);
+
+            overflow: hidden;
 
         }
 
 
-        .hana-image {
+        .هانا-تصویر::before {
 
-            min-height:
-                480px;
+            content: "";
 
-            border-radius:
-                40px;
+            position: absolute;
 
-            position:
-                relative;
-
-            overflow:
-                hidden;
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    #171721,
-                    #0c0c12
-                );
-
-        }
-
-
-        .hana-image::before {
-
-            content:
-                "";
-
-            position:
-                absolute;
-
-            inset:
-                0;
+            inset: 0;
 
             background:
 
                 linear-gradient(
                     135deg,
-                    rgba(0,229,255,.15),
-                    transparent 35%,
-                    rgba(255,60,172,.15)
+                    rgba(41,166,166,.20),
+                    transparent 50%,
+                    rgba(184,38,31,.20)
                 );
 
-            z-index:
-                1;
+            z-index: 1;
 
-            pointer-events:
-                none;
+            mix-blend-mode: screen;
 
         }
 
 
-        .hana-image img {
+        .هانا-تصویر img {
 
-            width:
-                100%;
+            width: 100%;
+            height: 100%;
 
-            height:
-                100%;
+            object-fit: cover;
 
-            object-fit:
-                cover;
+            filter: contrast(1.15) saturate(1.1);
 
-            display:
-                block;
-
-            filter:
-                saturate(.9)
-                contrast(1.05);
+            animation: نقش-برشی 11s infinite;
 
         }
 
 
         /* =====================================================
-           PHILOSOPHY
+           پرسش · PHILOSOPHY
         ====================================================== */
 
-        .philosophy {
+        .پرسش {
 
-            text-align:
-                center;
+            text-align: center;
 
-            padding:
-                180px 0;
+            padding: 180px 0;
 
-        }
+            background: var(--شب);
 
+            position: relative;
 
-        .philosophy-mark {
-
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
-
-            font-size:
-                12px;
-
-            color:
-                var(--muted);
-
-            letter-spacing:
-                .2em;
-
-            margin-bottom:
-                30px;
+            overflow: hidden;
 
         }
 
 
-        .philosophy h2 {
+        .پرسش::before {
 
-            margin:
-                auto;
+            content: "";
 
-            max-width:
-                1100px;
+            position: absolute;
 
-            font-size:
-                clamp(
-                    3rem,
-                    7vw,
-                    7rem
-                );
-
-            line-height:
-                .9;
-
-            letter-spacing:
-                -.075em;
-
-        }
-
-
-        .philosophy h2 span {
+            inset: 0;
 
             background:
 
-                linear-gradient(
-                    100deg,
-                    var(--cyan),
-                    var(--violet),
-                    var(--pink)
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(41,166,166,.13),
+                    transparent 62%
                 );
 
-            -webkit-background-clip:
-                text;
+            pointer-events: none;
 
-            background-clip:
-                text;
+        }
 
-            color:
-                transparent;
+
+        .پرسش-نشان {
+
+            font-family: "Gulzar", "Noto Naskh Arabic", serif;
+
+            font-style: italic;
+
+            font-size: 17px;
+
+            letter-spacing: .08em;
+
+            color: var(--زر);
+
+            margin-block-end: 48px;
+
+            position: relative;
+
+        }
+
+
+        .پرسش h2 {
+
+            max-width: 1160px;
+
+            margin: auto;
+
+            font-family: "Lalezar", "Markazi Text", serif;
+
+            font-size: clamp(2rem, 5.8vw, 5.8rem);
+
+            line-height: 1.35;
+
+            font-weight: 400;
+
+            position: relative;
+
+            letter-spacing: .005em;
+
+        }
+
+
+        .پرسش h2 .بند {
+            display: block;
+            margin-block-end: 14px;
+        }
+
+
+        .پرسش h2 .بند-۱ {
+            color: var(--لعاب);
+        }
+
+
+        .پرسش h2 .بند-۲ {
+
+            color: transparent;
+
+            -webkit-text-stroke: 2px var(--زر);
+
+            font-style: italic;
+
+        }
+
+
+        .پرسش h2 .بند-۳ {
+
+            background: var(--فیروزه);
+
+            color: var(--شب);
+
+            display: inline-block;
+
+            padding: 0 22px 6px;
+
+            transform: skewX(4deg);
 
         }
 
 
         /* =====================================================
-           FOOTER
+           پاصفحه · FOOTER
         ====================================================== */
 
         footer {
 
-            border-top:
-                1px solid
-                var(--line);
+            border-block-start: 3px double var(--زر);
 
-            padding:
-                60px 0 35px;
+            padding: 68px 0 36px;
 
-        }
+            background: var(--شب-۲);
 
-
-        .footer-grid {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                flex-start;
-
-            gap:
-                40px;
+            position: relative;
 
         }
 
 
-        .footer-brand {
+        footer::before {
 
-            display:
-                flex;
+            content: "";
 
-            align-items:
-                center;
+            position: absolute;
 
-            gap:
-                12px;
+            inset-block-start: -3px;
+            inset-inline-start: 0;
 
-            font-size:
-                22px;
+            width: 100%;
+            height: 3px;
 
-            font-weight:
-                700;
+            background:
 
-            letter-spacing:
-                -.04em;
-
-        }
-
-
-        .footer-logo {
-
-            width:
-                42px;
-
-            height:
-                42px;
-
-            object-fit:
-                contain;
-
-            display:
-                block;
+                repeating-linear-gradient(
+                    90deg,
+                    var(--فیروزه) 0 12px,
+                    transparent 12px 18px
+                );
 
         }
 
 
-        .footer-sub {
+        .پاصفحه-ردیف {
 
-            color:
-                var(--muted);
+            display: flex;
 
-            margin-top:
-                10px;
+            justify-content: space-between;
 
-            font-size:
-                13px;
+            align-items: flex-start;
 
-        }
+            gap: 40px;
 
+            flex-wrap: wrap;
 
-        .footer-links {
-
-            display:
-                flex;
-
-            gap:
-                20px;
-
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
-
-            font-size:
-                11px;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                .08em;
-
-            color:
-                var(--muted);
+            margin-block-end: 48px;
 
         }
 
 
-        .footer-links a:hover {
+        .پاصفحه-نشان {
 
-            color:
-                white;
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            font-family: "Lalezar", serif;
+
+            font-size: 22px;
+
+            letter-spacing: .01em;
+
+            color: var(--لعاب);
+
+            padding-block-start: 4px;
 
         }
 
 
-        .copyright {
+        .پاصفحه-نگاره {
 
-            margin-top:
-                60px;
+            width: 48px;
+            height: 48px;
 
-            padding-top:
-                20px;
+            object-fit: contain;
 
-            border-top:
-                1px solid
-                var(--line);
+            filter: brightness(1.15);
 
-            display:
-                flex;
+        }
 
-            justify-content:
-                space-between;
 
-            color:
-                #555560;
+        .پاصفحه-زیرنویس {
 
-            font-family:
-                "Vazirmatn",
-                "DM Mono",
-                monospace;
+            font-family: "Vazirmatn", sans-serif;
 
-            font-size:
-                10px;
+            font-size: 13px;
 
-            letter-spacing:
-                .08em;
+            color: var(--گرد);
 
-            text-transform:
-                uppercase;
+            letter-spacing: .05em;
+
+            margin-block-start: 14px;
+
+        }
+
+
+        .پاصفحه-پیوندها {
+
+            display: flex;
+
+            gap: 28px;
+
+            flex-wrap: wrap;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+        }
+
+
+        .پاصفحه-پیوندها a {
+
+            color: var(--گرد);
+
+            text-decoration: none;
+
+            transition: color .2s ease;
+
+        }
+
+
+        .پاصفحه-پیوندها a:hover {
+            color: var(--فیروزه);
+        }
+
+
+        .حقوق {
+
+            border-block-start: 1px solid var(--کاشی-خط-نازک);
+
+            padding-block-start: 24px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-family: "Vazirmatn", sans-serif;
+
+            font-size: 12px;
+
+            color: var(--خاک);
+
+            flex-wrap: wrap;
+
+            gap: 12px;
 
         }
 
 
         /* =====================================================
-           RESPONSIVE — TABLET
+           واکنش‌گرایی · RESPONSIVE
         ====================================================== */
 
         @media (max-width: 900px) {
 
-            .nav-links {
-                display:
-                    none;
-            }
+            .پیوندها { display: none; }
 
+            .قهرمان-ردیف,
+            .استودیو-ردیف,
+            .هانا-ردیف,
+            .کار {
 
-            .hero-grid,
-            .about-grid,
-            .hana-grid,
-            .project {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
             }
 
 
-            .hero {
-
-                padding-top:
-                    130px;
-
+            .قلمروها {
+                grid-template-columns: repeat(2, 1fr);
             }
 
 
-            .hero-art {
-
-                min-height:
-                    430px;
-
-                order:
-                    -1;
-
-            }
+            .قلمرو:nth-child(2n) { border-inline-end: none; }
 
 
-            .hero-logo-wrapper {
-
-                width:
-                    min(
-                        400px,
-                        72vw
-                    );
-
-            }
-
-
-            .domains {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-            }
-
-
-            .project-visual {
-
-                min-height:
-                    420px;
-
-            }
-
-
-            .hana-image {
-
-                min-height:
-                    400px;
-
-            }
+            .قهرمان-طاق { min-height: 520px; }
 
         }
 
-
-        /* =====================================================
-           RESPONSIVE — MOBILE
-        ====================================================== */
 
         @media (max-width: 600px) {
 
-            .container {
+            .قهرمان {
+                padding: 100px 0 50px;
+            }
 
-                width:
-                    min(
-                        calc(100% - 28px),
-                        var(--max-width)
-                    );
+
+            .قهرمان-ردیف { gap: 34px; }
+
+
+            .قهرمان-آواز h1 { font-size: 3rem; }
+
+
+            .قهرمان-طاق {
+                min-height: 380px;
+                order: -1;
+            }
+
+
+            .قلمروها { grid-template-columns: 1fr; }
+
+
+            .قلمرو {
+
+                border-inline-end: none;
+                border-block-end: 1px solid var(--کاشی-خط);
+                min-height: 280px;
 
             }
 
 
-            section {
+            .قلمرو:nth-last-child(-n+4) {
+                border-block-end: 1px solid var(--کاشی-خط);
+            }
 
-                padding:
-                    90px 0;
+
+            .قلمرو:last-child { border-block-end: none; }
+
+
+            .پاصفحه-ردیف,
+            .حقوق {
+
+                flex-direction: column;
 
             }
 
 
-            .hero {
-
-                padding:
-                    120px 0
-                    70px;
-
-            }
+            .پاصفحه-پیوندها { flex-wrap: wrap; }
 
 
-            .hero-grid {
+            .کار-نشان {
 
-                gap:
-                    30px;
+                width: 64px;
+                height: 64px;
+                inset-block-end: 16px;
+                inset-inline-start: 16px;
+                padding: 4px;
 
             }
 
-
-            .hero-art {
-
-                min-height:
-                    320px;
-
-            }
-
-
-            .hero-logo-wrapper {
-
-                width:
-                    min(
-                        310px,
-                        80vw
-                    );
-
-            }
-
-
-            .hero-logo {
-
-                width:
-                    70%;
-
-                height:
-                    70%;
-
-            }
-
-
-            .hero h1 {
-
-                font-size:
-                    4rem;
-
-            }
-
-
-            .hero-copy {
-
-                font-size:
-                    1rem;
-
-            }
-
-
-            .domains {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .domain {
-
-                min-height:
-                    260px;
-
-            }
-
-
-            .project-visual {
-
-                min-height:
-                    340px;
-
-            }
-
-
-            .hana-image {
-
-                min-height:
-                    340px;
-
-            }
-
-
-            .footer-grid,
-            .copyright {
-
-                flex-direction:
-                    column;
-
-            }
-
-
-            .footer-links {
-
-                flex-wrap:
-                    wrap;
-
+            .کار-پیوندها {
+                flex-direction: column;
+                align-items: stretch;
             }
 
         }
 
 
         /* =====================================================
-           ACCESSIBILITY
+           دسترس‌پذیری · ACCESSIBILITY
         ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior:
-                    auto;
-            }
 
             *,
             *::before,
             *::after {
 
-                animation-duration:
-                    0.01ms !important;
-
-                animation-iteration-count:
-                    1 !important;
-
-                transition-duration:
-                    0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
 
             }
-
-        }
-
-
-        /* =====================================================
-           PERSIAN TYPOGRAPHY OVERRIDES
-        ====================================================== */
-
-        .hero h1,
-        .section-title,
-        .about-text h2,
-        .project-info h3,
-        .hana-copy h2,
-        .philosophy h2 {
-
-            letter-spacing:
-                0;
-
-            line-height:
-                1.1;
 
         }
 
@@ -2579,67 +2666,96 @@
 
 <body>
 
-
     <!-- =====================================================
-         AMBIENT BACKGROUND
+         خطِ نور
     ====================================================== -->
 
-    <div class="orb one"></div>
-
-    <div class="orb two"></div>
-
-    <div class="orb three"></div>
+    <div class="خط-نور"></div>
 
 
     <!-- =====================================================
-         NAVIGATION
+         کاشی‌نوار
+    ====================================================== -->
+
+    <div class="کاشی-نازک"></div>
+
+
+    <!-- =====================================================
+         ناوبری
     ====================================================== -->
 
     <nav>
 
-        <a
-            href="#top"
-            class="nav-brand"
-        >
+        <a href="#top" class="نشان">
 
             <img
                 src="assets/DHA_logo_h.png"
-                alt="لوگوی Digital__Hana__Arts®"
-                class="nav-logo"
+                alt="صنایع رقومی هانا"
+                class="نشان-نگاره"
             >
 
-            <span>
-                DHA
-            </span>
+            <span>صنایع رقومی هانا®</span>
 
         </a>
 
 
-        <div class="nav-links">
+        <div class="پیوندها">
 
-            <a href="#about">
-                درباره ما
-            </a>
+            <a href="#about">استودیو</a>
 
-            <a href="#domains">
-                حوزه‌ها
-            </a>
+            <a href="#domains">قلمروها</a>
 
-            <a href="#work">
-                آثار
-            </a>
+            <a href="#work">کارها</a>
 
-            <a href="#hana">
-                هانا
-            </a>
+            <a href="#hana">هانا</a>
 
             <a
                 href="https://github.com/DigitalHanaArts"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                گیت‌هاب
+                کد
             </a>
+
+        </div>
+
+
+        <div class="زبان">
+
+            <input
+                type="checkbox"
+                id="زبان-ورودی"
+                class="زبان-ورودی"
+                aria-label="باز کردن فهرست زبان‌ها"
+            >
+
+            <label for="زبان-ورودی" class="زبان-دکمه">
+                [فارسی] ▾
+            </label>
+
+            <div class="زبان-فهرست" role="menu">
+
+                <a href="#" class="زبان-گزینه فعال">[فارسی]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha/" class="زبان-گزینه">[English]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-zh/" class="زبان-گزینه">[中文]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-ko/" class="زبان-گزینه">[조선어]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-hi/" class="زبان-گزینه">[हिन्दी]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-es/" class="زبان-گزینه">[Español]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-yi/" class="زبان-گزینه">[ייִדיש]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha-ru/" class="زبان-گزینه">[Русский]</a>
+
+                <a href="https://digitalhanaarts.github.io/it_dha/" class="زبان-گزینه">[Italiano]</a>
+
+                <a href="https://digitalhanaarts.github.io/dha_ar/" class="زبان-گزینه">[العربية]</a>
+
+            </div>
 
         </div>
 
@@ -2647,76 +2763,69 @@
 
 
     <!-- =====================================================
-         HERO
+         متن
     ====================================================== -->
 
     <main id="top">
 
-        <section class="hero">
 
-            <div class="container">
+        <!-- =================================================
+             پرده‌ی نخست · قهرمان
+        ================================================== -->
 
-                <div class="hero-grid">
+        <section class="قهرمان">
 
+            <div class="جام">
 
-                    <div>
+                <div class="قهرمان-ردیف">
 
-                        <div class="eyebrow">
-                            استودیوی خلاقیت محاسباتی
+                    <div class="قهرمان-آواز">
+
+                        <span class="قهرمان-برچسب">— موتور هنر محاسباتی —</span>
+
+                        <div class="قهرمان-بیت">
+
+                            <span class="مصرع">صورت‌گر نقاشم، هر لحظه بتی سازم</span>
+
+                            <span class="مصرع">در خود شکنم آن بت، بر خویشتنم غیرت</span>
+
+                            <span class="گفتار">— مولانا جلال‌الدین بلخی</span>
+
                         </div>
-
 
                         <h1>
 
-                            <span>
-                                صنایع
-                            </span>
+                            <span class="واژه واژه-۱">صنایع</span>
 
-                            <span>
-                                رقومی
-                            </span>
+                            <span class="واژه واژه-۲">رقومی</span>
 
-                            <span class="gradient">
-                                هانا
-                            </span>
+                            <span class="واژه واژه-۳">هانا®</span>
 
                         </h1>
 
+                        <p>
 
-                        <p class="hero-copy">
+                            میان <strong>هنر</strong> و <strong>خوارزم</strong>،
 
-                            جایی که
+                            میان <strong>داده</strong> و <strong>خواب</strong>،
 
-                            <strong>هنر</strong>،
+                            میان <strong>هوش</strong> و <strong>غریزه</strong> —
 
-                            <strong>داده</strong>،
-
-                            <strong>هوش مصنوعی</strong>
-
-                            و
-
-                            <strong>فناوری غیرمتمرکز</strong>
-
-                            به شکل‌های تازه‌ای از بیان دیجیتال می‌رسند.
+                            ص.ر.ه. در شبِ نیلی گام می‌زند.
 
                         </p>
 
+                        <div class="قهرمان-کنش‌ها">
 
-                        <div class="hero-actions">
-
-                            <a
-                                href="#work"
-                                class="button primary"
-                            >
-                                مشاهده آثار
+                            <a href="#work" class="دکمه دکمه-اصلی">
+                                دیدنِ کارها
                             </a>
-
 
                             <a
                                 href="https://github.com/DigitalHanaArts"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="button secondary"
+                                class="دکمه"
                             >
                                 گیت‌هاب ↗
                             </a>
@@ -2726,20 +2835,38 @@
                     </div>
 
 
-                    <div class="hero-art">
+                    <div class="قهرمان-طاق">
 
-                        <div class="hero-logo-wrapper">
+                        <div class="طاق-قاب">
 
-                            <img
-                                src="assets/DHA_logo.png"
-                                alt="لوگوی دیجیتال هانا آرتز"
-                                class="hero-logo"
-                            >
+                            <div class="کاشی-درون"></div>
+
+                            <div class="مقرنس">
+
+                                <div class="حلقه حلقه-۱"></div>
+                                <div class="حلقه حلقه-۲"></div>
+                                <div class="حلقه حلقه-۳"></div>
+                                <div class="حلقه حلقه-۴"></div>
+
+                            </div>
+
+                            <div class="نگاره-مرکزی">
+
+                                <img
+                                    src="assets/DHA_neon.png"
+                                    alt="نگاره‌ی د.ه.آ."
+                                    loading="eager"
+                                >
+
+                            </div>
+
+                            <div class="اسلیمی"></div>
+
+                            <div class="طاق-امضا">DHA · PERSIAN EDITION</div>
 
                         </div>
 
                     </div>
-
 
                 </div>
 
@@ -2749,30 +2876,36 @@
 
 
         <!-- =================================================
-             MARQUEE
+             نوارِ نگار
         ================================================== -->
 
-        <div class="marquee">
+        <div class="نگار">
 
-            <div class="marquee-track">
-
-                <span>هنر</span>
-                <span>داده</span>
-                <span>هوش مصنوعی</span>
-                <span>بلاک‌چین</span>
-                <span>مولد</span>
-                <span>محاسباتی</span>
-                <span>هوش</span>
-                <span>بصری‌سازی</span>
+            <div class="نگار-ردیف">
 
                 <span>هنر</span>
                 <span>داده</span>
-                <span>هوش مصنوعی</span>
+                <span>هوش</span>
                 <span>بلاک‌چین</span>
                 <span>مولد</span>
                 <span>محاسباتی</span>
+                <span>هوشمندی</span>
+                <span>تجسم</span>
+                <span>انتزاع</span>
+                <span>ایران</span>
+                <span>هانا</span>
+
+                <span>هنر</span>
+                <span>داده</span>
                 <span>هوش</span>
-                <span>بصری‌سازی</span>
+                <span>بلاک‌چین</span>
+                <span>مولد</span>
+                <span>محاسباتی</span>
+                <span>هوشمندی</span>
+                <span>تجسم</span>
+                <span>انتزاع</span>
+                <span>ایران</span>
+                <span>هانا</span>
 
             </div>
 
@@ -2780,70 +2913,76 @@
 
 
         <!-- =================================================
-             ABOUT
+             استودیو · درباره
         ================================================== -->
 
         <section id="about">
 
-            <div class="container">
+            <div class="جام">
 
-                <div class="about-grid">
+                <div class="استودیو-ردیف">
+
+                    <div class="استودیو-نگاره">
+
+                        <img
+                            src="assets/DHA_logo.png"
+                            alt="شبکه‌ی صنایع رقومی هانا"
+                            loading="lazy"
+                        >
+
+                    </div>
 
 
-                    <div class="about-visual"></div>
+                    <div class="استودیو-گفتار">
 
-
-                    <div class="about-text">
-
-                        <div class="section-label">
-                            ۰۱ / استودیو
-                        </div>
-
+                        <span class="پرده-برچسب">۱ · استودیو</span>
 
                         <h2>
 
                             فناوری
 
-                            <span class="gradient">
-                                ابزار و مصالح
-                            </span>
+                            همانا
 
-                            است.
+                            <span class="زیرخط">ماده‌ی خام است.</span>
 
                         </h2>
 
-
                         <p>
 
-                            صنایع رقومی هانا (دیجیتال هانا آرتز) یک استودیوی تجربی خلاقیت محاسباتی است
-                            که فضای میان فناوری و بیان هنری را کاوش می‌کند.
+                            صنایع رقومی هانا کارگاهی است آزمایشی در
+
+                            آفرینش‌گری محاسباتی که در <strong>فضای میانی</strong>
+
+                            میان فناوری و بیانِ هنری گام برمی‌دارد.
 
                         </p>
 
-
                         <p>
 
-                            ما نرم‌افزار، سیستم‌های بصری، آزمایش‌های یادگیری ماشین،
-                            آثار هنری داده‌محور و دارایی‌های دیجیتال مبتنی بر بلاک‌چین
-                            توسعه می‌دهیم.
+                            ما نرم‌افزار می‌سازیم، سامانه‌های بصری می‌آفرینیم،
+
+                            آزمایش‌های یادگیری ماشین می‌پردازیم،
+
+                            هنرِ داده‌محور می‌آفرینیم و دارایی‌های رقومی
+
+                            بلاک‌چین‌محور می‌سازیم — همه با
+
+                            <strong>حسی پساانسانی</strong>.
 
                         </p>
 
-
                         <p>
 
-                            پرسش اصلی ما ساده است:
+                            پرسش کانونی ما ساده نیست:
 
-                            <strong>
-                                وقتی محاسبه به یک رسانه خلاق تبدیل شود،
-                                چه رخ می‌دهد؟
-                            </strong>
+                            <strong>هنگامی که محاسبه به رسانه‌ی آفرینش بدل شود،
+
+                            چه رخ می‌دهد؟</strong>
 
                         </p>
 
                     </div>
 
-
                 </div>
 
             </div>
@@ -2852,135 +2991,92 @@
 
 
         <!-- =================================================
-             DOMAINS
+             قلمروها
         ================================================== -->
 
         <section id="domains">
 
-            <div class="container">
+            <div class="جام">
 
-                <div class="section-label">
-                    ۰۲ / اکوسیستم
-                </div>
+                <span class="پرده-برچسب">۲ · قلمروها</span>
 
+                <h2 class="پرده-عنوان">
 
-                <h2 class="section-title">
+                    چهار قلمرو.
 
-                    چهار حوزه.
+                    <span class="سایه">یک سامانه.</span>
 
-                    <span class="gradient">
-                        یک سامانه.
-                    </span>
+                    <span class="خط‌خورده">بی‌مرز.</span>
 
                 </h2>
 
+                <p class="پرده-درآمد">
 
-                <p class="section-intro">
+                    ص.ر.ه. فراتر از یک رسته‌ی فناورانه، در میان
 
-                    DHA به‌جای فعالیت در یک دسته فناوری واحد،
-                    در میان رشته‌ها کار می‌کند.
+                    دانش‌ها کار می‌کند. این است شبکه‌ی گشوده.
 
                 </p>
 
 
-                <div class="domains">
+                <div class="قلمروها">
 
 
-                    <article class="domain art">
+                    <article class="قلمرو" data-شماره="۱">
 
-                        <div class="domain-number">
-                            ۰۱
-                        </div>
+                        <div class="قلمرو-نماد">❖</div>
 
-
-                        <div class="domain-symbol">
-                            ◇
-                        </div>
-
-
-                        <h3>
-                            هنر دیجیتال
-                        </h3>
-
+                        <h3>هنرِ رقومی</h3>
 
                         <p>
-                            سیستم‌های مولد، هنر الگوریتمی،
-                            عکاسی محاسباتی و رسانه دیجیتال تجربی.
+                            سامانه‌های مولد، هنر الگوریتمی،
+                            عکاسی محاسباتی و
+                            رسانه‌های رقومی آزمایشی.
                         </p>
 
                     </article>
 
 
-                    <article class="domain data">
+                    <article class="قلمرو" data-شماره="۲">
 
-                        <div class="domain-number">
-                            ۰۲
-                        </div>
+                        <div class="قلمرو-نماد">◉</div>
 
-
-                        <div class="domain-symbol">
-                            ◌
-                        </div>
-
-
-                        <h3>
-                            علم داده
-                        </h3>
-
+                        <h3>دانشِ داده</h3>
 
                         <p>
-                            داده‌کاوی، تحلیل، بصری‌سازی،
-                            محاسبات آماری و کشف داده‌محور.
+                            کاوش داده، تحلیل، تجسم،
+                            محاسبات آماری و
+                            کشفِ داده‌محور.
                         </p>
 
                     </article>
 
 
-                    <article class="domain ai">
+                    <article class="قلمرو" data-شماره="۳">
 
-                        <div class="domain-number">
-                            ۰۳
-                        </div>
+                        <div class="قلمرو-نماد">◍</div>
 
-
-                        <div class="domain-symbol">
-                            ◎
-                        </div>
-
-
-                        <h3>
-                            هوش
-                        </h3>
-
+                        <h3>هوشمندی</h3>
 
                         <p>
-                            یادگیری ماشین، یادگیری عمیق،
-                            بینایی رایانه و هوش مصنوعی مولد.
+                            یادگیری ماشین، یادگیری ژرف،
+                            بینایی ماشین و
+                            هوش مصنوعیِ مولد.
                         </p>
 
                     </article>
 
 
-                    <article class="domain chain">
+                    <article class="قلمرو" data-شماره="۴">
 
-                        <div class="domain-number">
-                            ۰۴
-                        </div>
+                        <div class="قلمرو-نماد">⛓</div>
 
-
-                        <div class="domain-symbol">
-                            ⛓
-                        </div>
-
-
-                        <h3>
-                            بلاک‌چین
-                        </h3>
-
+                        <h3>بلاک‌چین</h3>
 
                         <p>
-                            ان‌اف‌تی‌ها، دارایی‌های دیجیتال،
-                            تحلیل بلاک‌چین و اکوسیستم‌های خلاق غیرمتمرکز.
+                            توکن‌های غیرقابل‌معاوضه، دارایی‌های رقومی،
+                            تحلیل زنجیره و
+                            بوم‌سازگان‌های آفرینشیِ نامتمرکز.
                         </p>
 
                     </article>
@@ -2994,186 +3090,217 @@
 
 
         <!-- =================================================
-             WORK
+             کارها
         ================================================== -->
 
         <section id="work">
 
-            <div class="container">
+            <div class="جام">
 
-                <div class="section-label">
-                    ۰۳ / آثار منتخب
-                </div>
+                <span class="پرده-برچسب">۳ · کارهای برگزیده</span>
 
+                <h2 class="پرده-عنوان">
 
-                <h2 class="section-title">
+                    از <span class="سایه">پیکسل</span>
 
-                    از
-
-                    <span class="gradient">
-                        پیکسل
-                    </span>
-
-                    تا بینش.
+                    تا <span class="خط‌خورده">هوش</span>.
 
                 </h2>
 
 
-                <div class="project">
+                <!-- =========================================
+                     زنجیره‌ی آزمایشگاه · MLabChain
+                ========================================== -->
+                <div class="کار پهن">
+
+                    <div class="کار-تصویر">
+
+                        <img
+                            src="assets/MLabChain_v3_Banner.png"
+                            alt="زنجیره‌ی آزمایشگاه · MLabChain — سکوی پژوهش بلاک‌چین"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="assets/mlabchain.png"
+                            alt="نشان MLabChain"
+                            class="کار-نشان"
+                        >
+
+                    </div>
+
+                    <div class="کار-گفتار">
+
+                        <span class="کار-برچسب">— پروتکل بلاک‌چین —</span>
+
+                        <h3>زنجیره‌ی<br><em>آزمایشگاه</em></h3>
+
+                        <p>
+
+                            سکویی پژوهشی و مهندسی در بلاک‌چین —
+
+                            که دانشِ آزمایشگاهی، زیرساختِ نامتمرکز و
+
+                            محاسبه‌ی اثبات‌پذیر را به هم می‌پیوندد.
+
+                            از آموزش تا ثبت تا بازبینی.
+
+                        </p>
+
+                        <div class="فن‌ها">
+
+                            <span>بلاک‌چین</span>
+                            <span>توزیع‌شده</span>
+                            <span>وب۳</span>
+                            <span>فیزیکِ انرژیِ بالا</span>
+                            <span>پژوهش</span>
+
+                        </div>
+
+                        <div class="کار-پیوندها">
+
+                            <a
+                                href="https://github.com/DigitalHanaArts/MLabChain"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="دکمه دکمه-اصلی"
+                            >
+                                گیت‌هاب ↗
+                            </a>
+
+                            <a
+                                href="https://gitlab.cern.ch/abavarch/labchain"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="دکمه"
+                            >
+                                گیت‌لب ↗
+                            </a>
+
+                            <a
+                                href="https://digitalhanaarts.github.io/mlc/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="دکمه"
+                            >
+                                تارنما ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-                    <div class="project-visual">
+                <!-- DHA Vision -->
+                <div class="کار">
+
+                    <div class="کار-تصویر">
 
                         <img
                             src="assets/DHA_Vision.png"
-                            alt="DHA Vision — دیجیتال هانا آرتز"
+                            alt="DHA Vision"
                             loading="lazy"
                         >
 
                     </div>
 
+                    <div class="کار-گفتار">
 
-                    <div class="project-info">
+                        <span class="کار-برچسب">— سکوی آزمایشی —</span>
 
-                        <div class="project-tag">
-                            پلتفرم تجربی
-                        </div>
-
-
-                        <h3>
-                            DHA<br>
-                            ویژن
-                        </h3>
-
+                        <h3>DHA<br><em>ویژن</em></h3>
 
                         <p>
 
-                            یک پلتفرم هنر محاسباتی مبتنی بر جولیا
-                            که کاوش می‌کند چگونه عکس‌ها می‌توانند
-                            از طریق پردازش تصویر، یادگیری ماشین
-                            و سیستم‌های مولد به آثار هنری دیجیتال تازه
-                            تبدیل شوند.
+                            سکویی برای هنرِ محاسباتی بر پایه‌ی Julia
+
+                            که می‌کاود چگونه عکس‌ها می‌توانند —
+
+                            از راهِ پردازش تصویر، یادگیری ماشین و
+
+                            سامانه‌های مولد — به آثارِ رقومیِ تازه
+
+                            دگرگون شوند.
 
                         </p>
 
+                        <div class="فن‌ها">
 
-                        <div class="tech">
-
-                            <span>
-                                جولیا
-                            </span>
-
-                            <span>
-                                فلوکس
-                            </span>
-
-                            <span>
-                                یادگیری ماشین
-                            </span>
-
-                            <span>
-                                پردازش تصویر
-                            </span>
-
-                            <span>
-                                هنر مولد
-                            </span>
+                            <span>Julia</span>
+                            <span>Flux</span>
+                            <span>یادگیری ماشین</span>
+                            <span>پردازش تصویر</span>
+                            <span>هنرِ مولد</span>
 
                         </div>
-
-
-                        <br>
-
 
                         <a
                             href="https://github.com/DigitalHanaArts/DHA-Vision"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="button secondary"
+                            class="دکمه"
                         >
-                            مشاهده پروژه ↗
+                            دیدنِ پروژه ↗
                         </a>
 
                     </div>
 
-
                 </div>
 
-            </div>
 
-        </section>
+                <!-- OpenSea -->
+                <div class="کار">
 
-
-        <!-- =================================================
-             HANA
-        ================================================== -->
-
-        <section
-            id="hana"
-            class="hana"
-        >
-
-            <div class="container">
-
-                <div class="hana-grid">
-
-
-                    <div class="hana-copy">
-
-                        <div class="section-label">
-                            ۰۴ / خاستگاه
-                        </div>
-
-
-                        <h2>
-
-                            <span>
-                                با
-                            </span>
-
-                            <span class="hana-gradient">
-                                هانا
-                            </span>
-
-                            <span>
-                                آشنا شوید.
-                            </span>
-
-                        </h2>
-
-
-                        <p>
-
-                            دیجیتال هانا آرتز به نام هانا نام‌گذاری شده است —
-                            بچه‌گربه‌ای که در قلب هویت بصری قرار دارد.
-
-                        </p>
-
-
-                        <p>
-
-                            حضور او عامدانه چیزی انسانی و ارگانیک را
-                            به جهانی محاسباتی وارد می‌کند:
-
-                            <strong>
-                                کنجکاوی، فردیت و شخصیت.
-                            </strong>
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="hana-image">
+                    <div class="کار-تصویر">
 
                         <img
-                            src="assets/Hana_the_kitten.jpeg"
-                            alt="هانا بچه‌گربه"
+                            src="assets/opensea.io.jpeg"
+                            alt="مجموعه‌ی اوپن‌سی"
                             loading="lazy"
                         >
 
                     </div>
 
+                    <div class="کار-گفتار">
+
+                        <span class="کار-برچسب">— مجموعه‌ی NFT —</span>
+
+                        <h3>مجموعه‌ی<br><em>اوپن‌سی</em></h3>
+
+                        <p>
+
+                            مجموعه‌ی رسمیِ صنایع رقومی هانا را
+
+                            در اوپن‌سی ببینید — دارایی‌های رقومیِ
+
+                            برگزیده، آثارِ مولد و آفریده‌های
+
+                            بلاک‌چین‌بنیان.
+
+                        </p>
+
+                        <div class="فن‌ها">
+
+                            <span>NFT</span>
+                            <span>اتریوم</span>
+                            <span>هنرِ رقومی</span>
+                            <span>بلاک‌چین</span>
+                            <span>OpenSea</span>
+
+                        </div>
+
+                        <a
+                            href="https://opensea.io/Digital__Hana__Arts"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="دکمه"
+                        >
+                            رفتن به اوپن‌سی ↗
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -3183,37 +3310,79 @@
 
 
         <!-- =================================================
-             PHILOSOPHY
+             هانا
         ================================================== -->
 
-        <section class="philosophy">
+        <section id="hana">
 
-            <div class="container">
+            <div class="جام">
 
+                <div class="هانا-ردیف">
 
-                <div class="philosophy-mark">
-                    ۰۵ / پرسش
+                    <div class="هانا-گفتار">
+
+                        <span class="پرده-برچسب">۴ · خاستگاه</span>
+
+                        <h2>
+
+                            <span class="واژه واژه-۱">آشنا شوید با</span>
+
+                            <span class="واژه واژه-۲">هانا.</span>
+
+                        </h2>
+
+                        <p>
+                            صنایع رقومی هانا به نامِ هانا نام‌گذاری شده است —
+                            بچه‌گربه‌ای که در قلبِ هویتِ بصری
+                            این کارگاه نشسته است.
+                        </p>
+
+                        <p>
+                            حضورِ او چیزی به‌عمد انسانی و اندام‌وار
+                            به این جهانِ محاسباتی می‌افزاید:
+
+                            <strong>کنجکاوی، یکتایی و منش.</strong>
+
+                        </p>
+
+                    </div>
+
+                    <div class="هانا-تصویر">
+
+                        <img
+                            src="assets/Hana_the_kitten.jpeg"
+                            alt="هانا — بچه‌گربه"
+                            loading="lazy"
+                        >
+
+                    </div>
+
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             پرسش
+        ================================================== -->
+
+        <section class="پرسش">
+
+            <div class="جام">
+
+                <span class="پرسش-نشان">۵ · پرسش</span>
 
                 <h2>
 
-                    چه رخ می‌دهد وقتی
+                    <span class="بند بند-۱">هنگامی که محاسبه</span>
 
-                    <span>
-                        محاسبه
-                    </span>
+                    <span class="بند بند-۲">به رسانه‌ی آفرینش</span>
 
-                    به یک
-
-                    <span>
-                        رسانه خلاق
-                    </span>
-
-                    تبدیل شود؟
+                    <span class="بند بند-۳">بدل شود، چه رخ می‌دهد؟</span>
 
                 </h2>
-
 
             </div>
 
@@ -3224,44 +3393,36 @@
 
 
     <!-- =====================================================
-         FOOTER
+         پاصفحه
     ====================================================== -->
 
     <footer>
 
-        <div class="container">
+        <div class="جام">
 
-
-            <div class="footer-grid">
-
+            <div class="پاصفحه-ردیف">
 
                 <div>
 
-                    <div class="footer-brand">
+                    <div class="پاصفحه-نشان">
 
                         <img
                             src="assets/DHA_logo.png"
-                            alt="لوگوی Digital__Hana__Arts®"
-                            class="footer-logo"
+                            alt="صنایع رقومی هانا"
+                            class="پاصفحه-نگاره"
                         >
 
-                        <span>
-                            دیجیتال هانا آرتز
-                        </span>
+                        <span>صنایع رقومی هانا®</span>
 
                     </div>
 
-
-                    <div class="footer-sub">
-
+                    <div class="پاصفحه-زیرنویس">
                         هنر × داده × هوش × بلاک‌چین
-
                     </div>
 
                 </div>
 
-
-                <div class="footer-links">
+                <div class="پاصفحه-پیوندها">
 
                     <a
                         href="https://github.com/DigitalHanaArts"
@@ -3271,30 +3432,29 @@
                         گیت‌هاب
                     </a>
 
-
-                    <a href="#top">
-                        بازگشت به بالا ↑
-                    </a>
+                    <a href="#top">بازگشت به بالا ↑</a>
 
                 </div>
 
-
             </div>
 
+			<div class="حقوق">
+			
+				<span>© ۲۰۲۶ صنایع رقومی هانا®</span>
 
-            <div class="copyright">
-
-                <span>
-                    © ۲۰۲۶ دیجیتال هانا آرتز®
-                </span>
-
-
-                <span>
-                    محاسبه به‌عنوان یک رسانه خلاق.
-                </span>
-
-            </div>
-
+                <span>محاسبه به‌مثابه رسانه‌ی آفرینش</span>
+				
+				<span class="ساخت-ایران">
+					ساخته‌شده در
+					<img
+						src="assets/Flag_of_Iran_(official).png"
+						alt="ایران"
+						class="پرچم-کوچک"
+					>
+					ایران
+				</span>
+			</div>
+			
 
         </div>
 

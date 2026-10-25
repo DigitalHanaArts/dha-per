@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ارتباط با صنایع رقومی هانا® — ایمیل، تلفن، واتس‌اپ و شبکه‌های اجتماعی.">
+    <meta name="theme-color" content="#0d1620">
+    <title>ارتباط با ما · صنایع رقومی هانا®</title>
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Estedad:wght@300;400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Lalezar&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Form styles specific to this page */
+        .فرم {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .فیلد-کامل { grid-column: 1 / -1; }
+
+        .فیلد {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .فیلد label {
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--لعاب-۲);
+        }
+
+        .فیلد input,
+        .فیلد textarea,
+        .فیلد select {
+            padding: 14px 18px;
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            color: var(--لعاب);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 14px;
+            transition: all var(--گذر);
+            direction: rtl;
+        }
+
+        .فیلد input:focus,
+        .فیلد textarea:focus,
+        .فیلد select:focus {
+            outline: none;
+            border-color: var(--فیروزه);
+            box-shadow: 0 0 0 3px rgba(41,166,166,.15);
+        }
+
+        .فیلد textarea {
+            resize: vertical;
+            min-height: 140px;
+            grid-column: 1 / -1;
+            font-family: "Vazirmatn", sans-serif;
+        }
+
+        .فرم-ارسال {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .فرم { grid-template-columns: 1fr; }
+        }
+
+        .پیام-موفق {
+            grid-column: 1 / -1;
+            padding: 20px;
+            background: rgba(41,166,166,.1);
+            border: 1px solid var(--فیروزه);
+            color: var(--لعاب);
+            text-align: center;
+            display: none;
+            animation: نبض-زر 3s ease-in-out;
+        }
+
+        .پیام-موفق.نمایان { display: block; }
+    </style>
+</head>
+<body id="top">
+
+    <header class="سر-برگ">
+        <a href="index.html" class="نشان">
+            <img src="assets/DHA_logo_h.png" alt="صنایع رقومی هانا" class="نشان-نگاره">
+            <span>صنایع رقومی هانا®</span>
+        </a>
+        <nav class="پیوندها">
+            <a href="index.html">خانه</a>
+            <a href="about.html">درباره</a>
+            <a href="works.html">پروژه‌ها</a>
+            <a href="gallery.html">گالری</a>
+            <a href="contact.html">ارتباط با ما</a>
+        </nav>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="زبان">
+                <input type="checkbox" id="زبان-ورودی" class="زبان-ورودی">
+                <label for="زبان-ورودی" class="زبان-دکمه">[فارسی] ▾</label>
+                <div class="زبان-فهرست">
+                    <a href="#" class="زبان-گزینه فعال">[فارسی]</a>
+					<a href="https://digitalhanaarts.github.io/dha-per/" class="زبان-گزینه">[Persian]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha/" class="زبان-گزینه">[English]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-cn/" class="زبان-گزینه">[中文]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-ru/" class="زبان-گزینه">[Русский]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-jp/" class="زبان-گزینه">[日本語]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-ko/" class="زبان-گزینه">[조선어]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-hi/" class="زبان-گزینه">[हिन्दी]</a>
+				
+					<a href="https://digitalhanaarts.github.io/it_dha/" class="زبان-گزینه">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/" class="زبان-گزینه">[Español]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha_ar/" class="زبان-گزینه">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/" class="زبان-گزینه">[ייִדיש]</a>
+                </div>
+            </div>
+            <button class="منو-دکمه" aria-label="منو">☰</button>
+        </div>
+    </header>
+
+    <div class="پرده-کشو"></div>
+    <aside class="کشو">
+        <button class="کشو-بستن" aria-label="بستن">×</button>
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره ما</a>
+        <a href="works.html">پروژه‌ها</a>
+        <a href="gallery.html">گالری</a>
+        <a href="contact.html">ارتباط با ما</a>
+		<a href="blog.html">نشریه</a>
+		<a href="services.html">خدمات</a>
+    </aside>
+
+    <main>
+
+        <section class="قهرمان" style="min-height:50vh; padding-top:160px;">
+            <div class="جام" style="text-align:center;">
+                <span class="قهرمان-برچسب">— ارتباط با ما —</span>
+                <h1 style="font-size:clamp(2.4rem,8vw,6rem); margin:20px 0;">
+                    <span style="display:block;">در <span style="color:transparent; -webkit-text-stroke:2px var(--زر); font-style:italic;">ارتباط</span> باشید.</span>
+                </h1>
+                <p style="max-width:720px; margin:0 auto; font-size:17px;">
+                    برای همکاری، سفارش هنری، پرسش درباره‌ی پروژه‌ها، یا هر گفت‌وگو
+                    درباره‌ی هنر و فناوری — از راه‌های زیر با ما در تماس باشید.
+                </p>
+            </div>
+        </section>
+
+        <!-- SOCIAL CARDS -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۱ · شبکه‌های اجتماعی</span>
+                <h2 class="بخش-عنوان">ما را <span class="سایه">دنبال کنید</span>.</h2>
+
+                <div class="تماس-شبکه">
+                    <a href="mailto:digital.hana.arts@gmail.com" class="تماس-کارت زرین">
+                        <div class="تماس-نماد">✉</div>
+                        <div class="تماس-نام">ایمیل</div>
+                        <div class="تماس-مقدار">digital.hana.arts@gmail.com</div>
+                    </a>
+
+                    <a href="https://wa.me/393495876169" target="_blank" rel="noopener" class="تماس-کارت زرین">
+                        <div class="تماس-نماد">☎</div>
+                        <div class="تماس-نام">واتس‌اپ</div>
+                        <div class="تماس-مقدار">+39 349 587 6169</div>
+                    </a>
+
+                    <a href="http://instagram.com/hana.bavarchi" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">◉</div>
+                        <div class="تماس-نام">اینستاگرام</div>
+                        <div class="تماس-مقدار">@hana.bavarchi</div>
+                    </a>
+
+                    <a href="https://t.me/DIGITALHANAARTS2" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">➤</div>
+                        <div class="تماس-نام">تلگرام</div>
+                        <div class="تماس-مقدار">@DIGITALHANAARTS2</div>
+                    </a>
+
+                    <a href="https://www.facebook.com/DIGITAL.HANA.ARTS" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">f</div>
+                        <div class="تماس-نام">فیسبوک</div>
+                        <div class="تماس-مقدار">DIGITAL.HANA.ARTS</div>
+                    </a>
+
+                    <a href="https://youtube.com/hanabavarchi3926" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">▶</div>
+                        <div class="تماس-نام">یوتیوب</div>
+                        <div class="تماس-مقدار">@hanabavarchi3926</div>
+                    </a>
+
+                    <a href="https://x.com/DigitalHanaArts" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">𝕏</div>
+                        <div class="تماس-نام">ایکس (توییتر)</div>
+                        <div class="تماس-مقدار">@DigitalHanaArts</div>
+                    </a>
+
+                    <a href="https://github.com/DigitalHanaArts" target="_blank" rel="noopener" class="تماس-کارت">
+                        <div class="تماس-نماد">◆</div>
+                        <div class="تماس-نام">گیت‌هاب</div>
+                        <div class="تماس-مقدار">DigitalHanaArts</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHONE NUMBERS -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۲ · تلفن</span>
+                <h2 class="بخش-عنوان">تماس <span class="سایه">مستقیم</span>.</h2>
+
+                <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:40px;">
+                    <a href="tel:+393513238388" class="دکمه" style="direction:ltr; font-family:'DM Mono',monospace;">
+                        ☎ +39 351 323 8388
+                    </a>
+                    <a href="tel:+989396842742" class="دکمه" style="direction:ltr; font-family:'DM Mono',monospace;">
+                        ☎ +98 9396 842 742
+                    </a>
+                    <a href="https://wa.me/393495876169" target="_blank" rel="noopener" class="دکمه دکمه-زرین" style="direction:ltr; font-family:'DM Mono',monospace;">
+                        ☎ WhatsApp +39 349 587 6169
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۳ · پیام مستقیم</span>
+                <h2 class="بخش-عنوان" style="text-align:center;">برای ما <span class="سایه">بنویسید</span>.</h2>
+                <p style="text-align:center; max-width:600px; margin:0 auto 50px; font-size:16px;">
+                    فرم زیر را پر کنید و پیام شما مستقیماً به ایمیل ما ارسال خواهد شد.
+                </p>
+
+                <form class="فرم" action="mailto:digital.hana.arts@gmail.com" method="post" enctype="text/plain">
+                    <div class="فیلد">
+                        <label for="نام">نام شما</label>
+                        <input type="text" id="نام" name="نام" required>
+                    </div>
+
+                    <div class="فیلد">
+                        <label for="ایمیل">ایمیل شما</label>
+                        <input type="email" id="ایمیل" name="ایمیل" required>
+                    </div>
+
+                    <div class="فیلد فیلد-کامل">
+                        <label for="موضوع">موضوع</label>
+                        <select id="موضوع" name="موضوع">
+                            <option>همکاری پروژه‌ای</option>
+                            <option>سفارش هنری</option>
+                            <option>پرسش درباره‌ی یک پروژه</option>
+                            <option>سایر</option>
+                        </select>
+                    </div>
+
+                    <div class="فیلد فیلد-کامل">
+                        <label for="پیام">پیام شما</label>
+                        <textarea id="پیام" name="پیام" required></textarea>
+                    </div>
+
+                    <div class="فرم-ارسال">
+                        <button type="submit" class="دکمه دکمه-اصلی">ارسال پیام</button>
+                    </div>
+
+                    <div class="پیام-موفق">
+                        ✓ پیام شما آماده‌ی ارسال است. سپاس از تماس شما!
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- IRAN FLAG BANNER -->
+        <section class="بخش آشکار" style="text-align:center; border-bottom:none;">
+            <div class="جام">
+                <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; padding:40px 0; border-top:1px solid var(--کاشی-خط-نازک);">
+                    <img src="assets/Flag_of_Iran_(official).png" alt="پرچم ایران" style="width:80px; border:1px solid var(--کاشی-خط); box-shadow:0 6px 20px rgba(0,0,0,.3);">
+                    <span style="font-family:'Vazirmatn',sans-serif; font-size:14px; color:var(--گرد);">
+                        ساخته‌شده با ❤ در ایتالیا و ایران — در خدمتِ هنر، داده و انسان.
+                    </span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="پا-برگ">
+        <div class="جام">
+            <div class="پا-شبکه">
+                <div>
+                    <div class="پا-نشان">
+                        <img src="assets/DHA_logo.png" alt="صنایع رقومی هانا" class="پا-نگاره">
+                        <span>صنایع رقومی هانا®</span>
+                    </div>
+                    <p class="پا-زیرنویس">در خدمتِ هنر، داده و انسان.</p>
+                </div>
+                <div class="پا-ستون">
+                    <h4>پیوندها</h4>
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">درباره</a>
+                    <a href="works.html">پروژه‌ها</a>
+                    <a href="gallery.html">گالری</a>
+                </div>
+                <div class="پا-ستون">
+                    <h4>شبکه‌ها</h4>
+                    <a href="http://instagram.com/hana.bavarchi" target="_blank" rel="noopener">اینستاگرام</a>
+                    <a href="https://t.me/DIGITALHANAARTS2" target="_blank" rel="noopener">تلگرام</a>
+                    <a href="https://wa.me/393495876169" target="_blank" rel="noopener">واتس‌اپ</a>
+                    <a href="https://github.com/DigitalHanaArts" target="_blank" rel="noopener">گیت‌هاب</a>
+                </div>
+            </div>
+            <div class="حقوق">
+                <span>© ۲۰۲۶ صنایع رقومی هانا®</span>
+                <span>محاسبه به‌مثابه رسانه‌ی آفرینش</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple form success message
+        document.querySelector('.فرم')?.addEventListener('submit', function() {
+            const پیام = document.querySelector('.پیام-موفق');
+            if (پیام) پیام.classList.add('نمایان');
+        });
+    </script>
+</body>
+</html>

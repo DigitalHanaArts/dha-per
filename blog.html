@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نشریه‌ی صنایع رقومی هانا® — نوشته‌ها و جستارها درباره‌ی هنر، داده، هوش مصنوعی، بلاک‌چین و پیش‌بینی بازار.">
+    <meta name="keywords" content="وبلاگ, نشریه, هنر رقومی, هوش مصنوعی, بلاک‌چین, TRX, MLabChain, ایران">
+    <meta name="theme-color" content="#0d1620">
+    <meta property="og:title" content="نشریه · صنایع رقومی هانا®">
+    <meta property="og:description" content="جستارهایی در مرز هنر و محاسبه">
+    <meta property="og:image" content="assets/DHA_logo.png">
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+    <title>نشریه · صنایع رقومی هانا®</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Estedad:wght@300;400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Lalezar&family=Gulzar&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== BLOG SPECIFIC ===== */
+
+        .ویژه {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 0;
+            border: 1px solid var(--کاشی-خط);
+            background: var(--شب-۲);
+            margin-bottom: 70px;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--گذر);
+        }
+
+        .ویژه:hover {
+            border-color: var(--فیروزه);
+            box-shadow: 0 24px 70px rgba(41,166,166,.18);
+        }
+
+        .ویژه-تصویر {
+            position: relative;
+            min-height: 480px;
+            overflow: hidden;
+        }
+
+        .ویژه-تصویر img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform .8s ease;
+            filter: contrast(1.05) brightness(.95);
+        }
+
+        .ویژه:hover .ویژه-تصویر img {
+            transform: scale(1.06);
+        }
+
+        .ویژه-تصویر::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(41,166,166,.18), transparent 45%, rgba(184,38,31,.15));
+            pointer-events: none;
+        }
+
+        .ویژه-برچسب-ویژه {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            padding: 8px 18px;
+            background: var(--زر);
+            color: var(--شب);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            z-index: 3;
+            box-shadow: 0 8px 20px rgba(201,162,39,.4);
+            transform: rotate(-2deg);
+        }
+
+        .ویژه-گفتار {
+            padding: clamp(34px, 5vw, 68px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ویژه-متا {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            font-family: "DM Mono", "Vazirmatn", monospace;
+            font-size: 11px;
+            color: var(--گرد);
+            margin-bottom: 22px;
+            letter-spacing: .1em;
+        }
+
+        .ویژه-متا .دسته {
+            color: var(--فیروزه);
+            border: 1px solid var(--فیروزه);
+            padding: 4px 12px;
+        }
+
+        .ویژه-گفتار h2 {
+            font-size: clamp(1.8rem, 3.4vw, 3.4rem);
+            line-height: 1.25;
+            margin-bottom: 22px;
+            color: var(--لعاب);
+        }
+
+        .ویژه-گفتار h2 em {
+            font-style: italic;
+            color: var(--فیروزه-۲);
+        }
+
+        .ویژه-گفتار p {
+            font-size: 15px;
+            line-height: 2.05;
+            margin-bottom: 30px;
+        }
+
+        .ویژه-گفتار .خواندن {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--زر);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--زر);
+            align-self: flex-start;
+            transition: all var(--گذر);
+        }
+
+        .ویژه:hover .خواندن {
+            gap: 16px;
+            color: var(--فیروزه-۲);
+            border-color: var(--فیروزه-۲);
+        }
+
+        /* ==== Articles Grid ==== */
+        .جستارها {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .جستار {
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            overflow: hidden;
+            transition: all var(--گذر);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .جستار::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(41,166,166,.06), transparent);
+            opacity: 0;
+            transition: opacity var(--گذر);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .جستار:hover {
+            transform: translateY(-8px);
+            border-color: var(--فیروزه);
+            box-shadow: 0 24px 60px rgba(41,166,166,.18);
+        }
+
+        .جستار:hover::before { opacity: 1; }
+
+        .جستار-تصویر {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: var(--شب);
+        }
+
+        .جستار-تصویر img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+            filter: contrast(1.05) brightness(.95);
+        }
+
+        .جستار:hover .جستار-تصویر img {
+            transform: scale(1.06);
+            filter: contrast(1.1) brightness(1);
+        }
+
+        .جستار-دسته {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            padding: 6px 14px;
+            background: rgba(13,22,32,.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--فیروزه);
+            color: var(--فیروزه-۲);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .1em;
+            z-index: 3;
+        }
+
+        .جستار-بدنه {
+            padding: 26px 24px 28px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .جستار-متا {
+            font-family: "DM Mono", "Vazirmatn", monospace;
+            font-size: 11px;
+            color: var(--گرد);
+            letter-spacing: .08em;
+            margin-bottom: 14px;
+        }
+
+        .جستار h3 {
+            font-size: 22px;
+            line-height: 1.35;
+            margin-bottom: 14px;
+            color: var(--لعاب);
+            transition: color var(--گذر);
+        }
+
+        .جستار:hover h3 { color: var(--فیروزه-۲); }
+
+        .جستار p {
+            font-size: 14px;
+            line-height: 1.95;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .جستار-پایان {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 18px;
+            border-top: 1px solid var(--کاشی-خط-نازک);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 12px;
+            color: var(--گرد);
+        }
+
+        .جستار-پایان .خواندن-بیشتر {
+            color: var(--زر);
+            font-weight: 600;
+            transition: all var(--گذر);
+        }
+
+        .جستار:hover .خواندن-بیشتر {
+            color: var(--فیروزه);
+            transform: translateX(-4px);
+        }
+
+        .جستار.پنهان { display: none; }
+
+        /* ==== Newsletter ==== */
+        .خبرنامه {
+            background: linear-gradient(135deg, var(--شب-۲), rgba(201,162,39,.06));
+            border: 1px solid var(--زر);
+            padding: clamp(40px, 6vw, 70px);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: نبض-زر 3.5s ease-in-out infinite;
+        }
+
+        .خبرنامه::before {
+            content: "❁";
+            position: absolute;
+            top: -20px; right: 30px;
+            font-size: 140px;
+            color: var(--زر);
+            opacity: .06;
+            pointer-events: none;
+        }
+
+        .خبرنامه::after {
+            content: "❁";
+            position: absolute;
+            bottom: -30px; left: 20px;
+            font-size: 180px;
+            color: var(--فیروزه);
+            opacity: .05;
+            pointer-events: none;
+        }
+
+        .خبرنامه h3 {
+            font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+            margin-bottom: 18px;
+            color: var(--لعاب);
+            position: relative;
+            z-index: 2;
+        }
+
+        .خبرنامه p {
+            max-width: 520px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .خبرنامه-فرم {
+            display: flex;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+
+        .خبرنامه-فرم input {
+            flex: 1;
+            min-width: 220px;
+            padding: 15px 20px;
+            background: var(--شب);
+            border: 1px solid var(--کاشی-خط);
+            color: var(--لعاب);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 14px;
+            transition: all var(--گذر);
+        }
+
+        .خبرنامه-فرم input:focus {
+            outline: none;
+            border-color: var(--فیروزه);
+            box-shadow: 0 0 0 3px rgba(41,166,166,.15);
+        }
+
+        /* ==== Article Modal ==== */
+        .نشریه-پنجره {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.92);
+            backdrop-filter: blur(10px);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--گذر);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .نشریه-پنجره.باز {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .نشریه-کارت {
+            background: var(--شب-۲);
+            border: 1px solid var(--زر);
+            max-width: 780px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: clamp(30px, 5vw, 60px);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform var(--گذر);
+        }
+
+        .نشریه-پنجره.باز .نشریه-کارت {
+            transform: translateY(0);
+        }
+
+        .نشریه-بستن {
+            position: absolute;
+            top: 20px; left: 20px;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid var(--کاشی-خط);
+            color: var(--لعاب);
+            font-size: 22px;
+            line-height: 1;
+            transition: all var(--گذر);
+        }
+
+        .نشریه-بستن:hover {
+            background: var(--انار);
+            border-color: var(--انار);
+        }
+
+        .نشریه-کارت h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: var(--لعاب);
+            padding-left: 60px;
+        }
+
+        .نشریه-کارت .نشریه-متا {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-family: "DM Mono", "Vazirmatn", monospace;
+            font-size: 11px;
+            color: var(--گرد);
+            letter-spacing: .1em;
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--کاشی-خط-نازک);
+        }
+
+        .نشریه-کارت .نشریه-تصویر {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 1px solid var(--کاشی-خط);
+        }
+
+        .نشریه-کارت p {
+            font-size: 16px;
+            line-height: 2.15;
+            margin-bottom: 20px;
+            color: var(--لعاب-۲);
+        }
+
+        .نشریه-کارت p strong {
+            color: var(--زر);
+            font-weight: 700;
+        }
+
+        .نشریه-کارت blockquote {
+            border-right: 3px solid var(--فیروزه);
+            padding: 8px 22px;
+            margin: 24px 0;
+            font-family: "Gulzar", serif;
+            font-size: 20px;
+            line-height: 1.9;
+            color: var(--فیروزه-۲);
+            font-style: italic;
+        }
+
+        .نشریه-کارت h3 {
+            font-size: 22px;
+            margin: 30px 0 16px;
+            color: var(--فیروزه);
+        }
+
+        /* ==== Reading Progress ==== */
+        .خواندن-پیشرفت {
+            position: fixed;
+            top: 75px;
+            right: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--فیروزه), var(--زر), var(--انار));
+            z-index: 9999;
+            transition: height .1s linear;
+            box-shadow: 0 0 8px rgba(41,166,166,.5);
+        }
+
+        @media (max-width: 900px) {
+            .ویژه { grid-template-columns: 1fr; }
+            .ویژه-تصویر { min-height: 300px; }
+            .جستارها { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header class="سر-برگ">
+        <a href="index.html" class="نشان">
+            <img src="assets/DHA_logo_h.png" alt="صنایع رقومی هانا" class="نشان-نگاره">
+            <span>صنایع رقومی هانا®</span>
+        </a>
+        <nav class="پیوندها">
+            <a href="index.html">خانه</a>
+            <a href="about.html">درباره</a>
+            <a href="works.html">پروژه‌ها</a>
+            <a href="blog.html">نشریه</a>
+            <a href="services.html">خدمات</a>
+            <a href="gallery.html">گالری</a>
+            <a href="contact.html">ارتباط با ما</a>
+        </nav>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="زبان">
+                <input type="checkbox" id="زبان-ورودی" class="زبان-ورودی">
+                <label for="زبان-ورودی" class="زبان-دکمه">[فارسی] ▾</label>
+                <div class="زبان-فهرست">
+                    <a href="#" class="زبان-گزینه فعال">[فارسی]</a>
+					<a href="https://digitalhanaarts.github.io/dha-per/" class="زبان-گزینه">[Persian]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha/" class="زبان-گزینه">[English]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-cn/" class="زبان-گزینه">[中文]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-ru/" class="زبان-گزینه">[Русский]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-jp/" class="زبان-گزینه">[日本語]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-ko/" class="زبان-گزینه">[조선어]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-hi/" class="زبان-گزینه">[हिन्दी]</a>
+				
+					<a href="https://digitalhanaarts.github.io/it_dha/" class="زبان-گزینه">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/" class="زبان-گزینه">[Español]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha_ar/" class="زبان-گزینه">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/" class="زبان-گزینه">[ייִדיש]</a>
+                </div>
+            </div>
+            <button class="منو-دکمه" aria-label="منو">☰</button>
+        </div>
+    </header>
+
+    <div class="پرده-کشو"></div>
+    <aside class="کشو">
+        <button class="کشو-بستن" aria-label="بستن">×</button>
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره ما</a>
+        <a href="works.html">پروژه‌ها</a>
+        <a href="blog.html">نشریه</a>
+        <a href="services.html">خدمات</a>
+        <a href="gallery.html">گالری</a>
+        <a href="contact.html">ارتباط با ما</a>
+    </aside>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="قهرمان" style="min-height:55vh; padding-top:160px;">
+            <div class="جام" style="text-align:center;">
+                <span class="قهرمان-برچسب">— نشریه —</span>
+                <h1 style="font-size:clamp(2.4rem,8vw,6rem); margin:20px 0;">
+                    <span style="display:block;">جستارهایی در</span>
+                    <span style="display:block; color:transparent; -webkit-text-stroke:2px var(--زر); font-style:italic;">مرزِ هنر و محاسبه.</span>
+                </h1>
+                <p style="max-width:720px; margin:0 auto; font-size:17px;">
+                    نوشته‌ها، یادداشت‌ها و جستارهای کوتاه درباره‌ی هنر رقومی،
+                    هوش مصنوعی، بلاک‌چین، فلسفه‌ی داده و چیزهایی که در
+                    کارگاه ما می‌گذرد.
+                </p>
+            </div>
+        </section>
+
+        <!-- FEATURED ARTICLE -->
+        <section class="بخش آشکار" style="padding-top:40px;">
+            <div class="جام">
+
+                <article class="ویژه">
+                    <div class="ویژه-تصویر">
+                        <span class="ویژه-برچسب-ویژه">ویژه</span>
+                        <img src="assets/TRX_Forecast_s.png" alt="پیش‌بینی ترون">
+                    </div>
+                    <div class="ویژه-گفتار">
+                        <div class="ویژه-متا">
+                            <span class="دسته">هوش مصنوعی</span>
+                            <span>۱۴۰۴/۰۷/۲۲</span>
+                            <span>·</span>
+                            <span>۹ دقیقه</span>
+                        </div>
+                        <h2>
+                            چرا <em>پیش‌بینی</em> قیمت رمزارز، هنری است در مرزِ ریاضیات و شهود؟
+                        </h2>
+                        <p>
+                            پیش‌بینی قیمت رمزارزهایی مانند ترون (TRX)، تنها یک
+                            مسئله‌ی آماری نیست. در این یادداشت، از تجربه‌ی ساخت
+                            سامانه‌ی TRX Forecast می‌گوییم — از داده‌های خام،
+                            از مدل‌های LSTM، و از لحظه‌ای که یک الگوریتم، روندِ
+                            بازار را «حس» می‌کند.
+                        </p>
+                        <a href="#مقاله-ویژه" class="خواندن" data-مقاله="ویژه">
+                            خواندنِ جستار
+                            <span style="font-size:18px;">←</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- FILTERS -->
+                <div class="گالری-فیلتر" style="margin-top:20px;">
+                    <button class="فیلتر-دکمه فعال" data-فیلتر="همه">همه</button>
+                    <button class="فیلتر-دکمه" data-فیلتر="هنر">هنر</button>
+                    <button class="فیلتر-دکمه" data-فیلتر="داده">داده</button>
+                    <button class="فیلتر-دکمه" data-فیلتر="هوش">هوش مصنوعی</button>
+                    <button class="فیلتر-دکمه" data-فیلتر="بلاک‌چین">بلاک‌چین</button>
+                </div>
+
+                <!-- ARTICLES GRID -->
+                <div class="جستارها" style="margin-top:30px;">
+
+                    <article class="جستار" data-دسته="بلاک‌چین" data-مقاله="mlabchain">
+                        <div class="جستار-تصویر">
+                            <img src="assets/MLabChain_v3_Banner.png" alt="MLabChain" loading="lazy">
+                            <span class="جستار-دسته">بلاک‌چین</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۴/۰۷/۰۵ · ۷ دقیقه</div>
+                            <h3>MLabChain: وقتی آزمایشگاه به زنجیره گره می‌خورد</h3>
+                            <p>
+                                از ایده‌ی اولیه در سرن تا سامانه‌ی Train-Record-Verify —
+                                روایتی از همکاریِ بلاک‌چین و علمِ باز.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>محمد رضایی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="هنر" data-مقاله="hana">
+                        <div class="جستار-تصویر">
+                            <img src="assets/Hana_the_kitten.jpeg" alt="هانا" loading="lazy">
+                            <span class="جستار-دسته">هنر</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۱۲/۱۸ · ۵ دقیقه</div>
+                            <h3>هانا: نامی که از یک بچه‌گربه آمد</h3>
+                            <p>
+                                چرا استودیوی ما به نام یک گربه نام‌گذاری شده؟
+                                روایتی کوتاه از پیوندِ نام و اندیشه در ص.ر.ه.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>تیم هانا</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="هوش" data-مقاله="gan">
+                        <div class="جستار-تصویر">
+                            <img src="assets/DHA_Vision.png" alt="GAN" loading="lazy">
+                            <span class="جستار-دسته">هوش مصنوعی</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۱۱/۲۷ · ۱۱ دقیقه</div>
+                            <h3>GAN چیست و چرا هنرمندان به آن دل بسته‌اند؟</h3>
+                            <p>
+                                نگاهی غیرفنی به شبکه‌های مولد رقابتی — از
+                                ایده‌ی بازی و رقابت تا تولد تصاویری که
+                                هیچ‌کس قبلاً ندیده.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>سارا کریمی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="داده" data-مقاله="data-art">
+                        <div class="جستار-تصویر">
+                            <img src="assets/DHA_logo.png" alt="هنر داده" loading="lazy">
+                            <span class="جستار-دسته">داده</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۱۰/۱۴ · ۸ دقیقه</div>
+                            <h3>هنرِ داده: وقتی عدد به تصویر بدل می‌شود</h3>
+                            <p>
+                                چطور از دلِ میلیون‌ها نقطه‌ی داده، تصویری زیبا
+                                و معناور بسازیم؟ سفری در مرزِ آماریک و
+                                زیبایی‌شناسی.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>علی نیک‌پور</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="هنر" data-مقاله="eslimi">
+                        <div class="جستار-تصویر">
+                            <img src="assets/DHA_neon.png" alt="اسلیمی" loading="lazy">
+                            <span class="جستار-دسته">هنر</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۰۹/۰۳ · ۶ دقیقه</div>
+                            <h3>اسلیمی و ختایی: همنشینیِ سنت و کد</h3>
+                            <p>
+                                نقوش کهن ایرانی، وقتی با ریاضیاتِ الگوریتمی
+                                بازتولید می‌شوند، چگونه هویت خود را حفظ می‌کنند؟
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>تیم هانا</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="بلاک‌چین" data-مقاله="nft">
+                        <div class="جستار-تصویر">
+                            <img src="assets/opensea.io.jpeg" alt="NFT" loading="lazy">
+                            <span class="جستار-دسته">بلاک‌چین</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۰۸/۱۲ · ۹ دقیقه</div>
+                            <h3>NFT چیست؟ راهنمای هنرمندان و کلکسیونرها</h3>
+                            <p>
+                                از مفهوم توکنِ غیرقابل‌معاوضه تا فرآیند
+                                ضربِ اثر — راهنمایی کاربردی برای ورود به
+                                بازار هنرِ رقومی.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>نیما شریفی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="داده" data-مقاله="viz">
+                        <div class="جستار-تصویر">
+                            <img src="assets/DHA_Vision.png" alt="تجسم داده" loading="lazy">
+                            <span class="جستار-دسته">داده</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۰۷/۲۹ · ۱۰ دقیقه</div>
+                            <h3>تجسم داده: پنج اصل برای روایت مؤثر</h3>
+                            <p>
+                                چطور داده را طوری بنویسیم که هم داستان بگوید
+                                و هم صادق بماند؟ پنج اصلی که هر تحلیل‌گر باید بداند.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>لیلا حسینی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="هوش" data-مقاله="lstm">
+                        <div class="جستار-تصویر">
+                            <img src="assets/TRX_Forecast_s.png" alt="LSTM" loading="lazy">
+                            <span class="جستار-دسته">هوش مصنوعی</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۰۶/۱۰ · ۱۲ دقیقه</div>
+                            <h3>شبکه‌های LSTM و پیش‌بینی سری‌های زمانی</h3>
+                            <p>
+                                چرا شبکه‌های بازگشتی بلندمدت برای داده‌های مالی
+                                مناسب‌ترند؟ نگاهی کاربردی به معماری LSTM
+                                و کاربرد آن در تحلیل بازار.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>محمد رضایی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="جستار" data-دسته="هنر" data-مقاله="music">
+                        <div class="جستار-تصویر">
+                            <img src="assets/DHA_logo.png" alt="موسیقی الگوریتمی" loading="lazy">
+                            <span class="جستار-دسته">هنر</span>
+                        </div>
+                        <div class="جستار-بدنه">
+                            <div class="جستار-متا">۱۴۰۳/۰۵/۱۷ · ۷ دقیقه</div>
+                            <h3>موسیقی الگوریتمی و دستگاه‌های ایرانی</h3>
+                            <p>
+                                اگر ردیفِ موسیقی ایرانی را به الگوریتم بسپاریم،
+                                چه چیزی بازمی‌گردد؟ کاوشی تجربی در پیوند
+                                سنت و کد.
+                            </p>
+                            <div class="جستار-پایان">
+                                <span>آرش مرادی</span>
+                                <span class="خواندن-بیشتر">خواندن ←</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <div class="خبرنامه">
+                    <h3>هفته‌نامه‌ی هانا</h3>
+                    <p>
+                        هر جمعه، یک جستار تازه، یک پروژه‌ی منتخب و یک نکته‌ی
+                        فنی — مستقیم در ایمیل شما. بدون تبلیغ، بدون شلوغی.
+                    </p>
+                    <form class="خبرنامه-فرم" onsubmit="event.preventDefault(); alert('سپاس از عضویت شما در هفته‌نامه‌ی هانا!');">
+                        <input type="email" placeholder="ایمیل شما" required>
+                        <button type="submit" class="دکمه دکمه-اصلی">عضویت</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ARTICLE MODAL -->
+    <div class="نشریه-پنجره" id="نشریه-پنجره">
+        <div class="نشریه-کارت">
+            <button class="نشریه-بستن" aria-label="بستن">×</button>
+            <h2 id="نشریه-عنوان">عنوان مقاله</h2>
+            <div class="نشریه-متا">
+                <span id="نشریه-نویسنده">نویسنده</span>
+                <span>·</span>
+                <span id="نشریه-تاریخ">تاریخ</span>
+            </div>
+            <img id="نشریه-تصویر" class="نشریه-تصویر" src="" alt="">
+            <div id="نشریه-متن"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="پا-برگ">
+        <div class="جام">
+            <div class="پا-شبکه">
+                <div>
+                    <div class="پا-نشان">
+                        <img src="assets/DHA_logo.png" alt="صنایع رقومی هانا" class="پا-نگاره">
+                        <span>صنایع رقومی هانا®</span>
+                    </div>
+                    <p class="پا-زیرنویس">
+                        نشریه‌ی جستارها در مرز هنر و فناوری. هر هفته یک یادداشت تازه.
+                    </p>
+                </div>
+                <div class="پا-ستون">
+                    <h4>پیوندها</h4>
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">درباره</a>
+                    <a href="works.html">پروژه‌ها</a>
+                    <a href="services.html">خدمات</a>
+                    <a href="gallery.html">گالری</a>
+                    <a href="contact.html">تماس</a>
+                </div>
+                <div class="پا-ستون">
+                    <h4>دسته‌ها</h4>
+                    <a href="#" onclick="return false;">هنر</a>
+                    <a href="#" onclick="return false;">داده</a>
+                    <a href="#" onclick="return false;">هوش مصنوعی</a>
+                    <a href="#" onclick="return false;">بلاک‌چین</a>
+                </div>
+            </div>
+            <div class="حقوق">
+                <span>© ۲۰۲۶ صنایع رقومی هانا®</span>
+                <span>محاسبه به‌مثابه رسانه‌ی آفرینش</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ===== BLOG-SPECIFIC INTERACTIONS =====
+        (function () {
+            'use strict';
+
+            // Article content database
+            const مقاله‌ها = {
+                'ویژه': {
+                    عنوان: 'چرا پیش‌بینی قیمت رمزارز، هنری است در مرزِ ریاضیات و شهود؟',
+                    نویسنده: 'محمد رضایی',
+                    تاریخ: '۱۴۰۴/۰۷/۲۲',
+                    تصویر: 'assets/TRX_Forecast_s.png',
+                    متن: `
+                        <p>وقتی از <strong>پیش‌بینی قیمت رمزارز</strong> سخن می‌گوییم، نخستین چیزی که به ذهن می‌آید «عدم قطعیت» است. بازارهای رمزارز، برخلاف بورس‌های سنتی، در معرض تأثیرات شدید احساسات جمعی، توییت‌های شبانه و رویدادهای ناگهانی قرار دارند.</p>
+                        <p>اما در دلِ همین بی‌نظمی، الگوهایی نهفته است که می‌توان آن‌ها را با ابزارهای درست آشکار کرد. <strong>TRX Forecast</strong> تلاشی است برای کشفِ همین الگوها.</p>
+                        <h3>از داده‌ی خام تا مدل</h3>
+                        <p>نخستین گام، گردآوری داده‌ی تاریخی قیمت، حجم معاملات، و شاخص‌های تکنیکال از منابع گوناگون است. سپس این داده‌ها پاک‌سازی، مقیاس‌پذیر و به پنجره‌های زمانی تقسیم می‌شوند.</p>
+                        <blockquote>«آنچه بازار نمی‌گوید، در داده‌ها پنهان است.»</blockquote>
+                        <h3>معماری LSTM</h3>
+                        <p>شبکه‌های <strong>LSTM</strong> به دلیل توانایی در نگه‌داشتن حافظه‌ی بلندمدت، برای سری‌های زمانی مالی بسیار مناسب‌اند. در TRX Forecast، از ترکیبی از LSTM و لایه‌های Dense استفاده می‌کنیم تا هم روندِ کوتاه‌مدت و هم الگوهای بلندمدت را بیاموزیم.</p>
+                        <h3>آیا این کار هنر است؟</h3>
+                        <p>پاسخ ما روشن است: بله. هر مدلی که می‌آموزیم، در واقع بازتابی از جهانی است که خودمان می‌سازیم — انتخابی از ویژگی‌ها، وزن‌ها و فرض‌ها. این دقیقاً همان جایی است که علم به هنر می‌رسد.</p>
+                        <p>کد کامل پروژه در <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" style="color:var(--فیروزه); border-bottom:1px solid;">گیت‌هاب</a> در دسترس است.</p>
+                    `
+                },
+                'mlabchain': {
+                    عنوان: 'MLabChain: وقتی آزمایشگاه به زنجیره گره می‌خورد',
+                    نویسنده: 'محمد رضایی',
+                    تاریخ: '۱۴۰۴/۰۷/۰۵',
+                    تصویر: 'assets/MLabChain_v3_Banner.png',
+                    متن: `
+                        <p>در آزمایشگاه‌های علمی بزرگ، مسأله‌ای همیشگی وجود دارد: <strong>چگونه اطمینان حاصل کنیم که یک مدل یادگیری ماشین، همان چیزی است که ادعا می‌شود؟</strong></p>
+                        <p><strong>MLabChain</strong> پاسخ ما به این پرسش است — بستری که هر مرحله از چرخه‌ی حیاتِ یک مدل (آموزش، ثبت، بازبینی) را در بلاک‌چین ثبت می‌کند.</p>
+                        <h3>Train · Record · Verify</h3>
+                        <p>سه کلمه، یک فلسفه. ابتدا مدل آموزش داده می‌شود، سپس پارامترها و فراپارامترها در زنجیره ثبت می‌شوند، و در نهایت هر کسی می‌تواند صحت آن را بازبینی کند.</p>
+                        <blockquote>«علمِ باز، تنها زمانی ممکن است که ابزارهایش باز باشند.»</blockquote>
+                        <p>پروژه در همکاری با اکوسیستم متن‌باز <strong>CERN</strong> توسعه یافته و در <a href="https://gitlab.cern.ch/abavarch/labchain" target="_blank" rel="noopener" style="color:var(--فیروزه); border-bottom:1px solid;">گیت‌لب سرن</a> و <a href="https://github.com/DigitalHanaArts/MLabChain" target="_blank" rel="noopener" style="color:var(--فیروزه); border-bottom:1px solid;">گیت‌هاب</a> در دسترس است.</p>
+                    `
+                },
+                'hana': {
+                    عنوان: 'هانا: نامی که از یک بچه‌گربه آمد',
+                    نویسنده: 'تیم هانا',
+                    تاریخ: '۱۴۰۳/۱۲/۱۸',
+                    تصویر: 'assets/Hana_the_kitten.jpeg',
+                    متن: `
+                        <p>نام‌گذاری یک استودیو، همیشه تصمیمی دشوار است. اما در مورد ما، تصمیم ساده بود: <strong>هانا</strong>.</p>
+                        <p>هانا بچه‌گربه‌ای است که پیش از هر خط کد و هر الگوریتم، در زندگی ما حضور داشت. وقتی شروع به ساختن سامانه‌های محاسباتی کردیم، خواستیم یادمان بماند که در میان همه‌ی پیچیدگی، باید چیزی انسانی و اندام‌وار باقی بماند.</p>
+                        <blockquote>«فناوری، ابزاری است در خدمت انسان — نه وارونه.»</blockquote>
+                        <p>امروز تصاویر و توکن‌های هانا، بخشی جدایی‌ناپذیر از هویت بصری صنایع رقومی هانا هستند و در گالری همین سایت قابل مشاهده‌اند.</p>
+                    `
+                },
+                'gan': {
+                    عنوان: 'GAN چیست و چرا هنرمندان به آن دل بسته‌اند؟',
+                    نویسنده: 'سارا کریمی',
+                    تاریخ: '۱۴۰۳/۱۱/۲۷',
+                    تصویر: 'assets/DHA_Vision.png',
+                    متن: `
+                        <p><strong>شبکه‌های مولد رقابتی</strong> یا GAN، یکی از زیباترین ایده‌های سال‌های اخیر در حوزه‌ی هوش مصنوعی است. ایده ساده است: دو شبکه در برابر هم قرار می‌گیرند — یکی می‌سازد، دیگری تشخیص می‌دهد.</p>
+                        <h3>هنرمند و منتقد، در یک بازی</h3>
+                        <p>شبکه‌ی «مولد» تلاش می‌کند تصاویری بسازد که از تصاویر واقعی قابل تشخیص نباشند. شبکه‌ی «تمایزگر» می‌کوشد آن‌ها را تشخیص دهد. این بازی، در نهایت به تولد تصاویری می‌انجامد که هیچ‌کس قبلاً ندیده است.</p>
+                        <p>هنرمندان به این تکنیک دل بسته‌اند چون به آن‌ها اجازه می‌دهد مرزهای تخیل را کمی فراتر ببرند — بی‌آنکه لازم باشد مهارتِ نقاشی کلاسیک داشته باشند.</p>
+                    `
+                },
+                'data-art': {
+                    عنوان: 'هنرِ داده: وقتی عدد به تصویر بدل می‌شود',
+                    نویسنده: 'علی نیک‌پور',
+                    تاریخ: '۱۴۰۳/۱۰/۱۴',
+                    تصویر: 'assets/DHA_logo.png',
+                    متن: `
+                        <p>هر عدد، یک داستان است. هر مجموعه‌داده، یک جهان. پرسش <strong>هنرِ داده</strong> این است: چگونه می‌توان این جهان‌ها را به تصویر کشید؟</p>
+                        <h3>پنج اصل برای تجسمِ مؤثر</h3>
+                        <p>نخست، <strong>سادگی</strong>: کمتر، بیشتر است. دوم، <strong>صداقت</strong>: مقیاس‌ها نباید گمراه‌کننده باشند. سوم، <strong>رنگ</strong>: رنگ باید معنا حمل کند، نه تزئین. چهارم، <strong>زمینه</strong>: هر نمودار نیاز به روایت دارد. و پنجم، <strong>زیبایی</strong>: تجسمِ داده، اگر زیبا نباشد، دیده نمی‌شود.</p>
+                        <blockquote>«داده، اگر روایت نشود، فقط صدا است.»</blockquote>
+                    `
+                },
+                'eslimi': {
+                    عنوان: 'اسلیمی و ختایی: همنشینیِ سنت و کد',
+                    نویسنده: 'تیم هانا',
+                    تاریخ: '۱۴۰۳/۰۹/۰۳',
+                    تصویر: 'assets/DHA_neon.png',
+                    متن: `
+                        <p>نقوشِ <strong>اسلیمی</strong> و <strong>ختایی</strong>، از کهن‌ترین میراث هنری ایران هستند. این نقوش، نه فقط تزئینی، بلکه بیانگر نوعی نگاه به جهان‌اند: پیوند، تکرار، بی‌نهایت.</p>
+                        <h3>وقتی ریاضیات، نقوش را بازتولید می‌کند</h3>
+                        <p>در کارگاه ما، تلاش کرده‌ایم این نقوش را با ابزارهای الگوریتمی بازتولید کنیم — نه برای جایگزینی دستِ استاد، بلکه برای کشفِ ریاضیاتی که در پسِ آن‌ها پنهان است.</p>
+                        <p>نتیجه، آثاری است که هم ریشه‌ی سنتی دارند و هم صدایی امروزی — پلی میان دو زمان.</p>
+                    `
+                },
+                'nft': {
+                    عنوان: 'NFT چیست؟ راهنمای هنرمندان و کلکسیونرها',
+                    نویسنده: 'نیما شریفی',
+                    تاریخ: '۱۴۰۳/۰۸/۱۲',
+                    تصویر: 'assets/opensea.io.jpeg',
+                    متن: `
+                        <p><strong>توکن غیرقابل‌معاوضه (NFT)</strong>، یک دارایی رقومیِ یکتاست که مالکیت آن در بلاک‌چین ثبت می‌شود. برخلاف بیت‌کوین که هر واحدش با واحد دیگر یکسان است، هر NFT منحصربه‌فرد است.</p>
+                        <h3>چگونه NFT بسازیم؟</h3>
+                        <p>پنج گام اصلی: انتخاب بلاک‌چین (معمولاً اتریوم)، ساختن کیف پول، بارگذاری اثر در پلتفرم (مثل OpenSea)، تعیین قیمت، و ضرب (Mint).</p>
+                        <h3>آیا ارزش سرمایه‌گذاری دارد؟</h3>
+                        <p>پاسخ صادقانه: بستگی دارد. مثل هر بازار دیگری، NFT هم ریسک دارد. کلید موفقیت، درک ارزش هنریِ اثر و پیوستن به جامعه‌ای است که آن را می‌فهمد.</p>
+                    `
+                },
+                'viz': {
+                    عنوان: 'تجسم داده: پنج اصل برای روایت مؤثر',
+                    نویسنده: 'لیلا حسینی',
+                    تاریخ: '۱۴۰۳/۰۷/۲۹',
+                    تصویر: 'assets/DHA_Vision.png',
+                    متن: `
+                        <p>تجسمِ داده، هنرِ ترجمه‌ی اعداد به داستان است. اما این ترجمه، قواعدی دارد که نادیده‌گرفتنشان به گمراهی می‌انجامد.</p>
+                        <h3>اصل یکم: مخاطب را بشناسید</h3>
+                        <p>نمودار برای متخصص با نمودار برای عموم، دو چیز کاملاً متفاوت است.</p>
+                        <h3>اصل دوم: زمینه را فراموش نکنید</h3>
+                        <p>هر عدد، تنها در بستر خود معنا دارد. نموداری بدون زمینه، شبیه جمله‌ای است بدون فعل.</p>
+                        <p>و سه اصل دیگر که در این مقاله به تفصیل بررسی می‌کنیم...</p>
+                    `
+                },
+                'lstm': {
+                    عنوان: 'شبکه‌های LSTM و پیش‌بینی سری‌های زمانی',
+                    نویسنده: 'محمد رضایی',
+                    تاریخ: '۱۴۰۳/۰۶/۱۰',
+                    تصویر: 'assets/TRX_Forecast_s.png',
+                    متن: `
+                        <p>شبکه‌های <strong>حافظه‌ی کوتاه‌مدت بلند</strong> یا LSTM، یکی از پرکاربردترین معماری‌ها در تحلیل سری‌های زمانی هستند. دلیلش ساده است: این شبکه‌ها می‌توانند اطلاعات را برای مدت‌های طولانی نگه دارند.</p>
+                        <h3>مشکل حافظه‌ی کوتاه</h3>
+                        <p>شبکه‌های عصبی معمولی، در مواجهه با داده‌های طولانی، اطلاعات گذشته را از دست می‌دهند. LSTM با معرفی «دروازه‌ها» (Gates) این مشکل را حل می‌کند.</p>
+                        <blockquote>«حافظه، تنها چیزی است که ما را از گذشته به آینده می‌رساند.»</blockquote>
+                        <p>کاربرد این معماری در پیش‌بینی قیمت رمزارز، در پروژه‌ی <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" style="color:var(--فیروزه); border-bottom:1px solid;">TRX Forecast</a> به‌طور عملی پیاده‌سازی شده است.</p>
+                    `
+                },
+                'music': {
+                    عنوان: 'موسیقی الگوریتمی و دستگاه‌های ایرانی',
+                    نویسنده: 'آرش مرادی',
+                    تاریخ: '۱۴۰۳/۰۵/۱۷',
+                    تصویر: 'assets/DHA_logo.png',
+                    متن: `
+                        <p>موسیقی ایرانی، با دستگاه‌ها و ردیف‌هایش، یکی از پیچیده‌ترین نظام‌های موسیقایی جهان است. پرسشی که ما را مشغول کرده: <strong>آیا می‌توان این نظام را به الگوریتم سپرد؟</strong></p>
+                        <h3>ردیف، به‌مثابه داده</h3>
+                        <p>هر گوشه‌ی ردیف، یک الگوی ملودیک است که می‌توان آن را به‌صورت عددی نمایش داد. با این نمایش، می‌توان الگوهای تازه‌ای ساخت که هم ریشه‌ی سنتی دارند و هم بدیع‌اند.</p>
+                        <p>این پروژه، هنوز در مراحل نخستین است — اما نتایج اولیه شگفت‌انگیز است.</p>
+                    `
+                }
+            };
+
+            // Filter buttons
+            document.querySelectorAll('.گالری-فیلتر .فیلتر-دکمه').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const دسته = btn.dataset.فیلتر;
+                    document.querySelectorAll('.گالری-فیلتر .فیلتر-دکمه').forEach(b => b.classList.remove('فعال'));
+                    btn.classList.add('فعال');
+
+                    document.querySelectorAll('.جستار[data-دسته]').forEach(جستار => {
+                        if (دسته === 'همه' || جستار.dataset.دسته === دسته) {
+                            جستار.classList.remove('پنهان');
+                        } else {
+                            جستار.classList.add('پنهان');
+                        }
+                    });
+                });
+            });
+
+            // Modal
+            const پنجره = document.getElementById('نشریه-پنجره');
+            const عنوان = document.getElementById('نشریه-عنوان');
+            const نویسنده = document.getElementById('نشریه-نویسنده');
+            const تاریخ = document.getElementById('نشریه-تاریخ');
+            const تصویر = document.getElementById('نشریه-تصویر');
+            const متن = document.getElementById('نشریه-متن');
+            const بستن = پنجره?.querySelector('.نشریه-بستن');
+
+            function بازکردن(شناسه) {
+                const مقاله = مقاله‌ها[شناسه];
+                if (!مقاله) return;
+                عنوان.textContent = مقاله.عنوان;
+                نویسنده.textContent = مقاله.نویسنده;
+                تاریخ.textContent = مقاله.تاریخ;
+                تصویر.src = مقاله.تصویر;
+                تصویر.alt = مقاله.عنوان;
+                متن.innerHTML = مقاله.متن;
+                پنجره.classList.add('باز');
+                document.body.style.overflow = 'hidden';
+                پنجره.scrollTop = 0;
+            }
+
+            function بستنپنجره() {
+                پنجره.classList.remove('باز');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.جستار').forEach(جستار => {
+                جستار.addEventListener('click', () => {
+                    بازکردن(جستار.dataset.مقاله);
+                });
+            });
+
+            document.querySelectorAll('.خواندن[data-مقاله]').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    بازکردن(el.dataset.مقاله);
+                });
+            });
+
+            if (بستن) بستن.addEventListener('click', بستنپنجره);
+            if (پنجره) پنجره.addEventListener('click', (e) => {
+                if (e.target === پنجره) بستنپنجره();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') بستنپنجره();
+            });
+
+        })();
+    </script>
+</body>
+</html>

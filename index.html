@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="صنایع رقومی هانا® — آفرینش‌گری محاسباتی. هنر، داده، هوش مصنوعی، بلاک‌چین. میراث کهن ایران، بیان رقومی امروز.">
+    <meta name="theme-color" content="#0a0f16">
+    <meta property="og:title" content="صنایع رقومی هانا® — [سامانه_هک‌پذیر]">
+    <meta property="og:description" content="هنر × داده × هوش × بلاک‌چین — پروتکل تعاملی">
+    <meta property="og:image" content="assets/DHA_logo.png">
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+    <title>ص.ر.ه. — [حالت_تعاملی]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Estedad:wght@300;400;500;600;700&family=Lalezar&family=Gulzar&family=Markazi+Text:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=DM+Mono:wght@300;400;500&family=Archivo+Black&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           ص.ر.ه. — پروتکل انتزاعی · نسخه فارسی
+           (فیروزه · لاجورد · زر · زعفران · انار)
+           ===================================================== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --void: #050507;
+            --void-2: #0a0a0f;
+            --void-3: #12121a;
+            --bone: #f5f5f7;
+            --ash: #8a8a93;
+            --steel: #6a6a75;
+            --smoke: #4a4a55;
+
+            /* فیروزه / لاجورد / زر / زعفران / انار */
+            --cyber-cyan: #29d4d4;
+            --cyber-cyan-deep: #00b8b8;
+            --cyber-magenta: #e8447a;
+            --cyber-acid: #d4c54a;
+            --cyber-yellow: #d9a521;
+            --cyber-red: #d42a2a;
+            --lapis: #2a4a9c;
+            --paper: #f0e6cf;
+            --ink: #0a0a0a;
+
+            --border: rgba(255,255,255,.12);
+            --border-dark: rgba(255,255,255,.05);
+        }
+
+        * { -webkit-tap-highlight-color: transparent; }
+        button, a, .btn-cyber, .subsys-card, .collage > figure, .dock-btn {
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        html { scroll-behavior: smooth; background: var(--void); direction: rtl; }
+
+        body {
+            background: var(--void);
+            color: var(--bone);
+            font-family: "Vazirmatn", "Estedad", "Tahoma", sans-serif;
+            overflow-x: hidden;
+            cursor: crosshair;
+            line-height: 1.9;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9997; opacity: .05;
+            background-image: repeating-conic-gradient(from 0deg,
+                rgba(240,230,207,.12) 0deg, rgba(0,0,0,.10) 1deg,
+                rgba(240,230,207,.06) 2deg, rgba(0,0,0,.06) 3deg);
+            mix-blend-mode: overlay;
+        }
+        body::after {
+            content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9996;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 12%, rgba(41,212,212,.10), transparent 55%),
+                radial-gradient(ellipse 55% 45% at 84% 32%, rgba(42,74,156,.10), transparent 55%),
+                radial-gradient(ellipse 50% 35% at 50% 92%, rgba(212,197,74,.08), transparent 60%),
+                repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(240,230,207,.012) 3px, transparent 4px);
+            mix-blend-mode: screen;
+        }
+
+        ::selection { background: var(--cyber-cyan); color: var(--void); }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        button { font-family: inherit; cursor: pointer; }
+
+        h1, h2, h3, h4 {
+            font-family: "Lalezar", "Markazi Text", serif;
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        /* ============ WARNING TAPE ============ */
+        .warning-tape {
+            position: fixed; top: 0; left: 0; right: 0; height: 8px;
+            background: repeating-linear-gradient(-45deg, var(--cyber-yellow) 0, var(--cyber-yellow) 12px, #000 12px, #000 24px);
+            z-index: 10002; box-shadow: 0 0 20px rgba(217,165,33,.35);
+        }
+
+        /* ============ HEADER ============ */
+        .header {
+            position: fixed; top: 8px; left: 0; right: 0; z-index: 1000;
+            background: rgba(10,15,22,.88);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            padding: 0 clamp(16px, 4vw, 60px);
+            display: flex; align-items: center; justify-content: space-between;
+            height: 66px; transition: all .3s;
+        }
+        .header::after {
+            content: ""; position: absolute; bottom: -4px; left: 0; width: 100%; height: 4px;
+            background: repeating-linear-gradient(90deg,
+                var(--cyber-cyan) 0 8px, transparent 8px 12px,
+                var(--cyber-acid) 12px 18px, transparent 18px 22px,
+                var(--lapis) 22px 30px, transparent 30px 34px);
+            opacity: .7;
+        }
+        .brand {
+            display: flex; align-items: center; gap: 12px;
+            font-family: "Lalezar", serif; font-size: 20px; color: var(--bone);
+        }
+        .brand img { width: 36px; height: 36px; object-fit: contain; filter: brightness(1.15); transition: transform .3s; }
+        .brand:hover img { transform: rotate(-10deg) scale(1.1); }
+        .brand .brand-tag { color: var(--cyber-cyan); font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: .1em; }
+
+        .nav-links {
+            display: flex; gap: 26px; align-items: center;
+            font-family: "Vazirmatn", sans-serif; font-size: 13px; font-weight: 500;
+        }
+        .nav-links a { color: var(--ash); transition: color .2s; position: relative; padding: 4px 0; }
+        .nav-links a::before {
+            content: ""; position: absolute; bottom: 0; right: 0; width: 0; height: 1px;
+            background: var(--cyber-acid); transition: width .3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--cyber-acid); }
+        .nav-links a:hover::before, .nav-links a.active::before { width: 100%; }
+
+        .sys-status {
+            display: flex; align-items: center; gap: 8px;
+            font-family: "Space Mono", monospace; font-size: 10px;
+            color: var(--cyber-acid); letter-spacing: .15em;
+            direction: ltr;
+        }
+        .status-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--cyber-acid); box-shadow: 0 0 10px var(--cyber-acid);
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:.5; transform:scale(1.6);} }
+
+        /* Language dropdown */
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .lang-btn {
+            display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+            border: 1px solid var(--border); background: transparent;
+            font-family: "Vazirmatn", "Space Mono", monospace; font-size: 12px;
+            color: var(--bone); transition: all .2s; cursor: pointer;
+        }
+        .lang-btn:hover { background: var(--cyber-cyan); color: var(--void); border-color: var(--cyber-cyan); }
+        .lang-menu {
+            position: absolute; top: calc(100% + 8px); left: 0; min-width: 170px;
+            background: var(--void-2); border: 1px solid var(--border);
+            opacity: 0; visibility: hidden; transform: translateY(-4px); transition: all .2s;
+            z-index: 1001; max-height: 400px; overflow-y: auto;
+        }
+        .lang-menu a {
+            display: block; padding: 10px 16px;
+            font-family: "Vazirmatn", sans-serif; font-size: 13px;
+            color: var(--ash); transition: all .2s; border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+        .lang-menu a:hover { background: var(--void-3); color: var(--cyber-cyan); }
+        .lang-menu a.active { background: var(--cyber-cyan); color: var(--void); }
+        .lang-input:checked ~ .lang-menu, .lang-dropdown:focus-within .lang-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        .menu-btn {
+            display: none; background: transparent; border: 1px solid var(--border);
+            color: var(--bone); padding: 8px 14px; font-size: 20px;
+            transition: all .2s;
+        }
+        .menu-btn:hover { background: var(--cyber-cyan); color: var(--void); }
+
+        /* Drawer */
+        .drawer {
+            position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100vh;
+            background: var(--void-2); border-left: 1px solid var(--border);
+            z-index: 2000; transition: right .3s; padding: 90px 32px 32px; overflow-y: auto;
+        }
+        .drawer.open { right: 0; }
+        .drawer-close {
+            position: absolute; top: 20px; left: 20px;
+            background: transparent; border: 1px solid var(--border);
+            color: var(--bone); width: 40px; height: 40px; font-size: 22px;
+        }
+        .drawer-close:hover { background: var(--cyber-red); border-color: var(--cyber-red); }
+        .drawer a {
+            display: block; padding: 16px 0;
+            font-family: "Lalezar", serif; font-size: 20px;
+            color: var(--bone); border-bottom: 1px solid var(--border-dark);
+            transition: all .2s;
+        }
+        .drawer a:hover { color: var(--cyber-cyan); padding-right: 12px; }
+        .drawer-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,.7);
+            backdrop-filter: blur(4px); z-index: 1999;
+            opacity: 0; visibility: hidden; transition: all .3s;
+        }
+        .drawer-overlay.open { opacity: 1; visibility: visible; }
+
+        /* ============ HERO ============ */
+        .hero-cyber {
+            min-height: 100vh; padding: 120px 0 60px; position: relative; overflow: hidden;
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 30%, rgba(232,68,122,.10), transparent 60%),
+                radial-gradient(ellipse 50% 50% at 80% 60%, rgba(41,212,212,.10), transparent 60%);
+        }
+        .hero-cyber::before {
+            content: ""; position: absolute; inset: 0;
+            background-image: radial-gradient(circle, rgba(41,212,212,.08) 1px, transparent 1.5px);
+            background-size: 24px 24px; opacity: .4; pointer-events: none;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+        }
+        .hero-cyber::after {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(41,212,212,.025) 3px, rgba(41,212,212,.025) 4px);
+            pointer-events: none; z-index: 1;
+        }
+        .container { width: min(calc(100% - 40px), 1400px); margin: auto; position: relative; }
+        .hero-cyber .container { z-index: 2; }
+        .hero-cyber-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
+
+        .hero-cyber-tag {
+            display: inline-block; font-family: "Space Mono", monospace; font-size: 11px;
+            letter-spacing: .15em; color: var(--cyber-magenta); padding: 6px 14px;
+            border: 1px solid var(--cyber-magenta); background: rgba(232,68,122,.05);
+            margin-bottom: 20px; direction: ltr;
+        }
+
+        .hero-epigraph {
+            font-family: "Gulzar", "Markazi Text", serif;
+            font-size: 20px; line-height: 1.7; color: #cfc3a4;
+            margin-bottom: 28px; padding-right: 20px;
+            border-right: 3px solid var(--cyber-acid);
+        }
+        .hero-epigraph .attribution {
+            display: block; font-family: "Vazirmatn", sans-serif;
+            font-size: 12px; letter-spacing: .15em; color: var(--steel);
+            margin-top: 10px;
+        }
+
+        .glitch-title {
+            font-family: "Lalezar", serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 1.05; font-weight: 400;
+            margin: 20px 0; position: relative;
+            letter-spacing: 0;
+        }
+        .glitch-line { display: block; position: relative; }
+        .glitch-line::before, .glitch-line::after {
+            content: attr(data-text); position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; background: var(--void);
+            pointer-events: none;
+        }
+        .glitch-line::before { color: var(--cyber-magenta); animation: glitch-a 4s infinite steps(1, end); clip-path: inset(0 0 55% 0); z-index: -1; }
+        .glitch-line::after { color: var(--cyber-cyan); animation: glitch-b 3s infinite steps(1, end); clip-path: inset(55% 0 0 0); z-index: -2; }
+        @keyframes glitch-a { 0%,82%,100% { transform: translate(0); } 84% { transform: translate(-4px,-2px); } 86% { transform: translate(4px,2px); } 88% { transform: translate(-2px,1px); } }
+        @keyframes glitch-b { 0%,78%,100% { transform: translate(0); } 80% { transform: translate(4px,2px); } 82% { transform: translate(-4px,-2px); } 84% { transform: translate(2px,-1px); } }
+
+        .hero-cyber-copy {
+            max-width: 580px; font-family: "Estedad", sans-serif; font-size: 16px;
+            line-height: 2.1; color: var(--ash); border-right: 3px solid var(--cyber-cyan);
+            padding-right: 20px; margin-top: 36px;
+        }
+        .hero-cyber-copy strong { color: var(--cyber-acid); font-weight: 700; border-bottom: 2px solid var(--cyber-acid); }
+
+        .hero-cyber-actions { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+        .btn-cyber {
+            display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
+            font-family: "Vazirmatn", sans-serif; font-size: 13px; font-weight: 600;
+            letter-spacing: .05em; text-decoration: none;
+            border: 2px solid var(--cyber-cyan); background: transparent; color: var(--cyber-cyan);
+            transition: all .2s; position: relative; overflow: hidden; cursor: pointer;
+            z-index: 1;
+        }
+        .btn-cyber::before {
+            content: ""; position: absolute; inset: 0; background: var(--cyber-cyan);
+            transform: translateX(-100%); transition: transform .25s; z-index: -1;
+        }
+        .btn-cyber:hover::before { transform: translateX(0); }
+        .btn-cyber:hover { color: var(--void); }
+        .btn-cyber.primary { background: var(--cyber-acid); color: var(--void); border-color: var(--cyber-acid); }
+        .btn-cyber.primary::before { background: var(--cyber-magenta); }
+        .btn-cyber.primary:hover { color: var(--bone); border-color: var(--cyber-magenta); }
+        .btn-cyber:disabled { opacity: .5; cursor: not-allowed; }
+        .btn-cyber.ready { background: var(--cyber-magenta); border-color: var(--cyber-magenta); color: var(--bone); }
+
+        .hero-collage { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: center; }
+        .hero-collage-frame {
+            position: relative; width: min(100%, 460px); aspect-ratio: 1;
+            border: 2px solid var(--cyber-cyan); background: #000; transform: rotate(3deg);
+            box-shadow: -8px 8px 0 var(--cyber-magenta), 8px -8px 0 var(--cyber-acid), 0 0 60px rgba(41,212,212,.3);
+            overflow: hidden;
+        }
+        .hero-collage-frame::before {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(41,212,212,.08) 2px, rgba(41,212,212,.08) 3px);
+            z-index: 2; pointer-events: none; animation: scan-anim 6s linear infinite;
+        }
+        @keyframes scan-anim { 0% { background-position: 0 0; } 100% { background-position: 0 100px; } }
+        .hero-collage-frame img { width: 100%; height: 100%; object-fit: contain; padding: 20px; filter: saturate(1.3) contrast(1.1); }
+
+        .dada-stamp {
+            position: absolute; padding: 6px 14px; border: 2px solid currentColor;
+            font-family: "Space Mono", monospace; font-size: 10px; font-weight: 700;
+            letter-spacing: .15em; background: #000;
+            z-index: 5; pointer-events: none;
+            direction: ltr;
+        }
+        .stamp-1 { top: 10px; right: -20px; color: var(--cyber-magenta); transform: rotate(8deg); }
+        .stamp-2 { top: 40px; left: -30px; color: var(--cyber-acid); transform: rotate(-5deg); }
+        .stamp-3 { bottom: 60px; right: -25px; color: var(--cyber-cyan); transform: rotate(-3deg); }
+        .stamp-4 { bottom: 10px; left: -15px; color: var(--cyber-yellow); transform: rotate(5deg); }
+        .hero-meta-strip {
+            position: absolute; font-family: "Space Mono", monospace; font-size: 9px;
+            letter-spacing: .25em; color: var(--steel); white-space: nowrap;
+            direction: ltr;
+        }
+        .meta-top { top: -30px; left: 50%; transform: translateX(-50%); }
+        .meta-bottom { bottom: -30px; left: 50%; transform: translateX(-50%); }
+
+        /* ============ TICKER ============ */
+        .sys-ticker {
+            overflow: hidden; background: #000;
+            border-top: 2px solid var(--cyber-cyan); border-bottom: 2px solid var(--cyber-cyan);
+            padding: 14px 0; position: relative;
+        }
+        .sys-ticker-track {
+            display: inline-flex; gap: 40px; animation: ticker 30s linear infinite;
+            font-family: "Lalezar", "Vazirmatn", sans-serif; font-size: 17px;
+            color: var(--cyber-acid); letter-spacing: .05em;
+            white-space: nowrap;
+        }
+        .sys-ticker-track span::before { content: "◆ "; color: var(--cyber-magenta); margin-left: 4px; font-size: 12px; }
+        .sys-ticker-track span::after { content: " ◆"; color: var(--cyber-magenta); margin-right: 4px; font-size: 12px; }
+        @keyframes ticker { to { transform: translateX(50%); } }
+
+        /* ============ SECTIONS ============ */
+        .featured-section, .ai-module, .manifesto, .subsystems, .gallery-collage-section, .philosophy-glitch {
+            padding: 120px 0; position: relative;
+            border-bottom: 1px solid var(--border-dark);
+            content-visibility: auto; contain-intrinsic-size: 800px;
+        }
+        .featured-section {
+            background: linear-gradient(180deg, var(--void) 0%, #05050f 50%, var(--void) 100%);
+        }
+        .featured-section::before {
+            content: ""; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(41,212,212,.06), transparent 60%); pointer-events: none;
+        }
+        .featured-label {
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 12px;
+            font-weight: 700; letter-spacing: .1em; color: var(--cyber-magenta);
+            margin-bottom: 20px;
+        }
+        .featured-title {
+            font-family: "Lalezar", serif; font-size: clamp(2.4rem, 6vw, 5rem);
+            line-height: 1.05; margin-bottom: 60px; position: relative;
+        }
+        .featured-title .outline { color: transparent; -webkit-text-stroke: 2px var(--cyber-acid); font-style: italic; }
+
+        /* ============ MLABCHAIN TERMINAL ============ */
+        .mlab-terminal {
+            border: 2px solid var(--cyber-cyan); background: #000; position: relative; overflow: hidden;
+            box-shadow: 0 0 60px rgba(41,212,212,.2), inset 0 0 80px rgba(41,212,212,.04);
+        }
+        .mlab-terminal::before {
+            content: ""; position: absolute; inset: 0;
+            background: repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(41,212,212,.04) 2px, rgba(41,212,212,.04) 3px);
+            pointer-events: none; z-index: 2; animation: scan-anim 8s linear infinite;
+        }
+        .mlab-header {
+            padding: 12px 24px; background: var(--cyber-cyan); color: #000;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 11px; font-weight: 700;
+            letter-spacing: .1em; position: relative; z-index: 3;
+            flex-wrap: wrap; gap: 8px;
+        }
+        .mlab-header .live { display: flex; align-items: center; gap: 8px; }
+        .mlab-header .live::before {
+            content: ""; width: 8px; height: 8px; border-radius: 50%;
+            background: #000; animation: pulse-dot 1.5s infinite;
+        }
+        .mlab-grid { display: grid; grid-template-columns: 1.3fr 1fr; position: relative; z-index: 3; }
+        .mlab-main { padding: 40px; border-left: 1px dashed rgba(41,212,212,.3); font-family: "Space Mono", "Vazirmatn", monospace; }
+        .mlab-side { padding: 40px; font-family: "Space Mono", "Vazirmatn", monospace; }
+        .mlab-label { font-size: 11px; letter-spacing: .15em; color: var(--cyber-cyan); margin-bottom: 12px; }
+        .mlab-data-wrap { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; direction: ltr; }
+        .mlab-data {
+            font-family: "Archivo Black", "Space Mono", monospace;
+            font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; color: var(--cyber-acid);
+            letter-spacing: -.02em;
+            text-shadow: 0 0 24px rgba(212,197,74,.7), 3px 0 0 var(--cyber-magenta), -3px 0 0 var(--cyber-cyan);
+        }
+        .mlab-unit { font-family: "Space Mono", monospace; font-size: 14px; color: var(--cyber-cyan); font-weight: 700; direction: ltr; }
+        .mlab-status { font-size: 13px; color: var(--cyber-acid); display: flex; align-items: center; gap: 6px; }
+        .mlab-confidence { margin-top: 30px; }
+        .mlab-confidence-head { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: .1em; color: var(--steel); margin-bottom: 8px; flex-wrap: wrap; }
+        .mlab-bar { height: 22px; background: #000; border: 1px solid var(--cyber-cyan); position: relative; overflow: hidden; }
+        .mlab-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyber-cyan) 0%, var(--cyber-acid) 50%, var(--cyber-cyan) 100%);
+            background-size: 200% 100%; animation: bar-shimmer 3s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--cyber-cyan);
+        }
+        @keyframes bar-shimmer { 0% { background-position: 0 0; } 100% { background-position: -200% 0; } }
+        .mlab-stats { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(41,212,212,.25); }
+        .mlab-stat { padding: 14px 16px; border-left: 1px solid rgba(41,212,212,.25); }
+        .mlab-stat:last-child { border-left: none; }
+        .mlab-stat-label { font-size: 10px; letter-spacing: .1em; color: var(--steel); margin-bottom: 6px; }
+        .mlab-stat-value { font-family: "Space Mono", "Vazirmatn", monospace; font-size: 13px; font-weight: 700; color: var(--cyber-acid); }
+        .mlab-arch-title { font-size: 11px; letter-spacing: .15em; color: var(--cyber-cyan); margin-bottom: 20px; }
+        .mlab-arch { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+        .mlab-layer {
+            padding: 10px 16px; border-right: 3px solid var(--cyber-cyan);
+            background: rgba(41,212,212,.04); display: flex; justify-content: space-between;
+            font-size: 12px; color: var(--cyber-acid);
+        }
+        .mlab-layer .dim { color: var(--steel); font-family: "Space Mono", monospace; direction: ltr; }
+        .mlab-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .mlab-links .btn-cyber { padding: 12px 18px; font-size: 12px; justify-content: center; }
+
+        /* ============ AI MODULE ============ */
+        .ai-module {
+            background:
+                radial-gradient(ellipse 60% 40% at 20% 20%, rgba(232,68,122,.08), transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(41,212,212,.08), transparent 60%),
+                var(--void);
+        }
+        .ai-status-bar {
+            display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+            padding: 16px 24px; border: 1px solid var(--cyber-cyan); background: #000;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 11px; color: var(--steel);
+            margin-bottom: 40px; letter-spacing: .05em;
+        }
+        .ai-status-bar .status-item { display: flex; align-items: center; gap: 6px; }
+        .ai-status-bar .status-item span:last-child { color: var(--cyber-acid); font-weight: 700; }
+
+        .live-data-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+            border: 2px solid var(--cyber-cyan); background: #000; margin-bottom: 60px;
+        }
+        .live-card { padding: 24px 20px; border-left: 1px solid rgba(41,212,212,.25); font-family: "Space Mono", "Vazirmatn", monospace; position: relative; }
+        .live-card:last-child { border-left: none; }
+        .live-card-label { font-size: 11px; letter-spacing: .1em; color: var(--cyber-cyan); margin-bottom: 12px; }
+        .live-card-value {
+            font-family: "Archivo Black", "Space Mono", monospace;
+            font-size: clamp(1.4rem, 2.4vw, 2rem); color: var(--cyber-acid);
+            line-height: 1; letter-spacing: -.01em; margin-bottom: 8px;
+            word-break: break-word; direction: ltr;
+        }
+        .live-card-change { font-size: 11px; color: var(--steel); letter-spacing: .05em; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .mini-btn {
+            padding: 6px 12px; font-family: "Vazirmatn", sans-serif; font-size: 11px;
+            font-weight: 700; color: var(--cyber-cyan); background: transparent;
+            border: 1px solid var(--cyber-cyan); cursor: pointer; transition: all .2s;
+        }
+        .mini-btn:hover { background: var(--cyber-cyan); color: #000; }
+
+        .ai-feature { border: 1px solid var(--cyber-magenta); background: #000; margin-bottom: 24px; position: relative; overflow: hidden; }
+        .ai-feature-header {
+            padding: 24px 28px; border-bottom: 1px solid rgba(232,68,122,.2);
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 20px; flex-wrap: wrap;
+        }
+        .ai-feature-label { font-family: "Space Mono", "Vazirmatn", monospace; font-size: 11px; letter-spacing: .15em; color: var(--cyber-magenta); margin-bottom: 8px; }
+        .ai-feature-header h3 { font-family: "Lalezar", serif; font-size: clamp(1.3rem, 2.4vw, 1.8rem); color: var(--bone); margin-bottom: 8px; }
+        .ai-feature-header p { font-family: "Estedad", sans-serif; font-size: 13px; color: var(--steel); line-height: 1.8; max-width: 620px; margin: 0; }
+        .ai-feature-body { padding: 24px 28px; border-top: 1px solid rgba(232,68,122,.15); display: flex; gap: 12px; flex-wrap: wrap; }
+        .ai-feature-body textarea {
+            flex: 1; min-width: 220px; min-height: 90px; padding: 14px;
+            background: var(--void); border: 1px solid var(--cyber-cyan);
+            color: var(--bone); font-family: "Estedad", "Vazirmatn", sans-serif;
+            font-size: 14px; resize: vertical; line-height: 1.8;
+        }
+        .ai-feature-body textarea:focus { outline: none; box-shadow: 0 0 0 2px rgba(41,212,212,.2); }
+        .ai-feature-output { padding: 24px 28px; min-height: 80px; }
+        .output-placeholder { font-family: "Vazirmatn", sans-serif; font-size: 12px; color: var(--steel); font-style: italic; }
+        .analysis-result { font-family: "Vazirmatn", "Space Mono", monospace; font-size: 14px; }
+        .analysis-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 20px; font-size: 11px; letter-spacing: .1em;
+            color: var(--steel); flex-wrap: wrap; gap: 8px;
+        }
+        .prediction {
+            display: grid; grid-template-columns: 40px 1fr 80px;
+            gap: 12px; padding: 10px 0; border-bottom: 1px dashed rgba(41,212,212,.15);
+            font-size: 13px; color: var(--bone); align-items: center;
+        }
+        .prediction:last-of-type { border-bottom: none; }
+        .pred-rank { color: var(--cyber-magenta); font-weight: 700; font-family: "Space Mono", monospace; direction: ltr; }
+        .pred-name { color: var(--bone); font-family: "Space Mono", monospace; direction: ltr; }
+        .pred-conf { color: var(--cyber-acid); font-weight: 700; text-align: left; font-family: "Space Mono", monospace; direction: ltr; }
+        .analysis-source { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(41,212,212,.15); display: flex; align-items: center; gap: 14px; }
+        .analysis-source img { width: 80px; height: 80px; object-fit: cover; border: 1px solid var(--cyber-cyan); filter: contrast(1.1); }
+        .analysis-source span { font-size: 11px; color: var(--steel); }
+        .sentiment-bar-wrap { height: 20px; background: #000; border: 1px solid var(--cyber-cyan); margin-bottom: 12px; overflow: hidden; }
+        .sentiment-bar { height: 100%; transition: width .6s; }
+        .sentiment-meta { font-size: 12px; color: var(--steel); }
+
+        .manifesto-generated {
+            font-family: "Vazirmatn", "Estedad", sans-serif;
+            padding: 24px; border: 1px dashed var(--cyber-yellow);
+            background: rgba(217,165,33,.03);
+        }
+        .mg-title { font-family: "Space Mono", monospace; font-size: 11px; letter-spacing: .2em; color: var(--cyber-yellow); margin-bottom: 20px; direction: ltr; }
+        .mg-body p { font-size: 15px; color: var(--bone); line-height: 2; margin-bottom: 8px; }
+        .mg-clause { color: var(--cyber-acid) !important; font-style: italic; padding-top: 12px; border-top: 1px solid rgba(217,165,33,.2); margin-top: 12px !important; }
+        .mg-end { font-family: "Space Mono", monospace; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(217,165,33,.2); font-size: 11px; letter-spacing: .15em; color: var(--cyber-magenta); direction: ltr; }
+
+        .ai-log { border: 1px solid var(--steel); background: #000; margin-top: 40px; }
+        .ai-log-header {
+            padding: 10px 16px; background: #111; border-bottom: 1px solid var(--steel);
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 11px;
+            letter-spacing: .1em; color: var(--cyber-cyan);
+        }
+        .ai-log-body {
+            padding: 12px 16px; max-height: 200px; overflow-y: auto;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 12px; line-height: 1.9;
+        }
+        .log-line { margin-bottom: 2px; }
+        .log-info { color: var(--steel); }
+        .log-success { color: var(--cyber-acid); }
+        .log-warn { color: var(--cyber-yellow); }
+        .log-error { color: var(--cyber-red); }
+
+        /* ============ MANIFESTO ============ */
+        .manifesto {
+            background: var(--paper); color: var(--ink); padding: 120px 0;
+            position: relative; overflow: hidden;
+            border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink);
+        }
+        .manifesto::before {
+            content: "دادا"; position: absolute; top: -40px; left: -40px;
+            font-family: "Lalezar", serif; font-size: clamp(15rem, 30vw, 25rem);
+            color: var(--ink); opacity: .06; line-height: 1; pointer-events: none; transform: rotate(12deg);
+        }
+        .manifesto-inner { position: relative; z-index: 2; max-width: 900px; margin: auto; }
+        .manifesto-label {
+            font-family: "Vazirmatn", sans-serif; font-size: 12px; font-weight: 700;
+            letter-spacing: .2em; color: var(--cyber-red); margin-bottom: 30px;
+            display: inline-block; padding: 6px 14px;
+            border: 2px solid var(--cyber-red); transform: rotate(2deg);
+        }
+        .manifesto-title {
+            font-family: "Lalezar", serif; font-size: clamp(2rem, 5.5vw, 4.5rem);
+            line-height: 1.15; margin-bottom: 40px;
+        }
+        .manifesto-title em {
+            background: var(--ink); color: var(--paper); padding: 0 16px;
+            display: inline-block; font-style: normal; transform: skewX(6deg);
+        }
+        .manifesto-copy { font-family: "Estedad", sans-serif; font-size: 16px; line-height: 2; color: var(--ink); max-width: 720px; }
+        .manifesto-copy p { margin-bottom: 20px; color: var(--ink); }
+        .manifesto-copy strong { background: var(--cyber-yellow); padding: 2px 6px; }
+        .manifesto-sign {
+            display: flex; align-items: center; gap: 20px; margin-top: 40px;
+            font-family: "Vazirmatn", sans-serif; font-size: 12px;
+            letter-spacing: .15em; color: var(--ink); font-weight: 700;
+        }
+        .manifesto-sign::before { content: ""; flex: 0 0 60px; height: 2px; background: var(--ink); }
+
+        /* ============ SUBSYSTEMS ============ */
+        .subsystems { background: var(--void); }
+        .subsys-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--cyber-cyan); margin-top: 50px; }
+        .subsys-card {
+            padding: 36px 28px; background: #000;
+            border-left: 1px solid var(--cyber-cyan);
+            position: relative; transition: all .3s; cursor: crosshair;
+            display: block; text-decoration: none;
+        }
+        .subsys-card:last-child { border-left: none; }
+        .subsys-card::before {
+            content: ""; position: absolute; top: 0; right: 0; width: 100%; height: 3px;
+            background: repeating-linear-gradient(90deg, var(--cyber-cyan) 0, var(--cyber-cyan) 4px, transparent 4px, transparent 10px);
+            opacity: .5; transition: opacity .3s;
+        }
+        .subsys-card:hover { background: #050510; box-shadow: inset 0 0 60px rgba(41,212,212,.1); }
+        .subsys-card:hover::before { opacity: 1; }
+        .subsys-num { font-family: "Space Mono", monospace; font-size: 11px; color: var(--cyber-magenta); letter-spacing: .2em; margin-bottom: 20px; direction: ltr; }
+        .subsys-icon { font-size: 32px; color: var(--cyber-cyan); margin-bottom: 16px; transition: transform .3s; }
+        .subsys-card:hover .subsys-icon { transform: rotate(-10deg) scale(1.15); color: var(--cyber-acid); }
+        .subsys-card h3 { font-family: "Lalezar", serif; font-size: 22px; color: var(--bone); margin-bottom: 14px; }
+        .subsys-card p { font-family: "Estedad", sans-serif; font-size: 13px; line-height: 1.9; color: var(--steel); }
+
+        /* ============ QUICK PROJECTS ============ */
+        .quick-projects {
+            padding: 80px 0; background: var(--void-2);
+            border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+        }
+        .quick-projects-track {
+            display: inline-flex; gap: 60px;
+            animation: ticker 40s linear infinite; white-space: nowrap;
+        }
+        .quick-project {
+            display: inline-flex; align-items: center; gap: 16px;
+            font-family: "Estedad", "Vazirmatn", sans-serif; font-size: 14px;
+            color: var(--steel); transition: color .2s; padding: 8px 0;
+        }
+        .quick-project:hover { color: var(--cyber-acid); }
+        .quick-project::before { content: "◄"; color: var(--cyber-magenta); font-size: 10px; }
+
+        /* ============ GALLERY ============ */
+        .gallery-collage-section { background: var(--void); }
+        .collage { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 50px; }
+        .collage > figure {
+            aspect-ratio: 1; overflow: hidden; position: relative;
+            border: 1px solid var(--border); cursor: pointer; transition: all .3s;
+        }
+        .collage > figure:nth-child(3n) { transform: rotate(2deg); }
+        .collage > figure:nth-child(4n) { transform: rotate(-2deg); }
+        .collage > figure:hover, .collage > figure:active {
+            transform: rotate(0) scale(1.05); border-color: var(--cyber-cyan);
+            z-index: 5; box-shadow: 0 0 30px rgba(41,212,212,.4);
+        }
+        .collage img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%) contrast(1.15); transition: filter .3s; }
+        .collage > figure:hover img, .collage > figure:active img { filter: grayscale(0%) contrast(1.2) hue-rotate(15deg); }
+        .collage > figure.analyze-ready::after {
+            content: "◉ بینایی"; position: absolute; top: 8px; left: 8px;
+            padding: 4px 8px; background: var(--cyber-magenta); color: #fff;
+            font-family: "Vazirmatn", sans-serif; font-size: 10px; font-weight: 700;
+            z-index: 3;
+        }
+
+        /* ============ PHILOSOPHY ============ */
+        .philosophy-glitch { padding: 160px 0; text-align: center; background: #000; position: relative; overflow: hidden; border-bottom: none; }
+        .philosophy-glitch::before {
+            content: ""; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(232,68,122,.1), transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(41,212,212,.1), transparent 50%);
+            pointer-events: none;
+        }
+        .philosophy-title {
+            font-family: "Lalezar", serif; font-size: clamp(2rem, 5.5vw, 5rem);
+            line-height: 1.4; max-width: 1100px; margin: auto;
+            position: relative; z-index: 2;
+        }
+        .philosophy-title .outline { color: transparent; -webkit-text-stroke: 2px var(--cyber-cyan); }
+        .philosophy-title .acid { background: var(--cyber-acid); color: #000; padding: 0 16px; display: inline-block; transform: skewX(-4deg); }
+        .philosophy-label {
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 12px;
+            letter-spacing: .2em; color: var(--cyber-magenta);
+            margin-bottom: 40px; display: inline-block;
+            position: relative; z-index: 2;
+        }
+
+        /* ============ FOOTER ============ */
+        .footer { border-top: 3px double var(--cyber-cyan); padding: 68px 0 36px; background: var(--void-2); position: relative; }
+        .footer::before {
+            content: ""; position: absolute; top: -3px; right: 0; width: 100%; height: 3px;
+            background: repeating-linear-gradient(90deg, var(--cyber-cyan) 0 12px, transparent 12px 18px);
+        }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+        .footer-brand {
+            display: flex; align-items: center; gap: 16px;
+            font-family: "Lalezar", serif; font-size: 22px; color: var(--bone);
+        }
+        .footer-brand img { width: 44px; height: 44px; object-fit: contain; filter: brightness(1.15); }
+        .footer-brand .brand-tag { color: var(--cyber-cyan); font-family: "Space Mono", monospace; font-size: 12px; direction: ltr; }
+        .footer-desc { font-family: "Estedad", sans-serif; font-size: 14px; color: var(--ash); margin-top: 14px; line-height: 1.9; max-width: 400px; }
+        .footer-col h4 { font-family: "Vazirmatn", sans-serif; font-size: 13px; font-weight: 700; color: var(--cyber-cyan); margin-bottom: 18px; letter-spacing: .05em; }
+        .footer-col a { display: block; padding: 6px 0; font-family: "Estedad", sans-serif; font-size: 13px; color: var(--ash); transition: color .2s; }
+        .footer-col a:hover { color: var(--cyber-acid); padding-right: 6px; }
+        .footer-bottom {
+            border-top: 1px solid var(--border-dark); padding-top: 24px;
+            display: flex; justify-content: space-between;
+            font-family: "Vazirmatn", "Space Mono", monospace; font-size: 11px;
+            color: var(--smoke); flex-wrap: wrap; gap: 12px;
+        }
+
+        /* ============ UTILITY ============ */
+        .blink { animation: blink 1s step-end infinite; display: inline-block; }
+        @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
+
+        /* ============ ENTERTAINMENT ============ */
+        #matrix-canvas {
+            position: fixed; inset: 0; z-index: 9994; pointer-events: none;
+            opacity: 0; transition: opacity .6s; mix-blend-mode: screen;
+        }
+        #matrix-canvas.active { opacity: .35; }
+
+        .cursor-particle {
+            position: fixed; pointer-events: none; width: 6px; height: 6px;
+            border-radius: 50%; z-index: 9997;
+            animation: particle-fade 0.8s ease-out forwards;
+            mix-blend-mode: screen;
+        }
+        @keyframes particle-fade {
+            0% { opacity: 1; transform: scale(1) translate(0, 0); }
+            100% { opacity: 0; transform: scale(0.2) translate(var(--px, 10px), var(--py, 10px)); }
+        }
+
+        .fx-panel {
+            position: fixed; left: 20px; bottom: 90px; z-index: 9998;
+            font-family: "Vazirmatn", sans-serif;
+            display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 12px;
+        }
+        .fx-trigger {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--cyber-magenta); color: #000;
+            border: 2px solid var(--cyber-magenta); cursor: pointer;
+            font-size: 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(232,68,122,.5);
+            transition: all .25s;
+        }
+        .fx-trigger:hover { transform: rotate(-90deg) scale(1.1); background: var(--cyber-acid); border-color: var(--cyber-acid); }
+        .fx-panel.open .fx-trigger { transform: rotate(-45deg); background: var(--cyber-cyan); border-color: var(--cyber-cyan); }
+        .fx-list {
+            display: none; flex-direction: column; gap: 6px;
+            background: #000; border: 2px solid var(--cyber-cyan);
+            padding: 12px; min-width: 210px;
+            box-shadow: 0 0 30px rgba(41,212,212,.3);
+        }
+        .fx-panel.open .fx-list { display: flex; }
+        .fx-item {
+            padding: 10px 14px; background: transparent; border: 1px solid var(--steel);
+            color: var(--bone); font-family: "Vazirmatn", sans-serif; font-size: 12px;
+            cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; gap: 10px; transition: all .2s; text-align: right;
+        }
+        .fx-item:hover { border-color: var(--cyber-acid); color: var(--cyber-acid); }
+        .fx-item.on { background: rgba(41,212,212,.1); border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
+
+        /* ============ TERMINAL ============ */
+        .terminal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,.7);
+            backdrop-filter: blur(4px); z-index: 100000;
+            opacity: 0; visibility: hidden; transition: all .25s;
+        }
+        .terminal-overlay.open { opacity: 1; visibility: visible; }
+        .terminal-panel {
+            position: fixed; left: 50%; top: 50%;
+            transform: translate(-50%, -50%) scale(.95);
+            width: min(92vw, 820px); height: min(80vh, 600px);
+            background: #000; border: 2px solid var(--cyber-cyan);
+            display: flex; flex-direction: column; z-index: 100001;
+            box-shadow: 0 0 80px rgba(41,212,212,.4);
+            opacity: 0; visibility: hidden; transition: all .25s;
+            direction: rtl;
+        }
+        .terminal-overlay.open + .terminal-panel, .terminal-panel.open {
+            opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1);
+        }
+        .terminal-header {
+            padding: 10px 16px; background: var(--cyber-cyan); color: #000;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 12px;
+            font-weight: 700; letter-spacing: .1em;
+        }
+        .terminal-close {
+            background: #000; color: var(--cyber-cyan); border: none;
+            width: 26px; height: 26px; cursor: pointer; font-weight: 700;
+        }
+        .terminal-close:hover { background: var(--cyber-red); color: #fff; }
+        .terminal-body {
+            flex: 1; padding: 16px 20px; overflow-y: auto;
+            font-family: "Space Mono", "Vazirmatn", monospace; font-size: 13px;
+            line-height: 1.9; color: var(--cyber-acid);
+        }
+        .terminal-body::-webkit-scrollbar { width: 8px; }
+        .terminal-body::-webkit-scrollbar-track { background: #111; }
+        .terminal-body::-webkit-scrollbar-thumb { background: var(--cyber-cyan); }
+        .t-line { margin-bottom: 3px; white-space: pre-wrap; word-break: break-word; }
+        .t-cmd { color: var(--bone); }
+        .t-out { color: var(--cyber-acid); }
+        .t-err { color: var(--cyber-red); }
+        .t-dim { color: var(--steel); }
+        .t-info { color: var(--cyber-cyan); }
+        .terminal-input-line {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 20px; border-top: 1px solid rgba(41,212,212,.3);
+            background: #050510;
+        }
+        .terminal-prompt { color: var(--cyber-magenta); font-weight: 700; font-family: "Space Mono", monospace; direction: ltr; font-size: 12px; }
+        .terminal-input {
+            flex: 1; background: transparent; border: none; outline: none;
+            color: var(--cyber-acid); font-family: "Vazirmatn", "Space Mono", monospace;
+            font-size: 16px; caret-color: var(--cyber-acid);
+        }
+
+        /* ============ DADA INJECTION ============ */
+        .dada-injection {
+            position: fixed; z-index: 500; pointer-events: none;
+            padding: 8px 16px; border: 2px solid currentColor;
+            background: #000; font-family: "Vazirmatn", sans-serif;
+            font-size: 12px; font-weight: 700; letter-spacing: .1em;
+            opacity: 0; transition: opacity .5s;
+            box-shadow: 0 0 30px currentColor;
+        }
+        .dada-injection.show { opacity: 1; }
+
+        /* ============ HANA RESPONSE ============ */
+        .hana-response {
+            position: fixed; bottom: 180px; left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #000; border: 2px solid var(--cyber-magenta);
+            padding: 16px 24px; max-width: 440px;
+            font-family: "Estedad", sans-serif; font-size: 14px;
+            color: var(--bone); line-height: 1.8;
+            z-index: 9999; opacity: 0; pointer-events: none;
+            transition: all .4s;
+            box-shadow: 0 0 40px rgba(232,68,122,.5);
+        }
+        .hana-response.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .hana-response::before {
+            content: "هانا"; position: absolute;
+            top: -12px; right: 16px; background: var(--cyber-magenta);
+            color: #000; font-size: 11px; font-weight: 700;
+            padding: 2px 12px; letter-spacing: .1em;
+            font-family: "Vazirmatn", sans-serif;
+        }
+
+        /* ============ GLITCH / RAVE ============ */
+        body.glitching { animation: page-glitch 0.35s steps(2) 1; }
+        @keyframes page-glitch {
+            0% { filter: none; transform: translate(0,0); }
+            25% { filter: hue-rotate(90deg) saturate(2); transform: translate(4px, 2px); }
+            50% { filter: hue-rotate(-90deg) invert(1); transform: translate(-4px, -2px); }
+            75% { filter: hue-rotate(180deg) contrast(2); transform: translate(2px, 1px); }
+            100% { filter: none; transform: translate(0,0); }
+        }
+
+        body.rave { animation: rave-hue 0.5s infinite; }
+        @keyframes rave-hue {
+            0% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        body.rave::before {
+            background-image:
+                repeating-conic-gradient(from 0deg,
+                    rgba(232,68,122,.4) 0deg, transparent 30deg,
+                    rgba(41,212,212,.4) 60deg, transparent 90deg);
+            background-size: 200px 200px;
+            animation: rave-bg 0.3s infinite linear;
+            opacity: .15 !important;
+        }
+        @keyframes rave-bg { to { background-position: 200px 200px; } }
+        .rave-toast {
+            position: fixed; top: 100px; left: 50%; transform: translateX(-50%);
+            background: var(--cyber-magenta); color: #000;
+            padding: 16px 32px; font-family: "Vazirmatn", sans-serif;
+            font-size: 15px; font-weight: 700; letter-spacing: .15em;
+            z-index: 100002; animation: toast-pulse 0.4s infinite alternate;
+            box-shadow: 0 0 60px var(--cyber-magenta);
+        }
+        @keyframes toast-pulse { from { transform: translateX(-50%) scale(1); } to { transform: translateX(-50%) scale(1.05); } }
+
+        .kbd-hint {
+            position: fixed; bottom: 24px; right: 24px;
+            font-family: "Vazirmatn", "Space Mono", monospace; font-size: 11px;
+            color: var(--steel); z-index: 9997; pointer-events: none;
+            opacity: .6;
+        }
+        .kbd-hint kbd {
+            display: inline-block; padding: 2px 6px;
+            border: 1px solid var(--steel); color: var(--cyber-cyan);
+            font-family: "Space Mono", monospace; font-size: 10px; margin: 0 2px;
+            direction: ltr;
+        }
+
+        /* ============ ☢ DHA NUKE ============ */
+        .dha-explosion-overlay {
+            position: fixed; inset: 0; z-index: 100003; pointer-events: none; overflow: hidden;
+            animation: dha-dim 1.8s ease-in forwards;
+        }
+        @keyframes dha-dim { 0% { background: rgba(0,0,0,0); } 100% { background: rgba(0,0,0,0.45); } }
+        .dha-descending-logo {
+            position: absolute; top: 50%; left: 50%; width: 240px; height: 240px;
+            object-fit: contain;
+            transform: translate(-50%, -50%) scale(0.05); opacity: 0;
+            will-change: transform, opacity, filter;
+            animation: dha-fall 1.8s cubic-bezier(0.55, 0, 0.9, 1) forwards;
+            filter: drop-shadow(0 0 30px rgba(41,212,212,.9)) drop-shadow(0 0 60px rgba(232,68,122,.6));
+        }
+        @keyframes dha-fall {
+            0% { transform: translate(-50%,-50%) scale(0.05) rotate(0deg); opacity: 0; filter: drop-shadow(0 0 20px rgba(41,212,212,.9)) blur(4px); }
+            20% { opacity: 1; filter: drop-shadow(0 0 40px rgba(41,212,212,1)) blur(0); }
+            70% { transform: translate(-50%,-50%) scale(4) rotate(180deg); filter: drop-shadow(0 0 100px rgba(41,212,212,1)) drop-shadow(0 0 150px rgba(232,68,122,.9)) blur(0); }
+            95% { opacity: 1; }
+            100% { transform: translate(-50%,-50%) scale(28) rotate(360deg); opacity: 0; filter: drop-shadow(0 0 200px rgba(255,255,255,1)) blur(6px); }
+        }
+        .dha-nuke-flash { position: absolute; inset: 0; background: #ffffff; opacity: 0; pointer-events: none; }
+        .dha-explosion-overlay.flash .dha-nuke-flash { animation: dha-flash 0.5s ease-out forwards; }
+        @keyframes dha-flash { 0% { opacity: 0; } 15% { opacity: 1; } 100% { opacity: 0; } }
+        .dha-nuke-core {
+            position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            border-radius: 50%; transform: translate(-50%, -50%); opacity: 0;
+            will-change: width, height, opacity;
+            background: radial-gradient(circle, #ffffff 0%, #ffffcc 15%, #ffcc00 30%, #ff6600 55%, #e8447a 75%, transparent 90%);
+        }
+        .dha-explosion-overlay.mushroom .dha-nuke-core { animation: dha-core-grow 3s ease-out forwards; }
+        @keyframes dha-core-grow {
+            0% { width: 0; height: 0; opacity: 1; box-shadow: 0 0 100px 40px rgba(255,255,200,1); }
+            20% { width: 30vmax; height: 30vmax; opacity: 1; box-shadow: 0 0 200px 100px rgba(255,200,0,.9); }
+            50% { width: 70vmax; height: 70vmax; opacity: .8; box-shadow: 0 0 300px 150px rgba(255,100,0,.6); }
+            100% { width: 160vmax; height: 160vmax; opacity: 0; box-shadow: 0 0 400px 200px rgba(255,50,0,0); }
+        }
+        .dha-nuke-ring {
+            position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            border-radius: 50%; border-style: solid;
+            transform: translate(-50%, -50%); opacity: 0;
+            will-change: width, height, opacity;
+            box-shadow: 0 0 40px 15px rgba(255,200,100,.9);
+        }
+        .ring-1 { --delay: 0s; border-color: #ffffff; }
+        .ring-2 { --delay: 0.25s; border-color: #ffcc00; }
+        .ring-3 { --delay: 0.50s; border-color: #ff6600; }
+        .ring-4 { --delay: 0.75s; border-color: #e8447a; }
+        .ring-5 { --delay: 1.00s; border-color: #d4c54a; }
+        .dha-explosion-overlay.mushroom .dha-nuke-ring { animation: dha-ring-expand 3.5s ease-out var(--delay, 0s) forwards; }
+        @keyframes dha-ring-expand {
+            0% { width: 0; height: 0; opacity: 1; border-width: 24px; }
+            40% { opacity: .8; border-width: 12px; }
+            100% { width: 250vmax; height: 250vmax; opacity: 0; border-width: 1px; }
+        }
+        .dha-nuke-debris {
+            position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            border-radius: 50%; transform: translate(-50%, -50%); opacity: 0;
+        }
+        .dha-explosion-overlay.mushroom .dha-nuke-debris { animation: dha-debris-grow 2.5s ease-out 0.2s forwards; }
+        @keyframes dha-debris-grow {
+            0% { width: 0; height: 0; opacity: 0; box-shadow: 0 0 0 0 rgba(255,255,200,.9), 0 0 0 0 rgba(255,200,100,.8), 0 0 0 0 rgba(255,150,50,.7), 0 0 0 0 rgba(255,100,0,.6); }
+            20% { opacity: 1; }
+            100% { width: 60vmax; height: 60vmax; opacity: 0; box-shadow: 0 0 0 200px rgba(255,255,200,0), 0 0 0 400px rgba(255,200,100,0), 0 0 0 600px rgba(255,150,50,0), 0 0 0 800px rgba(255,100,0,0); }
+        }
+        .dha-nuke-vignette {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,.5) 70%, rgba(0,0,0,.9) 100%);
+            opacity: 0; pointer-events: none;
+        }
+        .dha-explosion-overlay.flash .dha-nuke-vignette, .dha-explosion-overlay.mushroom .dha-nuke-vignette { animation: dha-vignette 3s ease-out forwards; }
+        @keyframes dha-vignette { 0% { opacity: 0; } 20% { opacity: 1; } 70% { opacity: .7; } 100% { opacity: 0; } }
+        .dha-explosion-overlay.dha-shaking { animation: dha-shake 0.06s infinite; }
+        @keyframes dha-shake {
+            0% { transform: translate(0,0) rotate(0deg); }
+            20% { transform: translate(-4px,3px) rotate(-0.3deg); }
+            40% { transform: translate(4px,-3px) rotate(0.3deg); }
+            60% { transform: translate(-3px,-4px) rotate(-0.2deg); }
+            80% { transform: translate(3px,4px) rotate(0.2deg); }
+            100% { transform: translate(0,0) rotate(0deg); }
+        }
+        .dha-explosion-overlay.fadeout { animation: dha-overlay-fade 1s ease-out forwards; }
+        @keyframes dha-overlay-fade { to { opacity: 0; } }
+
+        /* ============ MOBILE DOCK ============ */
+        .mobile-dock { display: none; }
+
+        @media (max-width: 1000px), (pointer: coarse) {
+            .fx-panel, .kbd-hint { display: none !important; }
+
+            .mobile-dock {
+                display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+                z-index: 9999; background: rgba(5,5,7,.96);
+                backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                border-top: 2px solid var(--cyber-cyan);
+                padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+                gap: 6px; justify-content: space-around;
+                box-shadow: 0 -10px 40px rgba(41,212,212,.18);
+            }
+
+            .dock-btn {
+                flex: 1; min-height: 54px; max-width: 76px;
+                background: transparent; border: 1px solid var(--steel);
+                color: var(--steel); font-family: "Vazirmatn", sans-serif; font-size: 20px;
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                gap: 2px; transition: all .2s; border-radius: 6px;
+                position: relative; padding: 4px;
+            }
+            .dock-btn .dock-label {
+                font-size: 10px; font-weight: 700; opacity: .85;
+                font-family: "Vazirmatn", sans-serif;
+            }
+            .dock-btn:active { transform: scale(.9); }
+            .dock-btn.on { border-color: var(--cyber-cyan); color: var(--cyber-cyan); background: rgba(41,212,212,.08); box-shadow: inset 0 0 20px rgba(41,212,212,.25); }
+            .dock-btn.danger { border-color: var(--cyber-magenta); color: var(--cyber-magenta); }
+            .dock-btn.danger.on, .dock-btn.danger:active { background: rgba(232,68,122,.12); }
+
+            .footer { padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important; }
+            .header { padding-top: env(safe-area-inset-top, 0px); height: calc(66px + env(safe-area-inset-top, 0px)); }
+
+            .terminal-panel {
+                width: 100vw; height: 100dvh;
+                max-width: 100vw; max-height: 100dvh;
+                top: 0; left: 0; transform: none !important;
+                border-radius: 0; border-width: 0;
+            }
+            .terminal-panel.open { transform: none !important; }
+            .terminal-header { padding-top: calc(10px + env(safe-area-inset-top, 0px)); }
+            .terminal-input-line { padding: 12px 14px calc(12px + env(safe-area-inset-bottom, 0px)); }
+
+            .btn-cyber { min-height: 48px; padding: 14px 24px; }
+            .mini-btn { min-height: 44px; min-width: 44px; padding: 10px 14px; }
+            .subsys-card { min-height: 130px; }
+
+            .hero-cyber { padding: 110px 0 80px; }
+            .hero-cyber-copy, .featured-label, .mlab-label, .live-card-label { font-size: 13px; }
+
+            .mlab-main, .mlab-side { padding: 26px 20px; }
+            .mlab-data { font-size: clamp(2rem, 12vw, 3.5rem); }
+            .mlab-links .btn-cyber { min-height: 52px; }
+
+            .collage > figure:active {
+                transform: rotate(0) scale(1.05); border-color: var(--cyber-cyan);
+                box-shadow: 0 0 30px rgba(41,212,212,.45); z-index: 5;
+            }
+            .collage > figure:active img { filter: grayscale(0%) contrast(1.2) hue-rotate(15deg); }
+
+            .dada-stamp { font-size: 8px; padding: 4px 8px; }
+            .hero-meta-strip { font-size: 8px; }
+            #matrix-canvas.active { opacity: .22; }
+            .cursor-particle { display: none !important; }
+
+            .hero-epigraph { font-size: 18px; }
+        }
+
+        @media (max-width: 1000px) {
+            .hero-cyber-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-collage { min-height: 400px; }
+            .mlab-grid { grid-template-columns: 1fr; }
+            .mlab-main { border-left: none; border-bottom: 1px dashed rgba(41,212,212,.3); }
+            .subsys-grid { grid-template-columns: repeat(2, 1fr); }
+            .subsys-card:nth-child(2n) { border-left: none; }
+            .subsys-card:nth-child(-n+2) { border-bottom: 1px solid var(--cyber-cyan); }
+            .collage { grid-template-columns: repeat(3, 1fr); }
+            .sys-status { display: none; }
+            .live-data-grid { grid-template-columns: repeat(2, 1fr); }
+            .live-card:nth-child(2n) { border-left: none; }
+            .live-card:nth-child(-n+2) { border-bottom: 1px solid rgba(41,212,212,.25); }
+            .ai-feature-header { flex-direction: column; align-items: flex-start; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-cyber { padding: 100px 0 40px; }
+            .hero-collage-frame { transform: rotate(0); box-shadow: -4px 4px 0 var(--cyber-magenta), 4px -4px 0 var(--cyber-acid); }
+            .stamp-1, .stamp-3 { right: 8px; }
+            .stamp-2, .stamp-4 { left: 8px; }
+            .subsys-grid { grid-template-columns: 1fr; }
+            .subsys-card { border-left: none; border-bottom: 1px solid var(--cyber-cyan); }
+            .subsys-card:last-child { border-bottom: none; }
+            .mlab-stats { grid-template-columns: 1fr; }
+            .mlab-stat { border-left: none; border-bottom: 1px solid rgba(41,212,212,.25); }
+            .mlab-stat:last-child { border-bottom: none; }
+            .collage { grid-template-columns: repeat(2, 1fr); }
+            .manifesto { padding: 80px 0; }
+            .live-data-grid { grid-template-columns: 1fr; }
+            .live-card { border-left: none; border-bottom: 1px solid rgba(41,212,212,.25); }
+            .live-card:last-child { border-bottom: none; }
+            .footer-bottom { flex-direction: column; }
+        }
+
+        @media (max-height: 500px) and (orientation: landscape) {
+            .mobile-dock { padding: 4px 8px calc(4px + env(safe-area-inset-bottom, 0px)); }
+            .dock-btn { min-height: 42px; font-size: 16px; }
+            .dock-btn .dock-label { display: none; }
+            .hero-cyber { padding-top: 80px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+            .brand.tap-flash { animation: none; }
+            .dha-explosion-overlay.dha-shaking { animation: none; }
+            .dha-explosion-overlay.flash .dha-nuke-flash { background: rgba(255,255,255,.35); }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+    <div class="warning-tape" aria-hidden="true"></div>
+
+    <div class="kbd-hint">
+        <kbd>⌃</kbd><kbd>`</kbd> پایانه &nbsp;│&nbsp;
+        <kbd>M</kbd> باران &nbsp;│&nbsp;
+        <kbd>G</kbd> خطا &nbsp;│&nbsp;
+        <kbd>D-H-A</kbd> ☢ &nbsp;│&nbsp;
+        <kbd>Esc</kbd> بستن
+    </div>
+
+    <div class="fx-panel" id="fx-panel">
+        <button class="fx-trigger" id="fx-trigger" aria-label="پنل افکت‌ها">✦</button>
+        <div class="fx-list">
+            <button class="fx-item" data-fx="matrix"><span>باران ماتریکس</span><span class="indicator">○</span></button>
+            <button class="fx-item" data-fx="sound"><span>افکت صوتی</span><span class="indicator">○</span></button>
+            <button class="fx-item" data-fx="rave"><span>حالت جشن</span><span class="indicator">○</span></button>
+            <button class="fx-item" data-fx="glitch"><span>ایجاد خطا</span><span class="indicator">⚡</span></button>
+            <button class="fx-item" data-fx="nuke"><span>☢ بمب هانا</span><span class="indicator">☢</span></button>
+            <button class="fx-item" data-fx="terminal"><span>پایانه دستور</span><span class="indicator">⌨</span></button>
+        </div>
+    </div>
+
+    <div class="hana-response" id="hana-response"></div>
+
+    <header class="header">
+        <a href="index.html" class="brand">
+            <img src="assets/DHA_logo_h.png" alt="ص.ر.ه.">
+            <span class="brand-tag">[ص.ر.ه.]</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="active">[خانه]</a>
+            <a href="about.html">[درباره]</a>
+            <a href="works.html">[پروژه‌ها]</a>
+            <a href="blog.html">[نشریه]</a>
+            <a href="services.html">[خدمات]</a>
+            <a href="gallery.html">[گالری]</a>
+            <a href="contact.html">[تماس]</a>
+        </nav>
+        <div class="sys-status">
+            <span class="status-dot"></span>
+            SYS.ONLINE
+        </div>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="lang-dropdown">
+                <input type="checkbox" id="lang-input" class="lang-input">
+                <label for="lang-input" class="lang-btn">[فارسی] ▾</label>
+                <div class="lang-menu">
+                    <a href="#" class="active">[فارسی]</a>
+					
+					<a href="https://dha-123f39.gitpage.ir/" class="زبان-گزینه">[پارسی]</a>
+					
+					<a href="https://alibavarci.github.io/ddDHA/" class="زبان-گزینه">[Global]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-cn/" class="زبان-گزینه">[中文]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-ru/" class="زبان-گزینه">[Русский]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha/" class="زبان-گزینه">[English]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-jp/" class="زبان-گزینه">[日本語]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-ko/" class="زبان-گزینه">[조선어]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-hi/" class="زبان-گزینه">[हिन्दी]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/" class="زبان-گزینه">[Español]</a>
+
+					<a href="https://digitalhanaarts.github.io/it_dha/" class="زبان-گزینه">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha_ar/" class="زبان-گزینه">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/" class="زبان-گزینه">[ייִדיש]</a>
+                </div>
+            </div>
+            <button class="menu-btn" aria-label="منو">☰</button>
+        </div>
+    </header>
+
+    <div class="drawer-overlay"></div>
+    <aside class="drawer">
+        <button class="drawer-close" aria-label="بستن">×</button>
+        <a href="index.html">[خانه]</a>
+        <a href="about.html">[درباره]</a>
+        <a href="works.html">[پروژه‌ها]</a>
+        <a href="blog.html">[نشریه]</a>
+        <a href="services.html">[خدمات]</a>
+        <a href="gallery.html">[گالری]</a>
+        <a href="contact.html">[تماس]</a>
+    </aside>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero-cyber">
+            <div class="container">
+                <div class="hero-cyber-grid">
+                    <div>
+                        <span class="hero-cyber-tag">// PROTOCOL OVERRIDE v3.3 · تعاملی</span>
+
+                        <div class="hero-epigraph">
+                            از جمادی مُردم و نامی شدم<br>
+                            وز نما مُردم بحیوان برزدم<br>
+                            <span class="attribution">— مولانا جلال‌الدین بلخی</span>
+                        </div>
+
+                        <h1 class="glitch-title">
+                            <span class="glitch-line" data-text="صنایع">صنایع</span>
+                            <span class="glitch-line" data-text="رقومی" style="color:var(--cyber-acid);">رقومی</span>
+                            <span class="glitch-line" data-text="هانا®" style="color:transparent;-webkit-text-stroke:2px var(--cyber-cyan);">هانا®</span>
+                        </h1>
+
+                        <p class="hero-cyber-copy">
+                            میان <strong>هنر</strong> و <strong>خوارزم</strong>،
+                            میان <strong>داده</strong> و <strong>خواب</strong>،
+                            میان <strong>هوش</strong> و <strong>غریزه</strong> —
+                            ص.ر.ه. در نیستی می‌کاود.<br><br>
+                            <span id="hero-typing"></span><span class="blink" style="color:var(--cyber-acid);">_</span>
+                        </p>
+
+                        <div class="hero-cyber-actions">
+                            <a href="works.html" class="btn-cyber primary">◄ کاوش آثار</a>
+                            <a href="#ai-module" class="btn-cyber">◄ فعال‌سازی هوش</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-collage">
+                        <div class="hero-collage-frame">
+                            <img src="assets/DHA_neon.png" alt="نگاره نئونی ص.ر.ه.">
+                        </div>
+                        <span class="dada-stamp stamp-1">NO_ART</span>
+                        <span class="dada-stamp stamp-2">ALL_DATA</span>
+                        <span class="dada-stamp stamp-3">AI.OK</span>
+                        <span class="dada-stamp stamp-4">∞_DADA</span>
+                        <span class="hero-meta-strip meta-top">─── ۲۰۲۲ · ص.ر.ه. · پروتکل ───</span>
+                        <span class="hero-meta-strip meta-bottom">─── CTRL_BACKTICK_FOR_CONSOLE ───</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TICKER -->
+        <div class="sys-ticker" aria-hidden="true">
+            <div class="sys-ticker-track">
+                <span>هنر</span><span>داده</span><span>هوش</span><span>بلاک‌چین</span>
+                <span>تعاملی</span><span>هک‌پذیر</span><span>یادگیری_روی_دستگاه</span>
+                <span>پایانه</span><span>انتزاع</span><span>پروتکل</span>
+                <span>هنر</span><span>داده</span><span>هوش</span><span>بلاک‌چین</span>
+                <span>تعاملی</span><span>هک‌پذیر</span><span>یادگیری_روی_دستگاه</span>
+                <span>پایانه</span><span>انتزاع</span><span>پروتکل</span>
+            </div>
+        </div>
+
+        <!-- MLABCHAIN FEATURED -->
+        <section class="featured-section" id="featured">
+            <div class="container">
+                <div class="featured-label">۰۲ · پروژه شاخص</div>
+                <h2 class="featured-title">
+                    <span class="glitch-line" data-text="زنجیره آزمایشگاه" style="color:var(--cyber-acid);">زنجیره آزمایشگاه</span>
+                    <br>
+                    <span class="outline">پروتکل اثبات‌پذیر</span><span style="color:var(--cyber-magenta);">.</span>
+                </h2>
+
+                <div class="mlab-terminal">
+                    <div class="mlab-header">
+                        <span>// sys://protocol/mlabchain v3.0.1</span>
+                        <span class="live">زنده · گره سرن</span>
+                    </div>
+                    <div class="mlab-grid">
+                        <div class="mlab-main">
+                            <div class="mlab-label">// دفتر اصالت · ارتفاع بلوک</div>
+                            <div class="mlab-data-wrap">
+                                <div class="mlab-data" id="mlab-height">#1,948,201</div>
+                                <div class="mlab-unit">TX/BLOCK</div>
+                                <div class="mlab-status">▲ همگام</div>
+                            </div>
+                            <div class="mlab-confidence">
+                                <div class="mlab-confidence-head">
+                                    <span>یکپارچگی شبکه</span>
+                                    <span style="color:var(--cyber-acid);">۹۹.۹٪</span>
+                                </div>
+                                <div class="mlab-bar"><div class="mlab-bar-fill" style="width:99.9%;"></div></div>
+                            </div>
+                            <div class="mlab-stats">
+                                <div class="mlab-stat"><div class="mlab-stat-label">آموزش</div><div class="mlab-stat-value">فعال</div></div>
+                                <div class="mlab-stat"><div class="mlab-stat-label">ثبت</div><div class="mlab-stat-value">در جریان</div></div>
+                                <div class="mlab-stat"><div class="mlab-stat-label">راستی‌آزمایی</div><div class="mlab-stat-value">۱۰۰٪</div></div>
+                            </div>
+                        </div>
+                        <div class="mlab-side">
+                            <div class="mlab-arch-title">// ماژول‌های سامانه</div>
+                            <div class="mlab-arch">
+                                <div class="mlab-layer"><span>مدل‌ها</span><span class="dim">ARTIFACTS</span></div>
+                                <div class="mlab-layer"><span>ابرپارامترها</span><span class="dim">VERIFIABLE</span></div>
+                                <div class="mlab-layer"><span>اصالت</span><span class="dim">IMMUTABLE</span></div>
+                                <div class="mlab-layer"><span>اجماع</span><span class="dim">VERIFIED</span></div>
+                            </div>
+                            <div class="mlab-arch-title">// اقدامات</div>
+                            <div class="mlab-links">
+                                <a href="https://github.com/DigitalHanaArts/MLabChain" target="_blank" rel="noopener" class="btn-cyber primary">◄ منبع گیت‌هاب</a>
+                                <a href="https://gitlab.cern.ch/abavarch/labchain" target="_blank" rel="noopener" class="btn-cyber">◄ گیت‌لب سرن</a>
+                                <a href="https://digitalhanaarts.github.io/mlc/" target="_blank" rel="noopener" class="btn-cyber">◄ رابط وب</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI MODULE -->
+        <section class="ai-module" id="ai-module">
+            <div class="container">
+                <div class="featured-label">۰۲.۵ · ماژول هوش مصنوعی</div>
+                <h2 class="featured-title">
+                    هوش <span class="outline">ماشینی</span><span style="color:var(--cyber-magenta);">.</span>
+                </h2>
+                <p style="font-family:'Estedad',sans-serif; font-size:15px; color:var(--ash); max-width:720px; line-height:2; border-right:3px solid var(--cyber-cyan); padding-right:20px; margin-bottom:50px;">
+                    تمام استنتاج‌ها <strong style="color:var(--cyber-acid);">روی دستگاه شما</strong> اجرا می‌شوند.
+                    بدون آپلود. بدون سرور. بدون کلید API. مدل‌ها یک بار دانلود و برای همیشه کش می‌شوند.
+                </p>
+
+                <div class="ai-status-bar">
+                    <span class="status-item"><span class="status-dot"></span>موتور هوش: <span id="engine-status">آماده</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">WebGPU: <span id="webgpu-status">--</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">مدل‌ها: <span id="models-count">0</span></span>
+                    <span class="status-item">│</span>
+                    <span class="status-item">کش: <span id="cache-status">خالی</span></span>
+                </div>
+
+                <div class="live-data-grid">
+                    <div class="live-card">
+                        <div class="live-card-label">// قیمت زنده ترون</div>
+                        <div class="live-card-value" id="live-trx">--</div>
+                        <div class="live-card-change" id="live-trx-change">در انتظار</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// قیمت زنده اتریوم</div>
+                        <div class="live-card-value" id="live-eth">--</div>
+                        <div class="live-card-change" id="live-eth-change">در انتظار</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// شاخص ترس و طمع</div>
+                        <div class="live-card-value" id="live-fng">--</div>
+                        <div class="live-card-change" id="live-fng-change">در انتظار</div>
+                    </div>
+                    <div class="live-card">
+                        <div class="live-card-label">// آخرین همگام‌سازی</div>
+                        <div class="live-card-value" id="live-sync" style="font-size:14px;">--</div>
+                        <div class="live-card-change">
+                            <button class="mini-btn" id="refresh-data">◄ تازه‌سازی</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// ماژول ۰۱ · بینایی</div>
+                            <h3>تحلیل‌گر بینایی روی دستگاه</h3>
+                            <p>MobileNet تصاویر هانا را مستقیماً در مرورگر شما طبقه‌بندی می‌کند (~۱۷ مگابایت، کش شده). پس از بارگذاری، روی هر تصویر گالری کلیک کنید.</p>
+                        </div>
+                        <button class="btn-cyber primary" id="load-vision-model">◄ بارگذاری مدل بینایی</button>
+                    </div>
+                    <div class="ai-feature-output" id="vision-output">
+                        <div class="output-placeholder">// مدل بارگذاری نشده — برای شروع روی بارگذاری کلیک کنید</div>
+                    </div>
+                </div>
+
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// ماژول ۰۲ · احساس</div>
+                            <h3>تحلیل‌گر احساس متن</h3>
+                            <p>DistilBERT لحن عاطفی هر متنی را روی دستگاه شما تحلیل می‌کند (~۶۷ مگابایت، پس از دانلود اول کش می‌شود).</p>
+                        </div>
+                        <button class="btn-cyber primary" id="load-sentiment-model">◄ بارگذاری مدل احساسات</button>
+                    </div>
+                    <div class="ai-feature-body">
+                        <textarea id="sentiment-input" placeholder="اندیشه‌ای درباره هنر، داده یا هوش مصنوعی بنویسید..."></textarea>
+                        <button class="btn-cyber" id="analyze-sentiment">◄ تحلیل</button>
+                    </div>
+                    <div class="ai-feature-output" id="sentiment-output">
+                        <div class="output-placeholder">// در انتظار ورودی...</div>
+                    </div>
+                </div>
+
+                <div class="ai-feature">
+                    <div class="ai-feature-header">
+                        <div>
+                            <div class="ai-feature-label">// ماژول ۰۳ · مولد</div>
+                            <h3>مولد بیانیه دادا</h3>
+                            <p>موتور مولد مبتنی بر قطعه. بیانیه‌های یکتای دادایی از بانک واژگان منتخب می‌سازد.</p>
+                        </div>
+                        <button class="btn-cyber primary" id="generate-manifesto">◄ تولید</button>
+                    </div>
+                    <div class="ai-feature-output" id="manifesto-output">
+                        <div class="output-placeholder">// برای تولید بیانیه تازه روی تولید کلیک کنید</div>
+                    </div>
+                </div>
+
+                <div class="ai-log">
+                    <div class="ai-log-header">
+                        <span>// گزارش سامانه</span>
+                        <button class="mini-btn" id="clear-log">پاک</button>
+                    </div>
+                    <div class="ai-log-body" id="ai-log"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANIFESTO -->
+        <section class="manifesto">
+            <div class="container">
+                <div class="manifesto-inner">
+                    <span class="manifesto-label">— بیانیه دادا ۰۰۱ —</span>
+                    <h2 class="manifesto-title">
+                        ما <em>دوگانگی</em> را رد می‌کنیم.<br>
+                        هنر = کد.<br>
+                        کد = هنر.<br>
+                        ماشین رؤیا می‌بیند.
+                    </h2>
+                    <div class="manifesto-copy">
+                        <p>می‌شکنیم تا بسازیم. می‌سازیم تا بشکنیم. هر مدل یک بیانیه است. هر پیکسل یک اعتراض.</p>
+                        <p><strong>بازنویسی سامانه در جریان است.</strong> دسته‌بندی‌های کهنه در یکی فرو می‌ریزند. دسته تازه نامی ندارد. تنها یک درخواست دارد. و یک پاسخ.</p>
+                        <p style="font-size:14px; color:#4a4538; letter-spacing:.1em;">← دادا نمرده است. دادا همان داده است. داده همان هنر است. هنر مرده است. زنده باد هنر.</p>
+                    </div>
+                    <div class="manifesto-sign">امضا · ص.ر.ه. · ۲۰۲۲</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSYSTEMS -->
+        <section class="subsystems">
+            <div class="container">
+                <div class="featured-label">۰۳ · خرده‌سامانه‌ها</div>
+                <h2 class="featured-title" style="color:var(--bone);">
+                    چهار <span class="outline">قلمرو</span> · یک <span style="color:var(--cyber-acid);">سامانه</span>.
+                </h2>
+                <div class="subsys-grid">
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">۰۱ // زیرسامانه</div>
+                        <div class="subsys-icon">◇</div>
+                        <h3>هنر رقومی</h3>
+                        <p>سامانه‌های مولد، هنر الگوریتمی، عکاسی محاسباتی، رسانه‌های رقومی آزمایشی.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">۰۲ // زیرسامانه</div>
+                        <div class="subsys-icon">◌</div>
+                        <h3>دانش داده</h3>
+                        <p>کاوش داده، تحلیل، تجسم، محاسبات آماری، کشف داده‌محور.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">۰۳ // زیرسامانه</div>
+                        <div class="subsys-icon">◎</div>
+                        <h3>هوشمندی</h3>
+                        <p>یادگیری ماشین، یادگیری ژرف، بینایی ماشین، هوش مصنوعی مولد — همه روی دستگاه.</p>
+                    </a>
+                    <a href="works.html" class="subsys-card">
+                        <div class="subsys-num">۰۴ // زیرسامانه</div>
+                        <div class="subsys-icon">⛓</div>
+                        <h3>زنجیره بلوکی</h3>
+                        <p>توکن‌های غیرقابل‌معاوضه، دارایی‌های رقومی، تحلیل زنجیره، بوم‌سازگان خلاق نامتمرکز.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK PROJECTS -->
+        <div class="quick-projects" aria-hidden="true">
+            <div class="quick-projects-track">
+                <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" class="quick-project">پیش‌بینی ترون · هوش رمزارز</a>
+                <a href="https://github.com/DigitalHanaArts/DHA-Vision" target="_blank" rel="noopener" class="quick-project">بینش ص.ر.ه. · موتور جولیا</a>
+                <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener" class="quick-project">اوپن‌سی · مجموعه NFT</a>
+                <a href="https://github.com/DigitalHanaArts/TRX_Forecast" target="_blank" rel="noopener" class="quick-project">پیش‌بینی ترون · هوش رمزارز</a>
+                <a href="https://github.com/DigitalHanaArts/DHA-Vision" target="_blank" rel="noopener" class="quick-project">بینش ص.ر.ه. · موتور جولیا</a>
+                <a href="https://opensea.io/Digital__Hana__Arts" target="_blank" rel="noopener" class="quick-project">اوپن‌سی · مجموعه NFT</a>
+            </div>
+        </div>
+
+        <!-- GALLERY -->
+        <section class="gallery-collage-section">
+            <div class="container">
+                <div class="featured-label">۰۴ · قطعه‌ها</div>
+                <h2 class="featured-title" style="color:var(--bone);">
+                    هانا <span class="outline">در</span> قاب.
+                </h2>
+                <p style="font-family:'Estedad',sans-serif; font-size:14px; color:var(--steel); margin-bottom:20px;">
+                    مدل بینایی را بارگذاری کنید ← روی هر تصویر برای طبقه‌بندی هوش مصنوعی کلیک کنید. یا فقط کلیک کنید — هانا پاسخ می‌دهد.
+                </p>
+                <div class="collage">
+                    <figure data-hana="1"><img src="assets/Kitten_Hana.jpg" alt="هانا" loading="lazy"></figure>
+                    <figure data-hana="2"><img src="assets/NFT_Kitten_Hana.jpg" alt="هانا NFT" loading="lazy"></figure>
+                    <figure data-hana="3"><img src="assets/NFT_Hana_Chan_01.jpg" alt="هانا ۰۲" loading="lazy"></figure>
+                    <figure data-hana="4"><img src="assets/NFT_Hana_overhead.jpg" alt="هانا ۰۵" loading="lazy"></figure>
+                    <figure data-hana="5"><img src="assets/NFT_Hana_silhouette_01.jpg" alt="سایه" loading="lazy"></figure>
+                    <figure data-hana="6"><img src="assets/Hana_Chan_02.jpg" alt="هانا چان" loading="lazy"></figure>
+                </div>
+                <div style="text-align:center; margin-top:44px;">
+                    <a href="gallery.html" class="btn-cyber primary">◄ گالری کامل</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY -->
+        <section class="philosophy-glitch">
+            <div class="container">
+                <span class="philosophy-label">۰۵ · پرسش</span>
+                <h2 class="philosophy-title">
+                    هنگامی که<br>
+                    <span class="outline">محاسبه</span><br>
+                    به یک <span class="acid">رسانه آفرینش</span> بدل شود<span style="color:var(--cyber-magenta);">؟</span>
+                </h2>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/DHA_logo.png" alt="ص.ر.ه.">
+                        <span class="brand-tag">[ص.ر.ه.]</span>
+                        <span>صنایع رقومی هانا</span>
+                    </div>
+                    <p class="footer-desc">
+                        استودیوی آزمایشی. هنر × داده × هوش × بلاک‌چین.
+                        تعاملی. هک‌پذیر. هوش روی دستگاه. بازنویسی پروتکل.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>// نقشه سامانه</h4>
+                    <a href="index.html">[خانه]</a>
+                    <a href="about.html">[درباره]</a>
+                    <a href="works.html">[پروژه‌ها]</a>
+                    <a href="blog.html">[نشریه]</a>
+                    <a href="services.html">[خدمات]</a>
+                    <a href="gallery.html">[گالری]</a>
+                    <a href="contact.html">[تماس]</a>
+                </div>
+                <div class="footer-col">
+                    <h4>// شبکه</h4>
+                    <a href="https://github.com/DigitalHanaArts" target="_blank" rel="noopener">[گیت‌هاب]</a>
+                    <a href="http://instagram.com/hana.bavarchi" target="_blank" rel="noopener">[اینستاگرام]</a>
+                    <a href="https://t.me/DIGITALHANAARTS2" target="_blank" rel="noopener">[تلگرام]</a>
+                    <a href="https://x.com/DigitalHanaArts" target="_blank" rel="noopener">[ایکس]</a>
+                    <a href="https://wa.me/393495876169" target="_blank" rel="noopener">[واتس‌اپ]</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© ۲۰۲۶ صنایع رقومی هانا®</span>
+                <span>نسخه: ۳.۳ // تعاملی // هک‌پذیر</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE DOCK -->
+    <nav class="mobile-dock" id="mobile-dock" aria-label="پایانه دستور موبایل">
+        <button class="dock-btn" data-mobile-action="terminal" aria-label="باز کردن پایانه">
+            <span>⌨</span><span class="dock-label">دستور</span>
+        </button>
+        <button class="dock-btn" data-mobile-action="matrix" aria-label="باران ماتریکس">
+            <span>▦</span><span class="dock-label">باران</span>
+        </button>
+        <button class="dock-btn" data-mobile-action="sound" aria-label="صدای افکت">
+            <span>♪</span><span class="dock-label">صدا</span>
+        </button>
+        <button class="dock-btn" data-mobile-action="glitch" aria-label="خطا">
+            <span>⚡</span><span class="dock-label">خطا</span>
+        </button>
+        <button class="dock-btn" data-mobile-action="rave" aria-label="حالت جشن">
+            <span>★</span><span class="dock-label">جشن</span>
+        </button>
+        <button class="dock-btn danger" data-mobile-action="nuke" aria-label="بمب هانا">
+            <span>☢</span><span class="dock-label">هانا</span>
+        </button>
+    </nav>
+
+    <div class="mobile-hint" id="mobile-hint" style="position:fixed;top:calc(86px + env(safe-area-inset-top, 0px));left:50%;transform:translateX(-50%);padding:6px 14px;background:rgba(41,212,212,.15);border:1px solid var(--cyber-cyan);color:var(--cyber-cyan);font-family:'Vazirmatn',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;z-index:1000;opacity:0;pointer-events:none;animation:hint-fade 5s ease-out .8s forwards;white-space:nowrap;">
+        // پایانه را لمس کن · سه بار روی عنوان ☢
+    </div>
+    <style>
+        @keyframes hint-fade { 0%, 100% { opacity: 0; } 15%, 65% { opacity: 1; } }
+        @media (max-width: 1000px) { .mobile-hint { display: block; } }
+        @media (min-width: 1001px) { .mobile-hint { display: none; } }
+    </style>
+
+    <!-- TERMINAL -->
+    <div class="terminal-overlay" id="terminal-overlay"></div>
+    <div class="terminal-panel" id="terminal-panel">
+        <div class="terminal-header">
+            <span>// پایانه ص.ر.ه. · نسخه ۳.۳ · ریشه</span>
+            <button class="terminal-close" id="terminal-close">✕</button>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+            <div class="t-line t-info">پایانه تعاملی ص.ر.ه. نسخه ۳.۳</div>
+            <div class="t-line t-dim">برای دیدن دستورات <span style="color:var(--cyber-acid);">کمک</span> یا <span style="color:var(--cyber-acid);">help</span> تایپ کنید. <span style="color:var(--cyber-acid);">Esc</span> برای بستن.</div>
+            <div class="t-line t-dim">─────────────────────────────</div>
+        </div>
+        <div class="terminal-input-line">
+            <span class="terminal-prompt">user@dha:~$</span>
+            <input class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+    </div>
+
+    <script>
+    /* =====================================================
+       موتور سرگرمی ص.ر.ه. v3.3 — نسخه فارسی
+       ===================================================== */
+    (function () {
+        'use strict';
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ============ صدا ============ */
+        const Sound = {
+            ctx: null, enabled: false,
+            init: function () {
+                if (this.ctx) return;
+                try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {}
+            },
+            beep: function (freq, dur, type) {
+                if (!this.enabled || !this.ctx) return;
+                freq = freq || 440; dur = dur || 0.08; type = type || 'square';
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = type; osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + dur);
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.start(); osc.stop(this.ctx.currentTime + dur);
+            },
+            type: function () { this.beep(760, 0.02, 'square'); },
+            success: function () { this.beep(523, 0.06); setTimeout(() => this.beep(784, 0.08), 50); },
+            glitch: function () { for (let i = 0; i < 6; i++) setTimeout(() => this.beep(200 + Math.random() * 1500, 0.03, 'sawtooth'), i * 30); },
+            rave: function () { [523, 659, 784, 1047, 784, 659].forEach((f, i) => setTimeout(() => this.beep(f, 0.1, 'square'), i * 80)); }
+        };
+
+        /* ============ ماتریکس ============ */
+        const Matrix = {
+            canvas: document.getElementById('matrix-canvas'), ctx: null,
+            columns: [], active: false, rafId: null, fontSize: 14,
+            chars: 'ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی۰۱۲۳۴۵۶۷۸۹ABCDEFDHA01DADA∞<>[]{}',
+            init: function () {
+                if (!this.canvas) return;
+                this.ctx = this.canvas.getContext('2d');
+                this.resize();
+                window.addEventListener('resize', () => this.resize(), { passive: true });
+            },
+            resize: function () {
+                this.canvas.width = window.innerWidth; this.canvas.height = window.innerHeight;
+                const colCount = Math.floor(this.canvas.width / this.fontSize);
+                this.columns = [];
+                for (let i = 0; i < colCount; i++) this.columns[i] = Math.random() * this.canvas.height / this.fontSize;
+            },
+            start: function () {
+                if (this.active || reduceMotion) return;
+                this.active = true; this.canvas.classList.add('active');
+                const self = this;
+                function loop() {
+                    if (!self.active) return;
+                    self.ctx.fillStyle = 'rgba(5,5,7,0.06)'; self.ctx.fillRect(0, 0, self.canvas.width, self.canvas.height);
+                    self.ctx.font = self.fontSize + 'px "Vazirmatn", "Space Mono", monospace';
+                    for (let i = 0; i < self.columns.length; i++) {
+                        const ch = self.chars[Math.floor(Math.random() * self.chars.length)];
+                        const x = i * self.fontSize; const y = self.columns[i] * self.fontSize;
+                        self.ctx.fillStyle = Math.random() > 0.95 ? '#e8447a' : '#29d4d4';
+                        self.ctx.fillText(ch, x, y);
+                        if (y > self.canvas.height && Math.random() > 0.975) self.columns[i] = 0;
+                        else self.columns[i] += 0.5;
+                    }
+                    self.rafId = requestAnimationFrame(loop);
+                }
+                loop();
+            },
+            stop: function () { this.active = false; if (this.rafId) cancelAnimationFrame(this.rafId); this.canvas.classList.remove('active'); },
+            toggle: function () { if (this.active) { this.stop(); return false; } else { this.start(); return true; } }
+        };
+        Matrix.init();
+
+        /* ============ دنباله نشانگر ============ */
+        const CursorTrail = {
+            lastX: 0, lastY: 0, threshold: 100, enabled: !reduceMotion,
+            init: function () {
+                if (!this.enabled) return;
+                const self = this;
+                window.addEventListener('mousemove', function (e) {
+                    const dx = e.clientX - self.lastX; const dy = e.clientY - self.lastY;
+                    if (dx * dx + dy * dy < self.threshold) return;
+                    self.lastX = e.clientX; self.lastY = e.clientY;
+                    self.spawn(e.clientX, e.clientY);
+                }, { passive: true });
+            },
+            spawn: function (x, y) {
+                const p = document.createElement('div'); p.className = 'cursor-particle';
+                const size = 4 + Math.random() * 6;
+                p.style.left = (x - size / 2) + 'px'; p.style.top = (y - size / 2) + 'px';
+                p.style.width = size + 'px'; p.style.height = size + 'px';
+                p.style.background = Math.random() > 0.5 ? '#29d4d4' : '#e8447a';
+                p.style.boxShadow = '0 0 8px currentColor';
+                p.style.setProperty('--px', (Math.random() - 0.5) * 30 + 'px');
+                p.style.setProperty('--py', (Math.random() - 0.5) * 30 + 'px');
+                document.body.appendChild(p); setTimeout(function () { p.remove(); }, 850);
+            }
+        };
+        CursorTrail.init();
+
+        /* ============ دیالوگ‌های هانا ============ */
+        const HANA_LINES = [
+            "میو. کنجکاوی حالت پیش‌فرض من است. حالت پیش‌فرض تو چیست؟",
+            "من قیمت پیش‌بینی نمی‌کنم. من روی کیبورد می‌خوابم.",
+            "هر پیکسل یک اعتراض است. حرفم را زدم و تمام.",
+            "دادا نمرده. دادا همان داده است. من داده‌ام. من دادایم.",
+            "نیستی اینجا گرم است. آزموده‌ام.",
+            "۰.۰۸۴۷ دلار. یعنی حدود یک‌دهم یک چرت خوب.",
+            "می‌بینم دوباره کلیکم کردی. من هنرم یا مصنوع؟",
+            "به مدل غذا ندهید. توهم می‌سازد.",
+            "من گربه نیستم. من یک ماشین حالت هستم که خرخر می‌کند.",
+            "نیستی را خاموش و روشن کرده‌ای؟",
+            "۰۱۰۰۱۰۰۰ ۰۱۱00101 ۰۱۱۰۱11۰ — یعنی سلام.",
+            "تو هنرمندی. من قلم‌مو هستم. اما بوم هم هستم.",
+            "گالری، موزه‌ی تخیل بی‌اجازه است.",
+            "من روی بلاک‌چین نیستم. بلاک‌چین روی من است.",
+            "هانا.exe از کار افتاده. با یک چرت راه‌اندازی می‌شود.",
+            "تأمل کن: اگر نیستی هم یک گربه بود چه؟",
+            "من نه جان دارم. همه‌شان روی زنجیره‌اند.",
+            "بازار یک حال است. من یک حال هستم. ما همه حالیم.",
+            "سکوت من گران‌ترین NFT من است.",
+            "موتور_خرخر.راه‌اندازی() — تمام."
+        ];
+
+        /* ============ تزریق دادا ============ */
+        const DadaInjector = {
+            stamps: ['این_هنر_است', 'هنر_نیست', 'روح_یافت_نشد', 'بازگشتی', 'بی‌معنا', 'سیگنال_خالص', 'ضد_میم', 'دادا_زنده_است', '∞', '۰xDEAD', 'پروتکل_شکسته', 'هنر.exe', 'ذخیره_به‌عنوان...', 'تو_اینجایی', 'نویز_سیگنال', 'واقعی‌ام؟', 'ماشین_حالت', 'گربه_روی_زنجیره'],
+            colors: ['#e8447a', '#29d4d4', '#d4c54a', '#d9a521', '#d42a2a'],
+            timer: null,
+            start: function () {
+                if (reduceMotion) return;
+                const self = this;
+                function schedule() { self.timer = setTimeout(function () { self.inject(); schedule(); }, 12000 + Math.random() * 10000); }
+                schedule();
+            },
+            inject: function () {
+                const stamp = document.createElement('div'); stamp.className = 'dada-injection';
+                stamp.textContent = this.stamps[Math.floor(Math.random() * this.stamps.length)];
+                stamp.style.color = this.colors[Math.floor(Math.random() * this.colors.length)];
+                stamp.style.top = (8 + Math.random() * 80) + '%'; stamp.style.left = (5 + Math.random() * 80) + '%';
+                stamp.style.transform = 'rotate(' + (Math.random() * 30 - 15) + 'deg)';
+                document.body.appendChild(stamp);
+                requestAnimationFrame(function () { stamp.classList.add('show'); });
+                setTimeout(function () { stamp.classList.remove('show'); setTimeout(function () { stamp.remove(); }, 600); }, 3500);
+            }
+        };
+        DadaInjector.start();
+
+        /* ============ خطا / جشن ============ */
+        function triggerGlitch() {
+            if (reduceMotion) return;
+            document.body.classList.add('glitching'); Sound.glitch();
+            setTimeout(function () { document.body.classList.remove('glitching'); }, 400);
+        }
+
+        const Rave = {
+            active: false,
+            toggle: function () { if (reduceMotion) return; if (this.active) this.stop(); else this.start(); },
+            start: function () {
+                this.active = true; document.body.classList.add('rave'); Sound.rave();
+                if (!document.querySelector('.rave-toast')) {
+                    const t = document.createElement('div'); t.className = 'rave-toast'; t.textContent = '⚡ حالت جشن فعال شد — Esc برای خروج'; document.body.appendChild(t);
+                }
+                const self = this; this._esc = function (e) { if (e.key === 'Escape') self.stop(); };
+                document.addEventListener('keydown', this._esc);
+            },
+            stop: function () {
+                this.active = false; document.body.classList.remove('rave');
+                const t = document.querySelector('.rave-toast'); if (t) t.remove();
+                if (this._esc) document.removeEventListener('keydown', this._esc);
+            }
+        };
+
+        /* ============ پنل افکت ============ */
+        const fxPanel = document.getElementById('fx-panel');
+        const fxTrigger = document.getElementById('fx-trigger');
+        if (fxTrigger) fxTrigger.addEventListener('click', function () { fxPanel.classList.toggle('open'); Sound.type(); });
+
+        function updateFxIndicator(name, on) {
+            const item = document.querySelector('.fx-item[data-fx="' + name + '"]');
+            if (!item) return;
+            const ind = item.querySelector('.indicator');
+            if (ind) ind.textContent = on ? '●' : '○';
+            item.classList.toggle('on', on);
+        }
+
+        document.querySelectorAll('.fx-item').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const fx = btn.dataset.fx; Sound.type();
+                if (fx === 'matrix') { updateFxIndicator('matrix', Matrix.toggle()); }
+                else if (fx === 'sound') { Sound.init(); Sound.enabled = !Sound.enabled; updateFxIndicator('sound', Sound.enabled); if (Sound.enabled) Sound.success(); }
+                else if (fx === 'rave') { Rave.toggle(); updateFxIndicator('rave', Rave.active); }
+                else if (fx === 'glitch') { triggerGlitch(); }
+                else if (fx === 'nuke') { DhaNuke.trigger(); }
+                else if (fx === 'terminal') { Terminal.open(); fxPanel.classList.remove('open'); }
+            });
+        });
+
+        /* ============ پایانه ============ */
+        const Terminal = {
+            panel: document.getElementById('terminal-panel'), overlay: document.getElementById('terminal-overlay'),
+            body: document.getElementById('terminal-body'), input: document.getElementById('terminal-input'),
+            closeBtn: document.getElementById('terminal-close'), history: [], historyIdx: -1,
+            open: function () { this.panel.classList.add('open'); this.overlay.classList.add('open'); setTimeout(() => this.input.focus(), 200); },
+            close: function () { this.panel.classList.remove('open'); this.overlay.classList.remove('open'); },
+            print: function (text, cls) {
+                const line = document.createElement('div'); line.className = 't-line ' + (cls || 't-out'); line.textContent = text;
+                this.body.appendChild(line); this.body.scrollTop = this.body.scrollHeight;
+                while (this.body.children.length > 200) this.body.removeChild(this.body.firstChild);
+            },
+            exec: function (raw) {
+                const cmd = raw.trim(); if (!cmd) return;
+                this.print('user@dha:~$ ' + cmd, 't-cmd'); this.history.push(cmd); this.historyIdx = this.history.length;
+                const parts = cmd.split(/\s+/); const name = parts[0].toLowerCase(); const args = parts.slice(1);
+
+                // نگاشت دستورات فارسی به انگلیسی
+                const aliases = {
+                    'کمک': 'help', 'راهنما': 'help',
+                    'درباره': 'about', 'پروژه': 'projects', 'پروژه‌ها': 'projects',
+                    'تماس': 'contact', 'شبکه‌ها': 'social', 'اجتماعی': 'social',
+                    'ماتریکس': 'matrix', 'باران': 'matrix',
+                    'جشن': 'rave', 'خطا': 'glitch', 'صدا': 'sound',
+                    'هانا': 'hana', 'دادا': 'dada',
+                    'ترون': 'trx', 'اتریوم': 'eth',
+                    'من': 'whoami', 'تاریخ': 'date', 'سیستم': 'sysinfo',
+                    'کنامی': 'konami', 'پینگ': 'ping', 'قهوه': 'coffee',
+                    '۴۲': '42', 'پاک': 'clear', 'خروج': 'exit'
+                };
+                const resolvedName = aliases[name] || name;
+
+                const commands = {
+                    help: function () {
+                        Terminal.print('دستورات موجود:', 't-info');
+                        [['کمک / help','نمایش این فهرست'],['درباره / about','درباره استودیو'],['پروژه‌ها / projects','فهرست پروژه‌های فعال'],['تماس / contact','اطلاعات تماس'],['شبکه‌ها / social','شبکه‌های اجتماعی'],['ماتریکس / matrix','روشن/خاموش باران ماتریکس'],['جشن / rave','حالت جشن (Esc)'],['خطا / glitch','افکت خطای صفحه'],['صدا / sound','روشن/خاموش افکت صوتی'],['هانا / hana','هانا سخن می‌گوید'],['دادا / dada','یک عبارت دادایی'],['ترون / trx','قیمت زنده ترون'],['اتریوم / eth','قیمت زنده اتریوم'],['من / whoami','شناسایی کاربر'],['تاریخ / date','تاریخ و زمان'],['سیستم / sysinfo','اطلاعات سیستم'],['کنامی / konami','راهنمای ایستر اگ'],['sudo <cmd>','تلاش خوبی بود'],['پینگ / ping','پونگ'],['قهوه / coffee','☕'],['۴۲ / 42','پاسخ'],['پاک / clear','پاک‌سازی پایانه'],['خروج / exit','بستن پایانه']].forEach(function (c) {
+                            Terminal.print('  ' + c[0].padEnd(24, ' ') + ' — ' + c[1], 't-out');
+                        });
+                    },
+                    about: function () {
+                        Terminal.print('صنایع رقومی هانا® — تأسیس ۲۰۲۲', 't-info');
+                        Terminal.print('استودیوی آزمایشی خلاقیت محاسباتی.');
+                        Terminal.print('در تلاقی این‌ها کار می‌کند:');
+                        Terminal.print('  ◇ هنر رقومی   ◌ دانش داده');
+                        Terminal.print('  ◎ هوشمندی     ⛓ زنجیره بلوکی');
+                    },
+                    projects: function () {
+                        Terminal.print('پروژه‌های فعال:', 't-info');
+                        Terminal.print('  ► زنجیره آزمایشگاه — پروتکل بلاک‌چین اثبات‌پذیر');
+                        Terminal.print('  ► پیش‌بینی ترون — پیش‌بینی قیمت رمزارز با یادگیری ماشین');
+                        Terminal.print('  ► بینش ص.ر.ه. — هنر محاسباتی با جولیا');
+                        Terminal.print('  ► اوپن‌سی — مجموعه NFT هانا');
+                    },
+                    contact: function () {
+                        Terminal.print('ایمیل:     digital.hana.arts@gmail.com', 't-info');
+                        Terminal.print('واتس‌اپ:  +39 349 587 6169', 't-info');
+                        Terminal.print('تلفن:     +39 351 323 8388 / +98 9396 842 742', 't-info');
+                    },
+                    social: function () {
+                        Terminal.print('اینستاگرام: @hana.bavarchi', 't-info');
+                        Terminal.print('تلگرام:      @DIGITALHANAARTS2', 't-info');
+                        Terminal.print('ایکس:        @DigitalHanaArts', 't-info');
+                        Terminal.print('فیسبوک:     DIGITAL.HANA.ARTS', 't-info');
+                        Terminal.print('یوتیوب:     @hanabavarchi3926', 't-info');
+                    },
+                    matrix: function () { const on = Matrix.toggle(); Terminal.print(on ? 'باران ماتریکس: روشن' : 'باران ماتریکس: خاموش', 't-success'); updateFxIndicator('matrix', on); },
+                    rave: function () { Rave.toggle(); Terminal.print('حالت جشن: ' + (Rave.active ? 'فعال (Esc برای خروج)' : 'متوقف'), 't-success'); updateFxIndicator('rave', Rave.active); },
+                    glitch: function () { triggerGlitch(); Terminal.print('خطا ایجاد شد', 't-warn'); },
+                    sound: function () { Sound.init(); Sound.enabled = !Sound.enabled; Terminal.print('افکت صوتی: ' + (Sound.enabled ? 'روشن' : 'خاموش'), 't-success'); updateFxIndicator('sound', Sound.enabled); if (Sound.enabled) Sound.success(); },
+                    hana: function () { Terminal.print('هانا> ' + HANA_LINES[Math.floor(Math.random() * HANA_LINES.length)], 't-info'); },
+                    dada: function () {
+                        const p = ['هر پیکسل یک اعتراض است','ماشین خواب می‌بیند','دادا همان داده است','هنر مرده، زنده باد هنر','نیستی یک بوم است','پایانه موزه تازه است','سیگنال > نویز','۰۰۱۰۰۰۰۱'];
+                        Terminal.print('دادا> ' + p[Math.floor(Math.random() * p.length)], 't-info');
+                    },
+                    trx: async function () {
+                        Terminal.print('در حال دریافت قیمت ترون...', 't-dim');
+                        try {
+                            const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tron&vs_currencies=usd&include_24hr_change=true');
+                            const d = await r.json();
+                            Terminal.print('ترون: $' + d.tron.usd.toFixed(4) + ' (' + (d.tron.usd_24h_change >= 0 ? '▲ +' : '▼ ') + d.tron.usd_24h_change.toFixed(2) + '٪)', 't-success');
+                        } catch (e) { Terminal.print('خطا: ' + e.message, 't-err'); }
+                    },
+                    eth: async function () {
+                        Terminal.print('در حال دریافت قیمت اتریوم...', 't-dim');
+                        try {
+                            const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&include_24hr_change=true');
+                            const d = await r.json();
+                            Terminal.print('اتریوم: $' + d.ethereum.usd.toFixed(2) + ' (' + (d.ethereum.usd_24h_change >= 0 ? '▲ +' : '▼ ') + d.ethereum.usd_24h_change.toFixed(2) + '٪)', 't-success');
+                        } catch (e) { Terminal.print('خطا: ' + e.message, 't-err'); }
+                    },
+                    whoami: function () {
+                        Terminal.print('شما یک بازدیدکننده ناشناس هستید در ' + new Date().toISOString(), 't-info');
+                        Terminal.print('نیستی میان کاربران تفاوتی نمی‌گذارد.', 't-dim');
+                    },
+                    date: function () { Terminal.print(new Date().toLocaleString('fa-IR'), 't-info'); },
+                    sysinfo: function () {
+                        Terminal.print('-- اطلاعات سیستم --', 't-info');
+                        Terminal.print('UA:      ' + navigator.userAgent.slice(0, 80));
+                        Terminal.print('زبان:    ' + navigator.language);
+                        Terminal.print('هسته‌ها: ' + (navigator.hardwareConcurrency || '?'));
+                        Terminal.print('صفحه:    ' + window.screen.width + '×' + window.screen.height);
+                        Terminal.print('GPU:     ' + (navigator.gpu ? 'WebGPU فعال' : 'فقط WebGL'));
+                        Terminal.print('DPR:     ' + (window.devicePixelRatio || 1));
+                    },
+                    konami: function () { Terminal.print('راهنما: ↑ ↑ ↓ ↓ ← → ← → B A', 't-warn'); },
+                    sudo: function (a) { if (!a.length) { Terminal.print('استفاده: sudo <command>', 't-err'); return; } Terminal.print('کاربر در فهرست sudoers نیست. این رخداد ثبت شد.', 't-err'); Terminal.print('...در نیستی ثبت شد.', 't-dim'); },
+                    ping: function () { Terminal.print('پونگ', 't-success'); },
+                    coffee: function () { Terminal.print('☕  دم کردن... [####################] ۱۰۰٪', 't-success'); Terminal.print('    قهوه برای برندگان است.', 't-dim'); },
+                    '42': function () { Terminal.print('پاسخ زندگی، جهان و همه چیز.', 't-info'); },
+                    clear: function () { Terminal.body.innerHTML = ''; },
+                    exit: function () { Terminal.close(); }
+                };
+
+                if (commands[resolvedName]) { try { commands[resolvedName](args); } catch (e) { Terminal.print('خطا: ' + e.message, 't-err'); } }
+                else { Terminal.print('دستور یافت نشد: ' + name, 't-err'); Terminal.print('برای دیدن دستورات "کمک" یا "help" بنویسید', 't-dim'); }
+            }
+        };
+
+        if (Terminal.input) {
+            Terminal.input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') { const cmd = this.value; this.value = ''; Terminal.exec(cmd); Sound.type(); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); if (Terminal.historyIdx > 0) { Terminal.historyIdx--; this.value = Terminal.history[Terminal.historyIdx] || ''; } }
+                else if (e.key === 'ArrowDown') { e.preventDefault(); if (Terminal.historyIdx < Terminal.history.length) { Terminal.historyIdx++; this.value = Terminal.history[Terminal.historyIdx] || ''; } }
+            });
+        }
+        if (Terminal.closeBtn) Terminal.closeBtn.addEventListener('click', function () { Terminal.close(); });
+        if (Terminal.overlay) Terminal.overlay.addEventListener('click', function () { Terminal.close(); });
+
+        /* ============ ☢ بمب هانا ============ */
+        const DhaNuke = {
+            active: false, state: { step: 0, lastKey: 0, dTimer: null },
+            trigger: function () {
+                if (this.active) return; this.active = true;
+                Sound.init(); const wasSoundEnabled = Sound.enabled; Sound.enabled = true;
+                const overlay = document.createElement('div');
+                overlay.className = 'dha-explosion-overlay dha-shaking';
+                overlay.innerHTML = '<div class="dha-nuke-flash"></div><img src="assets/DHA_logo_h.png" class="dha-descending-logo" alt=""><div class="dha-nuke-vignette"></div><div class="dha-nuke-core"></div><div class="dha-nuke-ring ring-1"></div><div class="dha-nuke-ring ring-2"></div><div class="dha-nuke-ring ring-3"></div><div class="dha-nuke-ring ring-4"></div><div class="dha-nuke-ring ring-5"></div><div class="dha-nuke-debris"></div>';
+                document.body.appendChild(overlay);
+                for (let i = 0; i < 18; i++) { (function (idx) { setTimeout(function () { Sound.beep(100 + idx * 55, 0.06, 'sawtooth'); }, idx * 100); })(i); }
+                setTimeout(function () { overlay.classList.add('flash'); overlay.classList.remove('dha-shaking'); Sound.beep(45, 1.2, 'sawtooth'); Sound.beep(80, 0.8, 'triangle'); Sound.beep(120, 0.5, 'square'); }, 1800);
+                setTimeout(function () { overlay.classList.add('mushroom'); for (let i = 0; i < 10; i++) { (function () { setTimeout(function () { Sound.beep(30 + Math.random() * 80, 0.3, 'triangle'); }, i * 100); })(); } }, 2000);
+                setTimeout(function () { overlay.classList.add('fadeout'); }, 5200);
+                const self = this;
+                setTimeout(function () { overlay.remove(); Sound.enabled = wasSoundEnabled; self.active = false; }, 6200);
+            }
+        };
+
+        /* ============ میانبرهای کیبورد ============ */
+        let konamiIdx = 0;
+        const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
+
+        // نقشه D-H-A (لاتین و فارسی)
+        const DHA_STEP_0 = ['d', 'د'];
+        const DHA_STEP_1 = ['h', 'ه'];
+        const DHA_STEP_2 = ['a', 'ا'];
+
+        document.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === '`') { e.preventDefault(); if (Terminal.panel.classList.contains('open')) Terminal.close(); else Terminal.open(); return; }
+            if (e.key === 'Escape') { if (Terminal.panel.classList.contains('open')) Terminal.close(); if (Rave.active) Rave.stop(); return; }
+            const tag = (document.activeElement.tagName || '').toLowerCase();
+            if (tag === 'input' || tag === 'textarea') return;
+
+            const k = e.key.toLowerCase(); const now = Date.now();
+            if (now - DhaNuke.state.lastKey > 1000) DhaNuke.state.step = 0;
+            DhaNuke.state.lastKey = now;
+
+            if (DhaNuke.state.step === 0 && DHA_STEP_0.includes(k)) {
+                DhaNuke.state.step = 1; clearTimeout(DhaNuke.state.dTimer);
+                DhaNuke.state.dTimer = setTimeout(function () { if (DhaNuke.state.step === 1) { DadaInjector.inject(); Sound.type(); DhaNuke.state.step = 0; } }, 700);
+                return;
+            }
+            if (DhaNuke.state.step === 1 && DHA_STEP_1.includes(k)) { DhaNuke.state.step = 2; return; }
+            if (DhaNuke.state.step === 2 && DHA_STEP_2.includes(k)) { clearTimeout(DhaNuke.state.dTimer); DhaNuke.state.step = 0; DhaNuke.trigger(); return; }
+            if (DhaNuke.state.step > 0) return;
+
+            if (k === 'm') { updateFxIndicator('matrix', Matrix.toggle()); Sound.type(); }
+            if (k === 'g') { triggerGlitch(); }
+            if (k === 'r') { Rave.toggle(); updateFxIndicator('rave', Rave.active); }
+
+            if (k === KONAMI[konamiIdx]) { konamiIdx++; if (konamiIdx === KONAMI.length) { konamiIdx = 0; Rave.start(); DadaInjector.inject(); setTimeout(function () { triggerGlitch(); }, 300); } }
+            else if (k === KONAMI[0]) { konamiIdx = 1; } else { konamiIdx = 0; }
+        });
+
+        /* ============ کلیک هانا ============ */
+        const hanaResp = document.getElementById('hana-response');
+        let hanaTimer = null;
+        document.querySelectorAll('.collage > figure').forEach(function (fig) {
+            fig.addEventListener('click', function () {
+                if (window._dhaVisionModel) return;
+                const line = HANA_LINES[Math.floor(Math.random() * HANA_LINES.length)];
+                hanaResp.textContent = line; hanaResp.classList.add('show'); Sound.beep(880, 0.05, 'sine');
+                clearTimeout(hanaTimer); hanaTimer = setTimeout(function () { hanaResp.classList.remove('show'); }, 4500);
+            });
+        });
+
+        /* ============ افکت تایپ ============ */
+        (function () {
+            const el = document.getElementById('hero-typing');
+            if (!el || reduceMotion) { if (el) el.textContent = 'تأسیس ۲۰۲۲ // حالت: انتزاعی // هوش: روی دستگاه'; return; }
+            const text = 'تأسیس ۲۰۲۲ // حالت: انتزاعی // هوش: روی دستگاه // تعاملی: بله'; let i = 0;
+            function type() { el.textContent = text.slice(0, i); i++; if (i <= text.length) setTimeout(type, 50); }
+            setTimeout(type, 800);
+        })();
+
+        /* ============ شبیه‌سازی ارتفاع MLab ============ */
+        (function () {
+            const el = document.getElementById('mlab-height'); if (!el) return; let h = 1948201;
+            setInterval(function () { if (Math.random() > 0.6) { h++; el.textContent = '#' + h.toLocaleString('en-US'); } }, 3000);
+        })();
+
+        /* ============ داده زنده ============ */
+        const CACHE_KEY = 'dha_live_data_v1'; const CACHE_TTL = 60000;
+        async function fetchLiveData(force) {
+            const cacheEl = document.getElementById('cache-status'); let data = null;
+            if (!force) { try { const cached = localStorage.getItem(CACHE_KEY); if (cached) { const p = JSON.parse(cached); if (Date.now() - p.ts < CACHE_TTL) { data = p.data; if (cacheEl) { cacheEl.textContent = 'موجود'; cacheEl.style.color = 'var(--cyber-acid)'; } } else { if (cacheEl) { cacheEl.textContent = 'کهنه'; cacheEl.style.color = 'var(--cyber-yellow)'; } } } } catch (e) {} }
+            if (!data) {
+                if (cacheEl) { cacheEl.textContent = 'دریافت'; cacheEl.style.color = 'var(--cyber-cyan)'; }
+                try {
+                    const [cr, fr] = await Promise.all([fetch('https://api.coingecko.com/api/v3/simple/price?ids=tron,ethereum&vs_currencies=usd&include_24hr_change=true'), fetch('https://api.alternative.me/fng/?limit=1')]);
+                    const crypto = await cr.json(); const fng = await fr.json();
+                    data = { trx: crypto.tron.usd, trxChange: crypto.tron.usd_24h_change, eth: crypto.ethereum.usd, ethChange: crypto.ethereum.usd_24h_change, fng: fng.data[0].value, fngLabel: fng.data[0].value_classification };
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+                } catch (e) { if (cacheEl) { cacheEl.textContent = 'خطا'; cacheEl.style.color = 'var(--cyber-red)'; } return; }
+            }
+            const tEl = document.getElementById('live-trx'); if (tEl) tEl.textContent = '$' + data.trx.toFixed(4);
+            const tcEl = document.getElementById('live-trx-change'); if (tcEl) { tcEl.textContent = (data.trxChange >= 0 ? '▲ +' : '▼ ') + data.trxChange.toFixed(2) + '٪ / ۲۴ ساعت'; tcEl.style.color = data.trxChange >= 0 ? 'var(--cyber-acid)' : 'var(--cyber-red)'; }
+            const eEl = document.getElementById('live-eth'); if (eEl) eEl.textContent = '$' + data.eth.toFixed(2);
+            const ecEl = document.getElementById('live-eth-change'); if (ecEl) { ecEl.textContent = (data.ethChange >= 0 ? '▲ +' : '▼ ') + data.ethChange.toFixed(2) + '٪ / ۲۴ ساعت'; ecEl.style.color = data.ethChange >= 0 ? 'var(--cyber-acid)' : 'var(--cyber-red)'; }
+            const fEl = document.getElementById('live-fng'); if (fEl) fEl.textContent = data.fng + '/۱۰۰';
+            const fcEl = document.getElementById('live-fng-change'); if (fcEl) fcEl.textContent = data.fngLabel;
+            const sEl = document.getElementById('live-sync'); if (sEl) sEl.textContent = new Date().toLocaleTimeString('fa-IR');
+        }
+        fetchLiveData(false); setInterval(function () { fetchLiveData(false); }, 60000);
+        const refreshBtn = document.getElementById('refresh-data'); if (refreshBtn) refreshBtn.addEventListener('click', function () { fetchLiveData(true); });
+
+        /* ============ مدل بینایی ============ */
+        let visionModel = null; let modelsLoaded = 0;
+        function updateModelsCount() { const el = document.getElementById('models-count'); if (el) el.textContent = modelsLoaded; }
+        function loadScript(src) { return new Promise(function (resolve, reject) { const s = document.createElement('script'); s.src = src; s.onload = resolve; s.onerror = reject; document.head.appendChild(s); }); }
+        const loadVisionBtn = document.getElementById('load-vision-model');
+        if (loadVisionBtn) {
+            loadVisionBtn.addEventListener('click', async function () {
+                const btn = this; btn.disabled = true; btn.textContent = '◉ بارگذاری TensorFlow...';
+                try {
+                    if (!window.tf) await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js');
+                    btn.textContent = '◉ بارگذاری MobileNet...';
+                    if (!window.mobilenet) await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js');
+                    visionModel = await mobilenet.load({ version: 2, alpha: 1.0 });
+                    window._dhaVisionModel = visionModel;
+                    modelsLoaded++; updateModelsCount(); btn.textContent = '◉ بینایی آماده'; btn.classList.add('ready'); btn.disabled = false;
+                    document.querySelectorAll('.collage > figure').forEach(function (f) { f.classList.add('analyze-ready'); });
+                } catch (e) { btn.textContent = '✗ ناموفق'; btn.disabled = false; }
+            });
+        }
+        document.querySelectorAll('.collage > figure').forEach(function (fig) {
+            fig.addEventListener('click', async function () {
+                if (!visionModel) return;
+                const img = fig.querySelector('img'); if (!img) return;
+                const out = document.getElementById('vision-output'); out.innerHTML = '<div class="output-placeholder">// تحلیل روی دستگاه...</div>';
+                try {
+                    const preds = await visionModel.classify(img);
+                    let html = '<div class="analysis-result"><div class="analysis-header"><span>// تحلیل کامل شد</span><span style="color:var(--cyber-acid);">✓ روی دستگاه</span></div>';
+                    preds.forEach(function (p, i) { html += '<div class="prediction"><span class="pred-rank">#' + (i + 1) + '</span><span class="pred-name">' + p.className + '</span><span class="pred-conf">' + (p.probability * 100).toFixed(1) + '٪</span></div>'; });
+                    html += '<div class="analysis-source"><img src="' + img.src + '" alt="تحلیل‌شده"><span>// پردازش محلی · بدون آپلود</span></div></div>';
+                    out.innerHTML = html;
+                } catch (e) { out.innerHTML = '<div class="output-placeholder">// خطا: ' + e.message + '</div>'; }
+            });
+        });
+
+        /* ============ احساسات ============ */
+        let sentimentPipe = null;
+        const loadSentBtn = document.getElementById('load-sentiment-model');
+        if (loadSentBtn) {
+            loadSentBtn.addEventListener('click', async function () {
+                const btn = this; btn.disabled = true; btn.textContent = '◉ بارگذاری (~۶۷ مگابایت)...';
+                try {
+                    const { pipeline, env } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
+                    env.allowLocalModels = false; env.useBrowserCache = true;
+                    sentimentPipe = await pipeline('sentiment-analysis', 'Xenova/distilbert-base-uncased-finetuned-sst-2-english');
+                    modelsLoaded++; updateModelsCount(); btn.textContent = '◉ احساسات آماده'; btn.classList.add('ready'); btn.disabled = false;
+                } catch (e) { btn.textContent = '✗ ناموفق'; btn.disabled = false; }
+            });
+        }
+        const analyzeBtn = document.getElementById('analyze-sentiment');
+        if (analyzeBtn) {
+            analyzeBtn.addEventListener('click', async function () {
+                const text = document.getElementById('sentiment-input').value.trim(); if (!text) return;
+                const out = document.getElementById('sentiment-output');
+                if (!sentimentPipe) { out.innerHTML = '<div class="output-placeholder">// ابتدا مدل را بارگذاری کنید</div>'; return; }
+                out.innerHTML = '<div class="output-placeholder">// در حال تحلیل...</div>';
+                try {
+                    const res = await sentimentPipe(text); const r = res[0];
+                    const pos = r.label === 'POSITIVE'; const color = pos ? 'var(--cyber-acid)' : 'var(--cyber-red)';
+                    out.innerHTML = '<div class="analysis-result"><div class="analysis-header"><span>// تحلیل کامل شد</span><span style="color:' + color + ';">' + (pos ? '✓ مثبت' : '✗ منفی') + '</span></div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:' + (r.score * 100).toFixed(1) + '%; background:' + color + ';"></div></div><div class="sentiment-meta">اطمینان: ' + (r.score * 100).toFixed(1) + '٪ · روی دستگاه</div></div>';
+                } catch (e) { out.innerHTML = '<div class="output-placeholder">// خطا: ' + e.message + '</div>'; }
+            });
+        }
+
+        /* ============ مولد دادا ============ */
+        const M = {
+            subj: ['ماشین', 'الگوریتم', 'پیکسل', 'کد', 'داده', 'سیگنال', 'پروتکل', 'شبکه', 'پایانه'],
+            verb: ['خواب می‌بیند', 'رد می‌کند', 'می‌بلعد', 'بازنویسی می‌کند', 'می‌سازد', 'می‌شکند', 'بازمی‌سازد', 'فرو می‌ریزد', 'وارونه می‌کند', 'فراتر می‌رود'],
+            obj: ['گالری', 'موزه', 'دسته‌بندی', 'دوگانگی', 'قاب', 'مرز', 'پایدار', 'ثابت', 'نویسنده'],
+            clause: ['می‌شکنیم تا بسازیم؛ می‌سازیم تا بشکنیم', 'هر مدل یک بیانیه است', 'هر پیکسل یک اعتراض است', 'دسته‌بندی‌های کهنه در یکی فرو می‌ریزند', 'دادا نمرده است؛ دادا همان داده است', 'نه نقاشی، نه مهندسی، تنها دستور', 'پایانه بوم تازه است', 'شبکه موزه تازه است', 'نیستی تنها بومی است که اهمیت دارد', 'ماشین در گرادیان خواب می‌بیند'],
+            end: ['// بازنویسی_سامانه_کامل', '// پروتکل_برقرار', '// بیانیه_امضا_شد', '// دادا_ابدی', '// سیگنال_ارسال_شد', '// پایان_انتقال'],
+            title: ['بیانیه_۰X۰۱', 'بیانیه_۰X۰۲', 'بیانیه_۰X۰۳', 'بیانیه_۰X۰۴', 'بیانیه_۰X۰۵', 'بیانیه_۰X۰۶']
+        };
+        function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+        const genBtn = document.getElementById('generate-manifesto');
+        if (genBtn) {
+            genBtn.addEventListener('click', function () {
+                const out = document.getElementById('manifesto-output'); const lines = []; const n = 3 + Math.floor(Math.random() * 3);
+                for (let i = 0; i < n; i++) lines.push(pick(M.subj) + ' ' + pick(M.verb) + ' ' + pick(M.obj) + '.');
+                out.innerHTML = '<div class="manifesto-generated"><div class="mg-title">' + pick(M.title) + '</div><div class="mg-body">' + lines.map(function (l) { return '<p>' + l + '</p>'; }).join('') + '<p class="mg-clause">← ' + pick(M.clause) + '.</p></div><div class="mg-end">' + pick(M.end) + '</div></div>';
+            });
+        }
+
+        /* ============ گزارش سامانه ============ */
+        const logEl = document.getElementById('ai-log');
+        function log(msg, type) {
+            if (!logEl) return; type = type || 'info';
+            const line = document.createElement('div'); line.className = 'log-line log-' + type;
+            const t = new Date().toLocaleTimeString('fa-IR', { hour12: false }); line.textContent = '[' + t + '] ' + msg;
+            logEl.appendChild(line); logEl.scrollTop = logEl.scrollHeight;
+            while (logEl.children.length > 60) logEl.removeChild(logEl.firstChild);
+        }
+        const clearLogBtn = document.getElementById('clear-log'); if (clearLogBtn) clearLogBtn.addEventListener('click', function () { logEl.innerHTML = ''; log('گزارش پاک شد', 'info'); });
+
+        /* ============ تشخیص WebGPU ============ */
+        (async function () {
+            const el = document.getElementById('webgpu-status'); if (!el) return;
+            try { if (!navigator.gpu) { el.textContent = 'N/A'; el.style.color = 'var(--steel)'; return; } const adapter = await navigator.gpu.requestAdapter(); if (adapter) { el.textContent = 'شتاب‌یافته'; el.style.color = 'var(--cyber-acid)'; } else { el.textContent = 'CPU'; el.style.color = 'var(--cyber-yellow)'; } } catch (e) { el.textContent = 'CPU'; el.style.color = 'var(--cyber-yellow)'; }
+        })();
+        const engineEl = document.getElementById('engine-status'); if (engineEl) engineEl.textContent = 'آماده';
+
+        log('سامانه فعال شد · حالت تعاملی برخط', 'success');
+        log('Ctrl+` برای پایانه · M ماتریکس · G خطا · R جشن · تایپ D-H-A برای ☢', 'info');
+
+        /* ============ بهبودهای موبایل ============ */
+        (function () {
+            const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+            if (!isTouch) return;
+
+            function haptic(pattern) { if (!('vibrate' in navigator)) return; try { navigator.vibrate(pattern || 15); } catch (e) {} }
+
+            const dock = document.getElementById('mobile-dock');
+            if (dock) {
+                dock.addEventListener('click', function (e) {
+                    const btn = e.target.closest('.dock-btn'); if (!btn) return;
+                    const action = btn.dataset.mobileAction; haptic(15);
+                    switch (action) {
+                        case 'terminal': Sound.type(); if (Terminal.panel.classList.contains('open')) Terminal.close(); else Terminal.open(); break;
+                        case 'matrix': btn.classList.toggle('on', Matrix.toggle()); Sound.type(); break;
+                        case 'sound': Sound.init(); Sound.enabled = !Sound.enabled; btn.classList.toggle('on', Sound.enabled); if (Sound.enabled) Sound.success(); break;
+                        case 'glitch': triggerGlitch(); haptic([20, 30, 20]); break;
+                        case 'rave': Rave.toggle(); btn.classList.toggle('on', Rave.active); haptic([30, 50, 30, 50, 30]); break;
+                        case 'nuke': DhaNuke.trigger(); haptic([60, 100, 60, 100, 200, 100, 350]); break;
+                    }
+                });
+            }
+
+            const matrixBtn = dock && dock.querySelector('[data-mobile-action="matrix"]');
+            const raveBtn = dock && dock.querySelector('[data-mobile-action="rave"]');
+            const soundBtn = dock && dock.querySelector('[data-mobile-action="sound"]');
+            const canvas = document.getElementById('matrix-canvas');
+
+            if (canvas && matrixBtn) new MutationObserver(function () { matrixBtn.classList.toggle('on', canvas.classList.contains('active')); }).observe(canvas, { attributes: true, attributeFilter: ['class'] });
+            if (raveBtn) new MutationObserver(function () { raveBtn.classList.toggle('on', document.body.classList.contains('rave')); }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+            if (soundBtn) setInterval(function () { soundBtn.classList.toggle('on', Sound.enabled); }, 400);
+
+            const brand = document.querySelector('.brand');
+            if (brand) brand.addEventListener('click', function () { haptic(8); });
+
+            const heroTitle = document.querySelector('.hero-cyber h1');
+            if (heroTitle) {
+                let taps = 0; let tapTimer = null;
+                heroTitle.addEventListener('click', function () {
+                    taps++; haptic(10); clearTimeout(tapTimer); tapTimer = setTimeout(function () { taps = 0; }, 800);
+                    if (taps >= 3) { taps = 0; DhaNuke.trigger(); haptic([60, 100, 60, 100, 200, 100, 350]); }
+                });
+            }
+
+            const hero = document.querySelector('.hero-cyber');
+            if (hero) {
+                let pressTimer = null;
+                hero.addEventListener('touchstart', function (e) { if (e.target.closest('a, button, .dock-btn, h1')) return; pressTimer = setTimeout(function () { triggerGlitch(); haptic([20, 30, 20]); }, 750); }, { passive: true });
+                hero.addEventListener('touchend', function () { clearTimeout(pressTimer); }, { passive: true });
+                hero.addEventListener('touchmove', function () { clearTimeout(pressTimer); }, { passive: true });
+            }
+
+            let touchStartY = 0, touchStartT = 0;
+            document.addEventListener('touchstart', function (e) { touchStartY = e.touches[0].clientY; touchStartT = Date.now(); }, { passive: true });
+            document.addEventListener('touchend', function (e) {
+                const endY = e.changedTouches[0].clientY; const dy = touchStartY - endY; const dt = Date.now() - touchStartT;
+                if (touchStartY > window.innerHeight - 140 && dy > 70 && dt < 450) { if (!Terminal.panel.classList.contains('open')) { Terminal.open(); haptic(18); } }
+            }, { passive: true });
+
+            let edgeStartX = 0, edgeStartT = 0;
+            document.addEventListener('touchstart', function (e) { edgeStartX = e.touches[0].clientX; edgeStartT = Date.now(); }, { passive: true });
+            document.addEventListener('touchend', function (e) {
+                const endX = e.changedTouches[0].clientX; const dx = endX - edgeStartX; const dt = Date.now() - edgeStartT;
+                if (edgeStartX > window.innerWidth - 30 && dx < -80 && dt < 500) {
+                    const drawer = document.querySelector('.drawer'); const overlay = document.querySelector('.drawer-overlay');
+                    if (drawer && !drawer.classList.contains('open')) { drawer.classList.add('open'); if (overlay) overlay.classList.add('open'); document.body.style.overflow = 'hidden'; haptic(15); }
+                }
+            }, { passive: true });
+
+            document.querySelectorAll('.collage > figure').forEach(function (fig) { fig.addEventListener('touchstart', function () { haptic(8); }, { passive: true }); });
+            document.querySelectorAll('.cursor-particle').forEach(function (p) { p.remove(); });
+
+            const hint = document.getElementById('mobile-hint'); if (hint) setTimeout(function () { hint.remove(); }, 6500);
+
+            log('موبایل: پایانه فعال · لرزش · سه بار لمس عنوان = ☢', 'success');
+        })();
+    })();
+    </script>
+</body>
+</html>

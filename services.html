@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدمات صنایع رقومی هانا® — سفارش هنری، تحلیل داده، مدل‌های هوش مصنوعی، بلاک‌چین، NFT و مشاوره. پرداخت به اتریوم (ETH).">
+    <meta name="keywords" content="خدمات, سفارش هنری, تحلیل داده, هوش مصنوعی, بلاک‌چین, NFT, مشاوره, اتریوم, ETH">
+    <meta name="theme-color" content="#0d1620">
+    <meta property="og:title" content="خدمات · صنایع رقومی هانا®">
+    <meta property="og:description" content="از ایده تا اجرا — در کنار شما. پرداخت به ETH.">
+    <meta property="og:image" content="assets/DHA_logo.png">
+    <link rel="icon" type="image/png" href="assets/DHA_logo_h.png">
+    <title>خدمات · صنایع رقومی هانا®</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Estedad:wght@300;400;500;600;700&family=Markazi+Text:wght@400;500;600;700&family=Lalezar&family=Gulzar&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ===== SERVICES SPECIFIC ===== */
+
+        .خدمت {
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            padding: 40px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--گذر);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .خدمت::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0;
+            width: 70px; height: 70px;
+            border-top: 2px solid var(--زر);
+            border-right: 2px solid var(--زر);
+            opacity: .6;
+            transition: all var(--گذر);
+        }
+
+        .خدمت::after {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 70px; height: 70px;
+            border-bottom: 2px solid var(--فیروزه);
+            border-left: 2px solid var(--فیروزه);
+            opacity: .6;
+            transition: all var(--گذر);
+        }
+
+        .خدمت:hover {
+            transform: translateY(-8px);
+            border-color: var(--فیروزه);
+            box-shadow: 0 24px 60px rgba(41,166,166,.2);
+        }
+
+        .خدمت:hover::before,
+        .خدمت:hover::after {
+            opacity: 1;
+            width: 110px;
+            height: 110px;
+        }
+
+        .خدمت-شماره {
+            font-family: "Lalezar", serif;
+            font-size: 38px;
+            color: var(--فیروزه);
+            opacity: .85;
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .خدمت-نماد {
+            font-size: 44px;
+            margin-bottom: 22px;
+            line-height: 1;
+            transition: transform var(--گذر);
+        }
+
+        .خدمت:hover .خدمت-نماد {
+            transform: rotate(-8deg) scale(1.1);
+        }
+
+        .خدمت h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--لعاب);
+            line-height: 1.3;
+        }
+
+        .خدمت p {
+            font-size: 14px;
+            line-height: 2;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .خدمت-فهرست {
+            list-style: none;
+            margin-bottom: 26px;
+            padding: 0;
+        }
+
+        .خدمت-فهرست li {
+            padding: 8px 0 8px 24px;
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 13px;
+            color: var(--لعاب-۲);
+            position: relative;
+            line-height: 1.9;
+        }
+
+        .خدمت-فهرست li::before {
+            content: "❁";
+            position: absolute;
+            right: 0;
+            color: var(--زر);
+            font-size: 12px;
+            top: 11px;
+        }
+
+        .خدمت-قیمت {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding-top: 20px;
+            border-top: 1px solid var(--کاشی-خط-نازک);
+            font-family: "Vazirmatn", sans-serif;
+            flex-wrap: wrap;
+        }
+
+        .خدمت-قیمت .مبلغ {
+            font-family: "Lalezar", serif;
+            font-size: 22px;
+            color: var(--زر);
+            direction: ltr;
+        }
+
+        .خدمت-قیمت .توضیح {
+            font-size: 11px;
+            color: var(--گرد);
+        }
+
+        /* ==== Process Timeline ==== */
+        .فرآیند {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .گام {
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            padding: 30px 22px;
+            position: relative;
+            transition: all var(--گذر);
+        }
+
+        .گام:hover {
+            border-color: var(--فیروزه);
+            transform: translateY(-6px);
+        }
+
+        .گام::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: -20px;
+            width: 20px;
+            height: 1px;
+            background: var(--کاشی-خط);
+        }
+
+        .گام:first-child::after { display: none; }
+
+        .گام-شماره {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--فیروزه);
+            color: var(--شب);
+            font-family: "Lalezar", serif;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .گام h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--لعاب);
+        }
+
+        .گام p {
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        /* ==== Pricing Tiers ==== */
+        .طرح‌ها {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .طرح {
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            padding: 40px 30px;
+            position: relative;
+            transition: all var(--گذر);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .طرح.برجسته {
+            border-color: var(--زر);
+            background: linear-gradient(155deg, var(--شب-۲), rgba(201,162,39,.08));
+            transform: scale(1.04);
+            z-index: 2;
+            animation: نبض-زر 4s ease-in-out infinite;
+        }
+
+        .طرح.برجسته::before {
+            content: "محبوب‌ترین";
+            position: absolute;
+            top: -12px;
+            right: 30px;
+            padding: 6px 16px;
+            background: var(--زر);
+            color: var(--شب);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .1em;
+        }
+
+        .طرح:hover {
+            transform: translateY(-6px);
+            border-color: var(--فیروزه);
+        }
+
+        .طرح.برجسته:hover {
+            transform: scale(1.04) translateY(-6px);
+        }
+
+        .طرح-نام {
+            font-family: "Lalezar", serif;
+            font-size: 26px;
+            color: var(--لعاب);
+            margin-bottom: 10px;
+        }
+
+        .طرح-توصیف {
+            font-size: 13px;
+            color: var(--گرد);
+            margin-bottom: 24px;
+            line-height: 1.9;
+            min-height: 40px;
+        }
+
+        .طرح-قیمت {
+            font-family: "Lalezar", serif;
+            font-size: 40px;
+            color: var(--زر);
+            line-height: 1;
+            margin-bottom: 6px;
+            direction: ltr;
+        }
+
+        .طرح-واحد {
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 12px;
+            color: var(--گرد);
+            margin-bottom: 30px;
+        }
+
+        .طرح-ویژگی‌ها {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .طرح-ویژگی‌ها li {
+            padding: 9px 0 9px 26px;
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 13px;
+            color: var(--لعاب-۲);
+            position: relative;
+            line-height: 1.8;
+            border-bottom: 1px solid var(--کاشی-خط-ظریف);
+        }
+
+        .طرح-ویژگی‌ها li:last-child { border-bottom: none; }
+
+        .طرح-ویژگی‌ها li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            top: 9px;
+            color: var(--فیروزه);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* ==== Crypto note ==== */
+        .یادداشت-رمزارز {
+            margin-top: 44px;
+            padding: 22px 26px;
+            border: 1px dashed var(--زر);
+            background: rgba(201,162,39,.05);
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 13px;
+            line-height: 2;
+            color: var(--لعاب-۲);
+            max-width: 780px;
+            margin-inline: auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .یادداشت-رمزارز::before {
+            content: "Ξ";
+            position: absolute;
+            top: -18px;
+            right: 24px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--زر);
+            color: var(--شب);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: "Lalezar", serif;
+        }
+
+        .یادداشت-رمزارز strong {
+            color: var(--زر);
+            font-weight: 700;
+        }
+
+        /* ==== FAQ Accordion ==== */
+        .پرسش‌ها {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .پرسش-قلم {
+            background: var(--شب-۲);
+            border: 1px solid var(--کاشی-خط);
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: all var(--گذر);
+        }
+
+        .پرسش-قلم:hover {
+            border-color: var(--فیروزه);
+        }
+
+        .پرسش-قلم[open] {
+            border-color: var(--زر);
+        }
+
+        .پرسش-سرفصل {
+            padding: 22px 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--لعاب);
+            list-style: none;
+            transition: all var(--گذر);
+        }
+
+        .پرسش-سرفصل::-webkit-details-marker { display: none; }
+
+        .پرسش-سرفصل:hover { color: var(--فیروزه-۲); }
+
+        .پرسش-سرفصل::after {
+            content: "+";
+            font-family: "Lalezar", serif;
+            font-size: 26px;
+            color: var(--فیروزه);
+            transition: transform var(--گذر);
+            line-height: 1;
+        }
+
+        .پرسش-قلم[open] .پرسش-سرفصل::after {
+            transform: rotate(45deg);
+            color: var(--زر);
+        }
+
+        .پرسش-پاسخ {
+            padding: 0 28px 24px;
+            font-size: 14px;
+            line-height: 2.05;
+            color: var(--گرد);
+        }
+
+        /* ==== Stats Strip ==== */
+        .آمار {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border: 1px solid var(--کاشی-خط);
+            margin-top: 40px;
+        }
+
+        .آمار-خانه {
+            padding: 36px 22px;
+            text-align: center;
+            border-left: 1px solid var(--کاشی-خط);
+            transition: all var(--گذر);
+            position: relative;
+        }
+
+        .آمار-خانه:last-child { border-left: none; }
+
+        .آمار-خانه:hover {
+            background: var(--شب-۲);
+        }
+
+        .آمار-عدد {
+            font-family: "Lalezar", serif;
+            font-size: 48px;
+            color: var(--زر);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .آمار-برچسب {
+            font-family: "Vazirmatn", sans-serif;
+            font-size: 13px;
+            color: var(--گرد);
+        }
+
+        @media (max-width: 1000px) {
+            .فرآیند { grid-template-columns: repeat(2, 1fr); }
+            .گام::after { display: none; }
+            .طرح‌ها { grid-template-columns: 1fr; }
+            .طرح.برجسته { transform: none; }
+            .طرح.برجسته:hover { transform: translateY(-6px); }
+            .آمار { grid-template-columns: repeat(2, 1fr); }
+            .آمار-خانه:nth-child(2) { border-left: none; }
+            .آمار-خانه:nth-child(-n+2) { border-bottom: 1px solid var(--کاشی-خط); }
+        }
+
+        @media (max-width: 600px) {
+            .فرآیند { grid-template-columns: 1fr; }
+            .آمار { grid-template-columns: 1fr; }
+            .آمار-خانه { border-left: none; border-bottom: 1px solid var(--کاشی-خط); }
+            .آمار-خانه:last-child { border-bottom: none; }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header class="سر-برگ">
+        <a href="index.html" class="نشان">
+            <img src="assets/DHA_logo_h.png" alt="صنایع رقومی هانا" class="نشان-نگاره">
+            <span>صنایع رقومی هانا®</span>
+        </a>
+        <nav class="پیوندها">
+            <a href="index.html">خانه</a>
+            <a href="about.html">درباره</a>
+            <a href="works.html">پروژه‌ها</a>
+            <a href="blog.html">نشریه</a>
+            <a href="services.html">خدمات</a>
+            <a href="gallery.html">گالری</a>
+            <a href="contact.html">ارتباط با ما</a>
+        </nav>
+        <div style="display:flex; gap:12px; align-items:center;">
+            <div class="زبان">
+                <input type="checkbox" id="زبان-ورودی" class="زبان-ورودی">
+                <label for="زبان-ورودی" class="زبان-دکمه">[فارسی] ▾</label>
+                <div class="زبان-فهرست">
+                    <a href="#" class="زبان-گزینه فعال">[فارسی]</a>
+					<a href="https://digitalhanaarts.github.io/dha-per/" class="زبان-گزینه">[Persian]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha/" class="زبان-گزینه">[English]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-cn/" class="زبان-گزینه">[中文]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-ru/" class="زبان-گزینه">[Русский]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-jp/" class="زبان-گزینه">[日本語]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-ko/" class="زبان-گزینه">[조선어]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-hi/" class="زبان-گزینه">[हिन्दी]</a>
+				
+					<a href="https://digitalhanaarts.github.io/it_dha/" class="زبان-گزینه">[Italiano]</a>
+
+					<a href="https://digitalhanaarts.github.io/dha-es/" class="زبان-گزینه">[Español]</a>
+					
+					<a href="https://digitalhanaarts.github.io/dha_ar/" class="زبان-گزینه">[العربية]</a>
+				
+					<a href="https://digitalhanaarts.github.io/dha-yi/" class="زبان-گزینه">[ייִדיש]</a>
+                </div>
+            </div>
+            <button class="منو-دکمه" aria-label="منو">☰</button>
+        </div>
+    </header>
+
+    <div class="پرده-کشو"></div>
+    <aside class="کشو">
+        <button class="کشو-بستن" aria-label="بستن">×</button>
+        <a href="index.html">خانه</a>
+        <a href="about.html">درباره ما</a>
+        <a href="works.html">پروژه‌ها</a>
+        <a href="blog.html">نشریه</a>
+        <a href="services.html">خدمات</a>
+        <a href="gallery.html">گالری</a>
+        <a href="contact.html">ارتباط با ما</a>
+    </aside>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="قهرمان" style="min-height:60vh; padding-top:160px;">
+            <div class="جام" style="text-align:center;">
+                <span class="قهرمان-برچسب">— خدمات —</span>
+                <h1 style="font-size:clamp(2.4rem,8vw,6rem); margin:20px 0;">
+                    <span style="display:block;">از ایده</span>
+                    <span style="display:block; color:transparent; -webkit-text-stroke:2px var(--زر); font-style:italic;">تا اجرا.</span>
+                </h1>
+                <p style="max-width:760px; margin:0 auto; font-size:17px;">
+                    خدماتی در مرزِ هنر، داده و فناوری — طراحی‌شده برای هنرمندان،
+                    استارتاپ‌ها، پژوهشگران و مجموعه‌های خلاق. هر پروژه،
+                    یک همکاری است، نه یک معامله. پرداخت به <strong style="color:var(--زر);">اتریوم (ETH)</strong>.
+                </p>
+
+                <div class="قهرمان-کنش‌ها" style="justify-content:center; margin-top:40px;">
+                    <a href="#خدمات-اصلی" class="دکمه دکمه-اصلی">مشاهده‌ی خدمات</a>
+                    <a href="contact.html" class="دکمه">گفت‌وگو با ما</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN SERVICES -->
+        <section class="بخش آشکار" id="خدمات-اصلی">
+            <div class="جام">
+                <span class="بخش-برچسب">۱ · خدمات اصلی</span>
+                <h2 class="بخش-عنوان">
+                    شش خدمت، <span class="سایه">یک تیم</span>.
+                </h2>
+                <p class="بخش-درآمد">
+                    هر خدمت را می‌توان به‌صورت مستقل سفارش داد یا در قالب
+                    یک بسته‌ی یکپارچه برای پروژه‌های بزرگ‌تر ترکیب کرد.
+                </p>
+
+                <div class="کارت-شبکه" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۱</div>
+                        <div class="خدمت-نماد">✦</div>
+                        <h3>هنرِ رقومی سفارشی</h3>
+                        <p>
+                            طراحی و ساخت آثار هنری رقومی سفارشی — از تصاویر
+                            مولد تا تجسمِ داده‌های شما به‌صورت اثر هنری.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>پرتره‌ی رقومی و تصویرسازی مولد</li>
+                            <li>تجسم خلاقانه‌ی داده</li>
+                            <li>هنر تولیدشده با هوش مصنوعی</li>
+                            <li>آثار مبتنی بر میراث ایرانی</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۱۵ ETH</span>
+                            <span class="توضیح">· بسته به پیچیدگی</span>
+                        </div>
+                    </article>
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۲</div>
+                        <div class="خدمت-نماد">◉</div>
+                        <h3>تحلیل و تجسم داده</h3>
+                        <p>
+                            از داده‌ی خام تا روایت بصری. ما داده‌های شما را
+                            پاک‌سازی، تحلیل و به تصاویری معنادار و جذاب
+                            تبدیل می‌کنیم.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>پاک‌سازی و آماده‌سازی داده</li>
+                            <li>تحلیل آماری و استخراج الگو</li>
+                            <li>داشبوردهای تعاملی</li>
+                            <li>گزارش‌های مدیریتی مبتنی بر داده</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۲۵ ETH</span>
+                            <span class="توضیح">· بسته به حجم داده</span>
+                        </div>
+                    </article>
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۳</div>
+                        <div class="خدمت-نماد">◍</div>
+                        <h3>مدل‌های هوش مصنوعی</h3>
+                        <p>
+                            طراحی، آموزش و استقرار مدل‌های یادگیری ماشین
+                            سفارشی — از پیش‌بینی سری‌های زمانی تا بینایی ماشین.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>پیش‌بینی سری‌های زمانی مالی</li>
+                            <li>طبقه‌بندی تصویر و تشخیص شیء</li>
+                            <li>پردازش زبان طبیعی فارسی</li>
+                            <li>استقرار مدل در محیط تولید</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۵ ETH</span>
+                            <span class="توضیح">· بسته به پیچیدگی مدل</span>
+                        </div>
+                    </article>
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۴</div>
+                        <div class="خدمت-نماد">⛓</div>
+                        <h3>راهکارهای بلاک‌چین</h3>
+                        <p>
+                            از ایده تا استقرار — طراحی قراردادهای هوشمند،
+                            توکن‌سازی دارایی‌ها و ساخت زیرساخت‌های
+                            نامتمرکز.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>توسعه‌ی قرارداد هوشمند (Solidity/Rust)</li>
+                            <li>ساخت و انتشار مجموعه‌ی NFT</li>
+                            <li>مشاوره‌ی توکنومیکس</li>
+                            <li>ادغام با پلتفرم‌های DeFi</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۷ ETH</span>
+                            <span class="توضیح">· بسته به مقیاس</span>
+                        </div>
+                    </article>
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۵</div>
+                        <div class="خدمت-نماد">◆</div>
+                        <h3>ساخت و انتشار NFT</h3>
+                        <p>
+                            بسته‌ی کامل برای هنرمندان و کلکسیونرها — از
+                            ساخت اثر تا ضرب در بلاک‌چین و بازاریابی.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>ساخت تصاویر و ویدیوهای NFT</li>
+                            <li>راه‌اندازی مجموعه در OpenSea</li>
+                            <li>کوچینگ هنرمند برای ورود به بازار</li>
+                            <li>مشاوره‌ی قیمت‌گذاری و بازاریابی</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۲ ETH</span>
+                            <span class="توضیح">· شامل ۵ اثر اول</span>
+                        </div>
+                    </article>
+
+                    <article class="خدمت">
+                        <div class="خدمت-شماره">۶</div>
+                        <div class="خدمت-نماد">❖</div>
+                        <h3>مشاوره و آموزش</h3>
+                        <p>
+                            مشاوره‌ی تخصصی در حوزه‌های هنر رقومی، داده،
+                            هوش مصنوعی و بلاک‌چین — برای افراد، تیم‌ها
+                            و سازمان‌ها.
+                        </p>
+                        <ul class="خدمت-فهرست">
+                            <li>جلسات مشاوره‌ی یک‌ساعته (آنلاین/حضوری)</li>
+                            <li>کارگاه‌های آموزشی تیمی</li>
+                            <li>منتورینگ پروژه‌های دانشجویی</li>
+                            <li>برنامه‌های آموزشی اختصاصی</li>
+                        </ul>
+                        <div class="خدمت-قیمت">
+                            <span class="مبلغ">از ۰.۰۵ ETH</span>
+                            <span class="توضیح">· هر ساعت مشاوره</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۲ · فرآیند کار</span>
+                <h2 class="بخش-عنوان">
+                    چهار گام تا <span class="سایه">تحویل</span>.
+                </h2>
+                <p class="بخش-درآمد">
+                    ما باور داریم که شفافیت، پایه‌ی هر همکاری خوبی است.
+                    به همین دلیل هر پروژه، در چهار گام مشخص پیش می‌رود.
+                </p>
+
+                <div class="فرآیند">
+                    <div class="گام">
+                        <div class="گام-شماره">۱</div>
+                        <h4>گفت‌وگوی اولیه</h4>
+                        <p>
+                            در یک جلسه‌ی مشترک، نیازها، بودجه و زمان‌بندی
+                            پروژه را بررسی می‌کنیم. مشاوره‌ی اولیه رایگان است.
+                        </p>
+                    </div>
+
+                    <div class="گام">
+                        <div class="گام-شماره">۲</div>
+                        <h4>پیشنهاد و برنامه</h4>
+                        <p>
+                            یک سند کامل شامل دامنه‌ی کار، مراحل، زمان‌بندی
+                            و هزینه‌ی دقیق پروژه (به ETH) تهیه می‌کنیم.
+                        </p>
+                    </div>
+
+                    <div class="گام">
+                        <div class="گام-شماره">۳</div>
+                        <h4>اجرا و بازخورد</h4>
+                        <p>
+                            پروژه در گام‌های مشخص پیش می‌رود و در هر مرحله
+                            بازخورد شما را دریافت و اعمال می‌کنیم.
+                        </p>
+                    </div>
+
+                    <div class="گام">
+                        <div class="گام-شماره">۴</div>
+                        <h4>تحویل و پشتیبانی</h4>
+                        <p>
+                            پس از تحویل نهایی، سه ماه پشتیبانی رایگان
+                            برای هر پروژه‌ای که انجام می‌دهیم ارائه می‌شود.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۳ · طرح‌های خدماتی</span>
+                <h2 class="بخش-عنوان">
+                    سه بسته، <span class="سایه">سه سطح</span>.
+                </h2>
+                <p class="بخش-درآمد">
+                    بسته‌های زیر، الگوهای اولیه هستند — هر پروژه‌ای می‌تواند
+                    کاملاً سفارشی طراحی شود. برای پروژه‌های بزرگ‌تر، با ما
+                    تماس بگیرید تا پیشنهاد اختصاصی دریافت کنید.
+                </p>
+
+                <div class="طرح‌ها">
+
+                    <article class="طرح">
+                        <h3 class="طرح-نام">آغاز</h3>
+                        <p class="طرح-توصیف">
+                            مناسب هنرمندان فردی و پروژه‌های کوچک که می‌خواهند
+                            نخستین گام را در دنیای رقومی بردارند.
+                        </p>
+                        <div class="طرح-قیمت">۰.۱۵ ETH</div>
+                        <div class="طرح-واحد">شروع از</div>
+                        <ul class="طرح-ویژگی‌ها">
+                            <li>۱-۳ اثر هنری رقومی سفارشی</li>
+                            <li>یا مشاوره‌ی ۳ ساعته</li>
+                            <li>پشتیبانی ۱ ماهه</li>
+                            <li>فایل‌های اصلی + فرمت وب</li>
+                            <li>تحویل ۲ هفته‌ای</li>
+                        </ul>
+                        <a href="contact.html" class="دکمه">درخواست</a>
+                    </article>
+
+                    <article class="طرح برجسته">
+                        <h3 class="طرح-نام">حرفه‌ای</h3>
+                        <p class="طرح-توصیف">
+                            مناسب کسب‌وکارهای نوپا و تیم‌های خلاق که
+                            به راهکاری یکپارچه نیاز دارند.
+                        </p>
+                        <div class="طرح-قیمت">۰.۵ ETH</div>
+                        <div class="طرح-واحد">شروع از</div>
+                        <ul class="طرح-ویژگی‌ها">
+                            <li>همه‌ی امکانات بسته‌ی «آغاز»</li>
+                            <li>+ تحلیل داده اختصاصی</li>
+                            <li>+ یک مدل هوش مصنوعی ساده</li>
+                            <li>+ داشبورد تعاملی</li>
+                            <li>پشتیبانی ۳ ماهه</li>
+                            <li>تحویل ۴ هفته‌ای</li>
+                        </ul>
+                        <a href="contact.html" class="دکمه دکمه-زرین">درخواست</a>
+                    </article>
+
+                    <article class="طرح">
+                        <h3 class="طرح-نام">سازمانی</h3>
+                        <p class="طرح-توصیف">
+                            برای سازمان‌های بزرگ، دانشگاه‌ها و پروژه‌هایی
+                            که به راهکار پیچیده و بلندمدت نیاز دارند.
+                        </p>
+                        <div class="طرح-قیمت">تماس</div>
+                        <div class="طرح-واحد">پیشنهاد اختصاصی</div>
+                        <ul class="طرح-ویژگی‌ها">
+                            <li>همه‌ی امکانات بسته‌ی «حرفه‌ای»</li>
+                            <li>+ زیرساخت بلاک‌چین اختصاصی</li>
+                            <li>+ مدل‌های پیشرفته ML/DL</li>
+                            <li>+ آموزش تیم شما</li>
+                            <li>پشتیبانی ۱۲ ماهه</li>
+                            <li>مدیریت اختصاصی پروژه</li>
+                        </ul>
+                        <a href="contact.html" class="دکمه">گفت‌وگو</a>
+                    </article>
+
+                </div>
+
+                <!-- Crypto note -->
+                <div class="یادداشت-رمزارز">
+                    <strong>توجه:</strong>
+                    قیمت‌ها به‌صورت تقریبی و بر پایه‌ی نرخ لحظه‌ای اتریوم (ETH) اعلام می‌شوند.
+                    مبلغ نهایی در زمان عقد قرارداد، بر اساس نرخ جاری بازار تثبیت می‌شود
+                    و امکان پرداخت معادل آن به دلار، یورو یا تومان نیز فراهم است.
+                    پرداخت‌ها به‌صورت امن از طریق شبکه‌ی اتریوم (ERC-20) انجام می‌گیرد.
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۴ · در یک نگاه</span>
+                <h2 class="بخش-عنوان">آمارِ <span class="سایه">کارگاه</span>.</h2>
+
+                <div class="آمار">
+                    <div class="آمار-خانه">
+                        <div class="آمار-عدد">۱۰+</div>
+                        <div class="آمار-برچسب">پروژه‌ی فعال</div>
+                    </div>
+                    <div class="آمار-خانه">
+                        <div class="آمار-عدد">۲۰۰+</div>
+                        <div class="آمار-برچسب">اثر NFT</div>
+                    </div>
+                    <div class="آمار-خانه">
+                        <div class="آمار-عدد">۲۴/۷</div>
+                        <div class="آمار-برچسب">پشتیبانی</div>
+                    </div>
+                    <div class="آمار-خانه">
+                        <div class="آمار-عدد">∞</div>
+                        <div class="آمار-برچسب">کنجکاوی</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="بخش آشکار">
+            <div class="جام">
+                <span class="بخش-برچسب">۵ · پرسش‌های پرتکرار</span>
+                <h2 class="بخش-عنوان" style="text-align:center;">
+                    پرسش‌هایی که <span class="سایه">زیاد</span> می‌شنویم.
+                </h2>
+
+                <div class="پرسش‌ها" style="margin-top:50px;">
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            چرا قیمت‌ها به اتریوم (ETH) است و نه دلار؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            اتریوم، ارز بومیِ بلاک‌چین است — همان بستری
+                            که ما در آن کار می‌کنیم (قراردادهای هوشمند،
+                            NFT، زیرساخت‌های نامتمرکز). استفاده از ETH
+                            به ما و شما امکان می‌دهد در یک زبان مشترک
+                            مالی، بدون واسطه‌های بانکی سنتی و با کارمزد
+                            کمتر، همکاری کنیم. در صورت تمایل، معادل دلاری،
+                            یورو یا تومان نیز قابل پرداخت است — مبلغ نهایی
+                            در زمان عقد قرارداد تثبیت می‌شود.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            آیا امکان کار با بودجه‌ی محدود هم وجود دارد؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            بله. ما برای هنرمندان، دانشجویان و پروژه‌های
+                            کوچک، بسته‌های سبک‌تری داریم. همچنین امکان
+                            پرداخت مرحله‌ای و همکاری سهمی در پروژه‌های
+                            خاص وجود دارد. با ما تماس بگیرید تا راه‌حل
+                            مناسبی برای شما پیدا کنیم.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            زمان تحویل یک پروژه چقدر است؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            بستگی به مقیاس پروژه دارد. یک اثر هنری رقومی
+                            ساده ممکن است ۱ تا ۲ هفته زمان ببرد، در حالی
+                            که یک مدل هوش مصنوعی یا زیرساخت بلاک‌چین
+                            می‌تواند ۴ تا ۱۲ هفته طول بکشد. برنامه‌ی
+                            دقیق زمان‌بندی در گام دوم (پیشنهاد پروژه)
+                            به شما ارائه می‌شود.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            آیا کد یا فایل‌های اصلی پروژه به من تحویل داده می‌شود؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            بله — در تمام بسته‌ها، شما مالکیت کامل تمام
+                            کدها، فایل‌ها و دارایی‌های رقومی را دریافت
+                            می‌کنید. علاوه بر این، مستندسازی کاملی از
+                            فرآیند کار نیز در اختیار شما قرار می‌گیرد.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            آیا امکان همکاری بلندمدت به‌عنوان مشاور وجود دارد؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            قطعاً. ما با چندین سازمان و استارتاپ در
+                            قالب قراردادهای مشاوره‌ی ماهانه همکاری می‌کنیم.
+                            در این حالت، تیم شما به‌طور مستقیم به دانش
+                            فنی ما دسترسی خواهد داشت.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            چه تضمینی برای کیفیت کار وجود دارد؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            ما با استانداردهای بالایی کار می‌کنیم و هر
+                            پروژه‌ای را پیش از تحویل نهایی، به‌طور کامل
+                            تست و بازبینی می‌کنیم. علاوه بر این، سه ماه
+                            پشتیبانی رایگان برای هر پروژه در نظر گرفته شده
+                            است — اگر در این مدت مشکلی پیش بیاید، آن را
+                            به‌صورت رایگان برطرف می‌کنیم.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            آیا در خارج از ایران نیز خدمات ارائه می‌دهید؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            بله. ما از راه دور با مشتریان در سراسر جهان
+                            همکاری می‌کنیم. پرداخت‌ها به‌صورت بین‌المللی
+                            (اتریوم، سایر ارزهای رمزنگاری، دلار یا یورو)
+                            و از طریق واتس‌اپ، تلگرام یا ایمیل هماهنگ
+                            می‌شود.
+                        </div>
+                    </details>
+
+                    <details class="پرسش-قلم">
+                        <summary class="پرسش-سرفصل">
+                            آیا امکان بازپرداخت وجه وجود دارد؟
+                        </summary>
+                        <div class="پرسش-پاسخ">
+                            برای پروژه‌های هنری (نقاشی رقومی، NFT و مانند آن)
+                            به دلیل ماهیت شخصی‌سازی، امکان بازپرداخت وجود
+                            ندارد. اما برای پروژه‌های مشاوره‌ای و فنی،
+                            در صورت عدم رضایت در گام اول، مبلغ به‌طور کامل
+                            بازگردانده می‌شود.
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="بخش آشکار" style="text-align:center; border-bottom:none;">
+            <div class="جام">
+                <h2 class="بخش-عنوان" style="font-size:clamp(2rem,5vw,4.5rem);">
+                    آماده‌ی <span class="سایه">شروع</span> هستید؟
+                </h2>
+                <p style="max-width:640px; margin:0 auto 44px; font-size:17px;">
+                    اولین جلسه‌ی مشاوره رایگان است. با ما تماس بگیرید تا
+                    درباره‌ی پروژه‌ی شما گفت‌وگو کنیم.
+                </p>
+                <div class="قهرمان-کنش‌ها" style="justify-content:center;">
+                    <a href="contact.html" class="دکمه دکمه-اصلی">تماس با ما</a>
+                    <a href="works.html" class="دکمه">مشاهده‌ی پروژه‌های پیشین</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="پا-برگ">
+        <div class="جام">
+            <div class="پا-شبکه">
+                <div>
+                    <div class="پا-نشان">
+                        <img src="assets/DHA_logo.png" alt="صنایع رقومی هانا" class="پا-نگاره">
+                        <span>صنایع رقومی هانا®</span>
+                    </div>
+                    <p class="پا-زیرنویس">
+                        خدمات یکپارچه در چهار قلمرو: هنر رقومی،
+                        داده، هوش مصنوعی و بلاک‌چین. پرداخت به ETH.
+                    </p>
+                </div>
+                <div class="پا-ستون">
+                    <h4>پیوندها</h4>
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">درباره</a>
+                    <a href="works.html">پروژه‌ها</a>
+                    <a href="blog.html">نشریه</a>
+                    <a href="gallery.html">گالری</a>
+                    <a href="contact.html">تماس</a>
+                </div>
+                <div class="پا-ستون">
+                    <h4>خدمات</h4>
+                    <a href="#خدمات-اصلی">هنر رقومی</a>
+                    <a href="#خدمات-اصلی">تحلیل داده</a>
+                    <a href="#خدمات-اصلی">هوش مصنوعی</a>
+                    <a href="#خدمات-اصلی">بلاک‌چین</a>
+                </div>
+            </div>
+            <div class="حقوق">
+                <span>© ۲۰۲۶ صنایع رقومی هانا®</span>
+                <span>محاسبه به‌مثابه رسانه‌ی آفرینش</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ accordion — close others when one opens
+        document.querySelectorAll('.پرسش-قلم').forEach(details => {
+            details.addEventListener('toggle', () => {
+                if (details.open) {
+                    document.querySelectorAll('.پرسش-قلم').forEach(other => {
+                        if (other !== details) other.open = false;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1133 @@
+/* =====================================================
+   صنایع رقومی هانا® — سیستم طراحی مشترک
+   DHA — PERSIAN DESIGN SYSTEM
+   ====================================================== */
+
+/* ===== 1 · RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== 2 · ROOT VARIABLES ===== */
+:root {
+    --شب:    #0d1620;
+    --شب-۲:  #131e2a;
+    --شب-۳:  #1c2b38;
+    --شب-۴:  #263849;
+
+    --لعاب:    #f0e6cf;
+    --لعاب-۲:  #cfc3a4;
+    --گرد:     #8a8474;
+    --خاک:     #4a4538;
+
+    --فیروزه:   #29a6a6;
+    --فیروزه-۲: #4ed9d9;
+    --فیروزه-۳: #1a7a7a;
+    --لاجورد:   #26428c;
+    --لاجورد-۲: #1a2c5e;
+    --زر:       #c9a227;
+    --زر-۲:     #e6bc3d;
+    --زعفران:   #e8701a;
+    --انار:     #b8261f;
+
+    --کاشی-خط:        rgba(240,230,207,.22);
+    --کاشی-خط-نازک:   rgba(240,230,207,.08);
+    --کاشی-خط-ظریف:   rgba(240,230,207,.04);
+
+    --پهنا: 1400px;
+    --گذر: .3s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ===== 3 · BASE ===== */
+html { scroll-behavior: smooth; background: var(--شب); direction: rtl; }
+
+body {
+    background: var(--شب);
+    color: var(--لعاب);
+    font-family: "Vazirmatn", "Estedad", "Tahoma", sans-serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+    line-height: 1.9;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9997;
+    opacity: .05;
+    background-image: repeating-conic-gradient(from 0deg,
+        rgba(240,230,207,.12) 0deg, rgba(0,0,0,.10) 1deg,
+        rgba(240,230,207,.06) 2deg, rgba(0,0,0,.06) 3deg);
+    mix-blend-mode: overlay;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9996;
+    background:
+        radial-gradient(ellipse 60% 40% at 18% 12%, rgba(41,166,166,.11), transparent 55%),
+        radial-gradient(ellipse 55% 45% at 84% 32%, rgba(38,66,140,.11), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 50% 92%, rgba(201,162,39,.09), transparent 60%),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(240,230,207,.014) 3px, transparent 4px);
+    mix-blend-mode: screen;
+    animation: نقش-نفس 18s ease-in-out infinite;
+}
+
+::selection { background: var(--فیروزه); color: var(--شب); }
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ===== 4 · TYPOGRAPHY ===== */
+h1, h2, h3, h4 { font-family: "Lalezar", "Markazi Text", serif; font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(3rem, 10vw, 8.5rem); }
+h2 { font-size: clamp(2.2rem, 6vw, 6rem); }
+h3 { font-size: clamp(1.6rem, 3.6vw, 3.2rem); }
+h4 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+
+p { line-height: 2.05; color: var(--گرد); }
+
+/* ===== 5 · ORNAMENT BANDS ===== */
+.کاشی-نازک {
+    height: 8px; width: 100%;
+    background: repeating-linear-gradient(90deg,
+        transparent 0 6px, var(--فیروزه) 6px 8px,
+        transparent 8px 14px, var(--زر) 14px 16px,
+        transparent 16px 24px, var(--انار) 24px 26px,
+        transparent 26px 34px);
+    opacity: .6;
+}
+
+.کاشی-کامل {
+    height: 20px; width: 100%;
+    background:
+        linear-gradient(45deg, var(--زر) 25%, transparent 25%) 0 0 / 20px 20px,
+        linear-gradient(-45deg, var(--زر) 25%, transparent 25%) 0 0 / 20px 20px,
+        linear-gradient(135deg, var(--فیروزه) 25%, transparent 25%) 10px 10px / 20px 20px,
+        linear-gradient(-135deg, var(--فیروزه) 25%, transparent 25%) 10px 10px / 20px 20px,
+        var(--لاجورد-۲);
+    opacity: .95;
+}
+
+/* ===== 6 · CURSOR GLOW ===== */
+.درخشش-نشانگر {
+    position: fixed;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(41,166,166,.09), transparent 60%);
+    pointer-events: none;
+    z-index: 9995;
+    transform: translate(-50%, -50%);
+    transition: transform .1s ease-out, opacity .3s;
+    mix-blend-mode: screen;
+    opacity: 0;
+}
+
+@media (hover: hover) { .درخشش-نشانگر { opacity: 1; } }
+
+/* ===== 7 · SCROLL PROGRESS ===== */
+.پیشرفت-اسکرول {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--فیروزه), var(--زر), var(--انار));
+    z-index: 10001;
+    transition: width .1s linear;
+    width: 0;
+    box-shadow: 0 0 12px rgba(41,166,166,.6);
+}
+
+/* ===== 8 · NAVIGATION ===== */
+.سر-برگ {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(13,22,32,.88);
+    border-bottom: 1px solid var(--کاشی-خط);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0 clamp(16px, 4vw, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    transition: all var(--گذر);
+}
+
+.سر-برگ.فشرده { height: 60px; background: rgba(13,22,32,.95); }
+
+.سر-برگ::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 100%; height: 5px;
+    background: repeating-linear-gradient(90deg,
+        var(--فیروزه) 0 8px, transparent 8px 12px,
+        var(--زر) 12px 20px, transparent 20px 24px,
+        var(--لاجورد) 24px 34px, transparent 34px 38px);
+    opacity: .75;
+}
+
+.نشان {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Lalezar", serif;
+    font-size: 20px;
+    color: var(--لعاب);
+    padding-top: 4px;
+}
+
+.نشان-نگاره {
+    width: 38px; height: 38px;
+    object-fit: contain;
+    filter: brightness(1.15) contrast(1.1);
+    transition: transform var(--گذر);
+}
+
+.نشان:hover .نشان-نگاره { transform: rotate(-8deg) scale(1.08); }
+
+.پیوندها {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.پیوندها a {
+    color: var(--گرد);
+    transition: color .2s ease;
+    position: relative;
+    padding: 4px 0;
+}
+
+.پیوندها a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px; right: 0;
+    width: 0; height: 1px;
+    background: var(--فیروزه);
+    transition: width .3s ease;
+}
+
+.پیوندها a:hover { color: var(--لعاب); }
+.پیوندها a:hover::before { width: 100%; }
+.پیوندها a.فعال { color: var(--فیروزه); }
+.پیوندها a.فعال::before { width: 100%; }
+
+/* Language dropdown */
+.زبان { position: relative; display: inline-block; }
+.زبان-ورودی { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.زبان-دکمه {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 1px solid var(--کاشی-خط);
+    background: transparent;
+    font-family: "Vazirmatn", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--لعاب);
+    transition: all var(--گذر);
+    user-select: none;
+}
+
+.زبان-دکمه:hover {
+    background: var(--فیروزه);
+    color: var(--شب);
+    border-color: var(--فیروزه);
+}
+
+.زبان-فهرست {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 190px;
+    background: var(--شب-۲);
+    border: 1px solid var(--کاشی-خط);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: all var(--گذر);
+    z-index: 1001;
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+.زبان-گزینه {
+    display: block;
+    padding: 11px 18px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    color: var(--گرد);
+    transition: all var(--گذر);
+    border-bottom: 1px solid rgba(240,230,207,.06);
+}
+
+.زبان-گزینه:hover { background: var(--شب-۳); color: var(--فیروزه-۲); }
+.زبان-گزینه.فعال { color: var(--شب); background: var(--فیروزه); }
+
+.زبان-ورودی:checked ~ .زبان-فهرست,
+.زبان:focus-within .زبان-فهرست {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Mobile menu button */
+.منو-دکمه {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--کاشی-خط);
+    color: var(--لعاب);
+    padding: 8px 12px;
+    font-size: 20px;
+    line-height: 1;
+    transition: all var(--گذر);
+}
+
+.منو-دکمه:hover { background: var(--فیروزه); color: var(--شب); }
+
+/* Mobile drawer */
+.کشو {
+    position: fixed;
+    top: 0; right: -100%;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: var(--شب-۲);
+    border-left: 1px solid var(--کاشی-خط);
+    z-index: 2000;
+    transition: right var(--گذر);
+    padding: 90px 32px 32px;
+    overflow-y: auto;
+}
+
+.کشو.باز { right: 0; }
+
+.کشو::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px; height: 100%;
+    background: repeating-linear-gradient(180deg,
+        var(--فیروزه) 0 20px, transparent 20px 26px,
+        var(--زر) 26px 44px, transparent 44px 50px);
+}
+
+.کشو-بستن {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: transparent;
+    border: 1px solid var(--کاشی-خط);
+    color: var(--لعاب);
+    width: 40px; height: 40px;
+    font-size: 22px;
+    line-height: 1;
+    transition: all var(--گذر);
+}
+
+.کشو-بستن:hover { background: var(--انار); border-color: var(--انار); }
+
+.کشو a {
+    display: block;
+    padding: 16px 0;
+    font-family: "Lalezar", serif;
+    font-size: 22px;
+    color: var(--لعاب);
+    border-bottom: 1px solid var(--کاشی-خط-نازک);
+    transition: all var(--گذر);
+}
+
+.کشو a:hover { color: var(--فیروزه); padding-right: 12px; }
+
+.پرده-کشو {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--گذر);
+}
+
+.پرده-کشو.باز { opacity: 1; visibility: visible; }
+
+/* ===== 9 · BUTTONS ===== */
+.دکمه {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid var(--کاشی-خط);
+    background: transparent;
+    color: var(--لعاب);
+    transition: all var(--گذر);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.دکمه::before {
+    content: "";
+    position: absolute;
+    top: 0; right: -100%;
+    width: 100%; height: 100%;
+    background: var(--فیروزه);
+    transition: right var(--گذر);
+    z-index: -1;
+}
+
+.دکمه:hover::before { right: 0; }
+.دکمه:hover { color: var(--شب); border-color: var(--فیروزه); }
+
+.دکمه-اصلی {
+    background: var(--فیروزه);
+    color: var(--شب);
+    border-color: var(--فیروزه);
+}
+
+.دکمه-اصلی::before { background: var(--زر); }
+.دکمه-اصلی:hover { color: var(--شب); border-color: var(--زر); }
+
+.دکمه-زرین {
+    background: var(--زر);
+    color: var(--شب);
+    border-color: var(--زر);
+}
+
+.دکمه-زرین::before { background: var(--زعفران); }
+.دکمه-زرین:hover { border-color: var(--زعفران); }
+
+/* ===== 10 · HERO (base for home page) ===== */
+.قهرمان {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.قهرمان-ردیف {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.قهرمان-برچسب {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .28em;
+    color: var(--فیروزه);
+    margin-bottom: 24px;
+    display: inline-block;
+    border: 1px solid var(--فیروزه);
+    padding: 8px 20px;
+    background: rgba(41,166,166,.06);
+}
+
+.قهرمان-بیت {
+    font-family: "Gulzar", "Noto Naskh Arabic", serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: var(--لعاب-۲);
+    margin-bottom: 32px;
+    padding-right: 24px;
+    border-right: 3px solid var(--زر);
+}
+
+.قهرمان-بیت .مصرع { display: block; }
+
+.قهرمان-بیت .گفتار {
+    display: block;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    letter-spacing: .06em;
+    color: var(--گرد);
+    margin-top: 12px;
+}
+
+.قهرمان-آواز h1 { position: relative; }
+.قهرمان-آواز h1 .واژه { display: block; position: relative; }
+
+.قهرمان-آواز h1 .واژه-۱ {
+    color: var(--لعاب);
+    text-shadow: 5px 0 0 var(--فیروزه), -4px 0 0 var(--لاجورد);
+    animation: نقش-برشی 7s infinite;
+}
+
+.قهرمان-آواز h1 .واژه-۲ {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--زر);
+    font-style: italic;
+    transform: translateX(-26px);
+    animation: کاشی-لرزش 9s infinite;
+}
+
+.قهرمان-آواز h1 .واژه-۳ {
+    color: var(--شب);
+    background: var(--زر);
+    padding: 0 24px 8px;
+    display: inline-block;
+    transform: skewX(6deg);
+    animation: شعله-نفس 5s infinite;
+}
+
+.قهرمان-آواز p {
+    margin-top: 44px;
+    max-width: 640px;
+    font-size: 17px;
+    border-right: 3px solid var(--فیروزه);
+    padding-right: 24px;
+}
+
+.قهرمان-آواز p strong {
+    color: var(--لعاب);
+    font-weight: 700;
+    border-bottom: 2px solid var(--زر);
+}
+
+.قهرمان-کنش‌ها {
+    display: flex;
+    gap: 16px;
+    margin-top: 44px;
+    flex-wrap: wrap;
+}
+
+/* ===== 11 · SECTIONS ===== */
+.بخش {
+    padding: 130px 0;
+    position: relative;
+    border-bottom: 1px solid var(--کاشی-خط-نازک);
+}
+
+.جام {
+    width: min(calc(100% - 40px), var(--پهنا));
+    margin: auto;
+    position: relative;
+}
+
+.بخش-برچسب {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .22em;
+    color: var(--فیروزه);
+    margin-bottom: 34px;
+    display: inline-block;
+    border-bottom: 2px solid var(--زر);
+    padding-bottom: 8px;
+}
+
+.بخش-عنوان {
+    font-family: "Lalezar", serif;
+    font-size: clamp(2.2rem, 6vw, 6rem);
+    line-height: 1.15;
+    margin-bottom: 36px;
+}
+
+.بخش-عنوان .سایه {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--زر);
+    font-style: italic;
+}
+
+.بخش-عنوان .خط‌خورده {
+    text-decoration: line-through;
+    text-decoration-color: var(--انار);
+    text-decoration-thickness: 4px;
+}
+
+.بخش-درآمد {
+    font-size: 17px;
+    line-height: 2.05;
+    color: var(--گرد);
+    max-width: 740px;
+    margin-bottom: 66px;
+    border-right: 3px solid var(--زر);
+    padding-right: 24px;
+}
+
+/* ===== 12 · CARDS ===== */
+.کارت-شبکه {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.کارت {
+    background: var(--شب-۲);
+    border: 1px solid var(--کاشی-خط);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--گذر);
+}
+
+.کارت::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    border-top: 2px solid var(--زر);
+    border-right: 2px solid var(--زر);
+    opacity: .5;
+    transition: all var(--گذر);
+}
+
+.کارت::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 60px; height: 60px;
+    border-bottom: 2px solid var(--فیروزه);
+    border-left: 2px solid var(--فیروزه);
+    opacity: .5;
+    transition: all var(--گذر);
+}
+
+.کارت:hover {
+    transform: translateY(-6px);
+    border-color: var(--فیروزه);
+    box-shadow: 0 20px 60px rgba(41,166,166,.18);
+}
+
+.کارت:hover::before,
+.کارت:hover::after { opacity: 1; width: 90px; height: 90px; }
+
+.کارت-شماره {
+    font-family: "Lalezar", serif;
+    font-size: 42px;
+    color: var(--فیروزه);
+    opacity: .85;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.کارت h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    color: var(--لعاب);
+}
+
+.کارت p { font-size: 15px; line-height: 2; }
+
+/* Project cards (works page) */
+.پروژه {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--شب-۲);
+    border: 1px solid var(--کاشی-خط);
+    margin-bottom: 40px;
+    transition: all var(--گذر);
+    position: relative;
+    overflow: hidden;
+}
+
+.پروژه:hover {
+    border-color: var(--فیروزه);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(41,166,166,.15);
+}
+
+.پروژه-تصویر {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: var(--شب);
+}
+
+.پروژه-تصویر img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: all .6s ease;
+    filter: contrast(1.05) brightness(.95);
+}
+
+.پروژه:hover .پروژه-تصویر img {
+    transform: scale(1.06);
+    filter: contrast(1.1) brightness(1);
+}
+
+.پروژه-تصویر::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(41,166,166,.15), transparent 40%, rgba(184,38,31,.12));
+    pointer-events: none;
+}
+
+.پروژه-گفتار {
+    padding: clamp(34px, 5vw, 66px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.پروژه-برچسب {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .22em;
+    color: var(--زر);
+    margin-bottom: 24px;
+}
+
+.پروژه-گفتار h3 {
+    font-size: clamp(2rem, 4.2vw, 4rem);
+    margin-bottom: 24px;
+    color: var(--لعاب);
+}
+
+.پروژه-گفتار h3 em { font-style: italic; color: var(--فیروزه-۲); }
+
+.پروژه-گفتار p { font-size: 15px; margin-bottom: 28px; }
+
+.فن‌ها {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.فن‌ها span {
+    border: 1px solid var(--کاشی-خط);
+    padding: 7px 14px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 11px;
+    color: var(--لعاب-۲);
+    background: var(--شب);
+}
+
+.پروژه-پیوندها { display: flex; gap: 12px; flex-wrap: wrap; }
+.پروژه-پیوندها .دکمه { padding: 13px 22px; font-size: 13px; }
+
+/* ===== 13 · GALLERY ===== */
+.گالری-فیلتر {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.فیلتر-دکمه {
+    padding: 10px 22px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent;
+    border: 1px solid var(--کاشی-خط);
+    color: var(--گرد);
+    transition: all var(--گذر);
+}
+
+.فیلتر-دکمه:hover { color: var(--لعاب); border-color: var(--فیروزه); }
+
+.فیلتر-دکمه.فعال {
+    background: var(--فیروزه);
+    color: var(--شب);
+    border-color: var(--فیروزه);
+}
+
+.گالری {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.قاب {
+    position: relative;
+    aspect-ratio: 1;
+    background: var(--شب-۲);
+    border: 2px solid var(--کاشی-خط);
+    overflow: hidden;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+
+.قاب::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(201,162,39,.35);
+    pointer-events: none;
+    z-index: 3;
+    transition: all var(--گذر);
+}
+
+.قاب:hover {
+    border-color: var(--فیروزه);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(41,166,166,.22);
+}
+
+.قاب:hover::before { border-color: var(--زر); }
+
+.قاب img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.05);
+    transition: all .5s ease;
+}
+
+.قاب:hover img { transform: scale(1.08); }
+
+.قاب-برچسب {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 12px 16px;
+    background: linear-gradient(to top, rgba(13,22,32,.95), transparent);
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    color: var(--لعاب);
+    z-index: 4;
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--گذر);
+}
+
+.قاب:hover .قاب-برچسب { opacity: 1; }
+
+.قاب.پنهان { display: none; }
+
+/* Lightbox */
+.نور-قاب {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.94);
+    backdrop-filter: blur(8px);
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--گذر);
+    padding: 40px;
+}
+
+.نور-قاب.باز { opacity: 1; visibility: visible; }
+
+.نور-قاب img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 2px solid var(--زر);
+    box-shadow: 0 0 80px rgba(41,166,166,.4);
+}
+
+.نور-بستن {
+    position: absolute;
+    top: 24px; left: 24px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--شب-۲);
+    border: 1px solid var(--کاشی-خط);
+    color: var(--لعاب);
+    font-size: 24px;
+    line-height: 1;
+    transition: all var(--گذر);
+}
+
+.نور-بستن:hover { background: var(--انار); border-color: var(--انار); }
+
+/* ===== 14 · CONTACT ===== */
+.تماس-شبکه {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.تماس-کارت {
+    border: 1px solid var(--کاشی-خط);
+    background: var(--شب-۲);
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    transition: all var(--گذر);
+    position: relative;
+    overflow: hidden;
+}
+
+.تماس-کارت:hover {
+    border-color: var(--فیروزه);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(41,166,166,.15);
+}
+
+.تماس-کارت.زرین {
+    border-color: var(--زر);
+    background: linear-gradient(135deg, var(--شب-۲), rgba(201,162,39,.08));
+    animation: نبض-زر 3.5s ease-in-out infinite;
+}
+
+.تماس-نماد {
+    font-size: 32px;
+    width: 64px; height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--شب-۳);
+    border: 1px solid var(--کاشی-خط);
+    transition: all var(--گذر);
+}
+
+.تماس-کارت:hover .تماس-نماد {
+    background: var(--فیروزه);
+    border-color: var(--فیروزه);
+    color: var(--شب);
+    transform: rotate(-6deg) scale(1.08);
+}
+
+.تماس-کارت.زرین .تماس-نماد { background: var(--زر); border-color: var(--زر); color: var(--شب); }
+
+.تماس-نام {
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--لعاب);
+}
+
+.تماس-مقدار {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: var(--گرد);
+    direction: ltr;
+    word-break: break-all;
+    line-height: 1.7;
+}
+
+/* ===== 15 · FOOTER ===== */
+.پا-برگ {
+    border-top: 3px double var(--زر);
+    padding: 68px 0 36px;
+    background: var(--شب-۲);
+    position: relative;
+}
+
+.پا-برگ::before {
+    content: "";
+    position: absolute;
+    top: -3px; left: 0;
+    width: 100%; height: 3px;
+    background: repeating-linear-gradient(90deg,
+        var(--فیروزه) 0 12px, transparent 12px 18px);
+}
+
+.پا-شبکه {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.پا-نشان {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: "Lalezar", serif;
+    font-size: 22px;
+    color: var(--لعاب);
+}
+
+.پا-نگاره {
+    width: 48px; height: 48px;
+    object-fit: contain;
+    filter: brightness(1.15);
+}
+
+.پا-زیرنویس {
+    font-size: 13px;
+    color: var(--گرد);
+    margin-top: 14px;
+    line-height: 2;
+    max-width: 420px;
+}
+
+.پا-ستون h4 {
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--زر);
+    margin-bottom: 18px;
+}
+
+.پا-ستون a {
+    display: block;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--گرد);
+    transition: color var(--گذر);
+}
+
+.پا-ستون a:hover { color: var(--فیروزه); padding-right: 6px; }
+
+.حقوق {
+    border-top: 1px solid var(--کاشی-خط-نازک);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--خاک);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ===== 16 · BACK TO TOP ===== */
+.بازگشت-بالا {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--شب-۲);
+    border: 2px solid var(--فیروزه);
+    color: var(--لعاب);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--گذر);
+    box-shadow: 0 8px 30px rgba(41,166,166,.25);
+}
+
+.بازگشت-بالا.نمایان {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.بازگشت-بالا:hover {
+    background: var(--فیروزه);
+    color: var(--شب);
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* ===== 17 · ANIMATIONS ===== */
+@keyframes نقش-نفس { 0%,100% { opacity:.85; } 50% { opacity:1; } }
+@keyframes کاشی-لرزش {
+    0%,100% { transform: translate(0,0); }
+    12% { transform: translate(3px,-1px); }
+    24% { transform: translate(-1px,-3px); }
+}
+@keyframes نقش-برشی {
+    0%,100% { clip-path: inset(0 0 0 0); }
+    30% { clip-path: inset(38% 0 32% 0); }
+    60% { clip-path: inset(0 0 0 0); }
+}
+@keyframes چرخ-آفتاب { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+@keyframes چرخ-ماه { 0% { transform: rotate(360deg); } 100% { transform: rotate(0); } }
+@keyframes شعله-نفس {
+    0%,100% { opacity:.55; transform:scale(1); }
+    50% { opacity:.95; transform:scale(1.04); }
+}
+@keyframes اسلیمی-گردش {
+    0% { background-position: 0 0, 24px 24px, 48px 48px; }
+    100% { background-position: 48px 48px, 72px 72px, 96px 96px; }
+}
+@keyframes نگار-گردش { to { transform: translateX(50%); } }
+@keyframes نبض-زر {
+    0%,100% { box-shadow: 0 0 0 0 rgba(201,162,39,.35); }
+    50% { box-shadow: 0 0 0 12px rgba(201,162,39,0); }
+}
+@keyframes نور-گذر { 0% { top: -100%; } 100% { top: 200%; } }
+
+/* Reveal on scroll */
+.آشکار {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.آشکار.نمایان {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marquee */
+.نگار {
+    border-top: 1px solid var(--کاشی-خط);
+    border-bottom: 1px solid var(--کاشی-خط);
+    padding: 22px 0;
+    overflow: hidden;
+    background: var(--شب-۲);
+    position: relative;
+}
+
+.نگار-ردیف {
+    display: inline-flex;
+    gap: 46px;
+    animation: نگار-گردش 34s linear infinite;
+    font-family: "Lalezar", serif;
+    font-size: 20px;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.نگار-ردیف span { color: var(--گرد); position: relative; }
+
+.نگار-ردیف span::before {
+    content: "❁";
+    color: var(--زر);
+    margin-left: 12px;
+    font-size: 14px;
+}
+
+.نگار-ردیف span::after {
+    content: "❁";
+    color: var(--زر);
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+/* ===== 18 · RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    .پیوندها { display: none; }
+    .منو-دکمه { display: block; }
+    .قهرمان-ردیف { grid-template-columns: 1fr; }
+    .پروژه { grid-template-columns: 1fr; }
+    .پا-شبکه { grid-template-columns: 1fr; gap: 40px; }
+    .قهرمان-طاق { min-height: 500px; }
+}
+
+@media (max-width: 600px) {
+    .قهرمان { padding: 110px 0 50px; }
+    .قهرمان-آواز h1 { font-size: 3rem; }
+    .گالری { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .تماس-شبکه { grid-template-columns: 1fr; }
+    .حقوق { flex-direction: column; }
+    .بازگشت-بالا { bottom: 20px; left: 20px; width: 44px; height: 44px; font-size: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
